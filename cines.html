@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf8">
+        <title>Peliculas disponibles</title>
+        <link rel="stylesheet" href="css/cines.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+    </head>
+    <body>
+    <!-- Barra de menu -->
+    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        <h2>MACIFLIX</h2>
+        <h1>Cines disponibles</h1> 
+    <!-- Las peliculas disponibles -->
+        <div class="contenedor-de-cines">
+            <div class="cine-individual" id="cine1">
+                <div class="fotocine">
+                    <a href="/peliculasdisponiblescines.html">
+                        <img src="/img/cine1.png" alt="Cine Tampa">
+                    </a>
+                </div>
+                <div class="cine_titulo">
+                    <div class="cine_titulo_1">Cine Tampa</div>
+                </div>
+                <div class="informacion-general">
+                    <span>Dirección: Carrer de l'Olivar, 123, 07001 Palma, Mallorca</span><br>
+                    <span>Teléfono de contacto: (+34) 123 456 789</span><br>
+                    <span>Correo electrónico: <address>contacto@cinemallorca.com</address></span>
+                    <span>Horarios de atención: Lunes a Domingo: 10:00 - 22:00</span><br>
+                    <span>Redes Sociales: <br> ·Facebook <br>·Instagram <br>·Twitter</span>
+                </div>
+            </div>
+            <div class="cine-individual" id="cine2">
+                <div class="fotocine">
+                    <a href="/peliculasdisponiblescines.html">
+                        <img src="/img/cine2.png" alt="Cinepolis">
+                    </a>
+                </div>
+                <div class="cine_titulo">
+                    <div class="cine_titulo_1">Cinepolis</div>
+                </div>
+            </div>
+            <script src="/js/cines.js"></script>
+        </div>
+        <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    </body>
+</html>

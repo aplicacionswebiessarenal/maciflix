@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maciflix - Reserva tu Asiento</title>
+        <link rel="stylesheet"
+            href="/css/compratusentradas.css">
+    </head>
+    <body>
+        <iframe src="header.html"
+            onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        <div class="container">
+            <header>
+                <h1>Maciflix</h1>
+            </header>
+
+            <div class="seleccion-cine">
+                <h2>Selecciona un Tipo de Cine</h2>
+                <div class="select-container">
+                    <select id="tipo-cine">
+                        <option value="cine1">Cine 1</option>
+                        <option value="cine2">Cine 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="seleccion-pelicula">
+                <h2>Selecciona una Película</h2>
+                <div class="select-container">
+                    <select id="peliculas">
+                        <option value="pelicula1">Pelicula 1</option>
+                        <option value="pelicula2">Pelicula 2</option>
+                        <option value="pelicula3">Pelicula 3</option>
+                    </select>
+                </div>
+                <div id="imagen-pelicula" class="imagen-pelicula"></div>
+            </div>
+
+            <div class="mapa-cine">
+                <h2>Ubicación del Cine</h2>
+                <img src alt="/i" id="mapa" />
+            </div>
+            <div class="seleccion-sala">
+                <div>
+                    <h2>Selecciona la sala</h2>
+                    <select id="sala">
+                        <option value="sala1">Sala 1</option>
+                        <option value="sala2">Sala 2</option>
+                    </select>
+
+                    <h2>Precios</h2>
+                    <div id="precios">
+                        <p id="precio-sala1">Sala 1: $10</p>
+                        <p id="precio-sala2">Sala 2: $12</p>
+                    </div>
+                </div>
+
+                <div class="seleccion-asientos">
+                    <h2>Selecciona tus Asientos</h2>
+                    <div class="select-container">
+                        <button id="mostrar-asientos" class="boton">Mostrar
+                            Asientos</button>
+                    </div>
+                    <div id="asientos-container" style="display: none;"></div>
+
+                </div>
+
+                <div class="select-container">
+                    <button id="confirmar" class="boton">Confirmar
+                        Reserva</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/compratusentradas.js"></script>
+        <iframe src="footer.html">
+
+            <iframe src="footer.html"
+                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+        </body>
+    </html>
