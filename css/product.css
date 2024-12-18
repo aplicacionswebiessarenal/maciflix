@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+    color: white;
+
+}
+
+.producto_detalle {
+    display: flex;
+    align-items: center;
+}
+
+.producto_detalle img{ 
+    height: 30em;
+    margin-right: 20px;
+}
+
+.nombre_productos {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+
+.información_product {
+    margin-left: 20px;
+    border: 1px solid red;
+    width: 30000000px;
+    height: 470px;
+}

@@ -1,0 +1,69 @@
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    text-align: left;
+    color: #E50914;
+}
+
+h1 {
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.pelicula-individual img {
+    width: 300px;
+    height: 450px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.pelicula-individual {
+    padding: 15px;
+    margin: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 450px;
+    margin-bottom: 70px;
+}
+
+.pelicula_detalles_1 {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    overflow-wrap: break-word;
+    max-width: 200px;
+    white-space: normal;
+    padding-top: 20px;
+}
+
+.contenedor-de-peliculas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.highlight-peliculas {
+    box-shadow: 
+        0 0 10px #E50914, /* Sombra difusa */
+        0 0 20px #E50914 /* Sombra más difusa */
+}
+
+img:hover {
+    width: 350px;
+    height: 500px;
+}
+
+img{
+    transition: 1s;
+}

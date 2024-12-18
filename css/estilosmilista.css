@@ -1,0 +1,11 @@
+body{
+    background-color: #461111;
+    color: rgb(255, 255, 255);
+}
+#milista {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}

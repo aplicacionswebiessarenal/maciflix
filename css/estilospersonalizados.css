@@ -1,0 +1,23 @@
+:root {
+  --inter-fuente: "Inter", sans-serif;
+  --roboto-fuente: "Roboto", sans-serif;
+  --texto-color: #dcdcde;
+  --rojo-color: #b81515;
+  --oscuro-rojo-color: #8d0f0f;
+}
+
+button {
+  color: var(--texto-color);
+  background-color: var(--rojo-color);
+  padding: 0.7em;
+  border-radius: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  font-family: var(--inter-fuente);
+}
+
+button:hover {
+  color: var(--texto-color);
+  background-color: var(--oscuro-rojo-color);
+  transition: 0.5s;
+}

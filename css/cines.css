@@ -1,0 +1,91 @@
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    text-align: left;
+    color: #E50914;
+}
+
+h1 {
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.cine-individual {
+    padding: 30px;
+    margin: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px; /* Ancho fijo para cada cine */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin-bottom: 70px;
+    max-width: 100%;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.cine-individual img {
+    width: 500px;
+    height: 350px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: 1s;
+}
+
+.cine_titulo_1 {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    overflow-wrap: break-word;
+    max-width: 200px;
+    white-space: normal;
+    padding-top: 50px;
+}
+
+.contenedor-de-cines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.highlight-cines {
+    box-shadow: 
+        0 0 10px #E50914, /* Sombra difusa */
+        0 0 20px #E50914 /* Sombra más difusa */
+}
+
+#cine1 {
+    padding-right: 50px;
+}
+
+#cine2 {
+    padding-left: 50px;
+}
+
+.fotocine img:hover {
+    height: 400px;
+    width: 550px;
+}
+
+.fotocine img{
+    transition: 1s;
+}
+
+span {
+    word-spacing: 0px;
+    line-height: 45px;
+}
+
+.informacion-general {
+    margin-top: 40px;
+    font-weight: 400;
+}

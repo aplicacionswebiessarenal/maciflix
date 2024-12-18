@@ -1,0 +1,58 @@
+body {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    text-align: center; /* Centrar el texto */
+    font-weight: 900; /* Negrita para el h2 */
+    height: 25px;
+    color: white;
+}
+
+.productos_container {
+    display: flex; /* Usar flexbox para alinear productos en fila */
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan en la siguiente línea si no hay suficiente espacio */
+    justify-content: center; /* Centrar productos horizontalmente */
+}
+
+.producto_container {
+    display: flex; /* Cada producto se comporta como un contenedor flex */
+    flex-direction: column; /* Alinear elementos dentro del producto en columna */
+    align-items: center; /* Centrar elementos dentro de cada producto */
+    margin: 20px; /* Espaciado alrededor de cada producto */
+    width: 250px; /* Ancho fijo para cada producto */
+}
+
+.producto img {
+    margin: 20px 0; /* Espaciado vertical alrededor de la imagen */
+    height: 15em; /* Altura fija para las imágenes */
+    display: block; /* Asegura que la imagen se comporte correctamente */
+}
+
+.producto p {
+    color: rgb(255, 255, 255); /* Color del texto */
+    margin-bottom: 10px; /* Espaciado debajo de cada párrafo */
+}
+
+.nombre_productos{
+    color: white;
+}
+
+button:hover {
+    color: black;
+}
+
+.botones {
+    background-color: red;
+    color: white;
+}

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: #000000; /* Fondo negro */
+    color: rgba(255, 255, 255, 0.87); /* Texto blanco */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url(/img/fondocinepresencial.jpg );
+    background-repeat: no-repeat;
+    
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(34, 27, 27, 0.5); 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(9, 9, 9, 0.59);
+    backdrop-filter: blur(14px);
+
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #E50914; /* Título en rojo */
+}
+
+h2 {
+    text-align: center;
+    color: white; /* Subtítulos en blanco */
+}
+
+.seleccion-cine,
+.seleccion-pelicula,
+.mapa-cine,
+.seleccion-asientos {
+    margin-bottom: 20px;
+}
+
+.select-container {
+    text-align: center; /* Centra el contenedor del select y botones */
+}
+
+select {
+    padding: 10px; /* Espaciado interno del select */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #e509146b; /* Borde rojo */
+    background-color: #333; /* Fondo del select */
+    color: white; /* Color del texto */
+}
+
+.imagen-pelicula {
+    text-align: center;
+    margin-top: 10px;
+}
+.seleccion-sala {
+    text-align: center; /* Centra el texto dentro del contenedor */
+    padding: 20px; /* Espaciado interno */
+    
+    border-radius: 8px; /* Bordes redondeados opcional */
+    
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+#mapa {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    max-width: 300px; /* Establece un ancho máximo de 300px */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+#asientos-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas para los asientos */
+    gap: 10px; /* Espacio entre los asientos */
+    margin-top: 10px;
+}
+
+.asiento {
+    width: 40px;
+    height: 40px;
+    background-color: #1b9953; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    background-image: url(/img/seat_320465.png);
+    width: 30px;
+    height: auto;
+}
+
+.asiento.seleccionado {
+    background-color: #E50914; /* Rojo más claro para los asientos seleccionados */
+}
+
+.boton {
+    background-color: #E50914; /* Color de fondo rojo */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.boton:hover {
+    background-color: #E50914; /* Color de fondo más claro al pasar el ratón */
+}
