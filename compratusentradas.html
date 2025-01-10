@@ -3,81 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Maciflix - Reserva tu Asiento</title>
-        <link rel="stylesheet"
-            href="/css/compratusentradas.css">
+        <title>Maciflix - Cine Presencial</title>
+        <link rel="stylesheet" href="/css/compratusentradas.css">
+        <!-- Enlace al archivo CSS -->
     </head>
     <body>
-        <iframe src="header.html"
-            onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
-        <div class="container">
-            <header>
-                <h1>Maciflix</h1>
-            </header>
+        <div class="header">
+            <img src="ruta_del_logo.png" alt="Logo" class="logo">
+            <!-- Asegúrate de que la ruta sea correcta -->
+            <div class="titulo-container">
+                <h1 class="titulo">Maciflix</h1>
+                <h2 class="subtitulo">Cine Presencial Estrenos</h2>
+                <h2 class="otrosubtitulo">Seleccione una película para ver su
+                    información</h2>
 
-            <div class="seleccion-cine">
-                <h2>Selecciona un Tipo de Cine</h2>
-                <div class="select-container">
-                    <select id="tipo-cine">
-                        <option value="cine1">Cine 1</option>
-                        <option value="cine2">Cine 2</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="seleccion-pelicula">
-                <h2>Selecciona una Película</h2>
-                <div class="select-container">
-                    <select id="peliculas">
-                        <option value="pelicula1">Pelicula 1</option>
-                        <option value="pelicula2">Pelicula 2</option>
-                        <option value="pelicula3">Pelicula 3</option>
-                    </select>
-                </div>
-                <div id="imagen-pelicula" class="imagen-pelicula"></div>
-            </div>
-
-            <div class="mapa-cine">
-                <h2>Ubicación del Cine</h2>
-                <img src alt="/i" id="mapa" />
-            </div>
-            <div class="seleccion-sala">
-                <div>
-                    <h2>Selecciona la sala</h2>
-                    <select id="sala">
-                        <option value="sala1">Sala 1</option>
-                        <option value="sala2">Sala 2</option>
-                    </select>
-
-                    <h2>Precios</h2>
-                    <div id="precios">
-                        <p id="precio-sala1">Sala 1: $10</p>
-                        <p id="precio-sala2">Sala 2: $12</p>
-                    </div>
-                </div>
-
-                <div class="seleccion-asientos">
-                    <h2>Selecciona tus Asientos</h2>
-                    <div class="select-container">
-                        <button id="mostrar-asientos" class="boton">Mostrar
-                            Asientos</button>
-                    </div>
-                    <div id="asientos-container" style="display: none;"></div>
-
-                </div>
-
-                <div class="select-container">
-                    <button id="confirmar" class="boton">Confirmar
-                        Reserva</button>
-                </div>
             </div>
         </div>
+    </div>
 
-        <script src="/js/compratusentradas.js"></script>
-        <iframe src="footer.html">
+    <div class="carrusel">
+        <div class="pelicula" id="pelicula1">
+            <a href="seleccion_asientos.html">
+                <img src="/img/laminelamine.png" alt="Película 1">
+                <h3>Lamine</h3>
+            </a>
+        </div>
+        <div class="pelicula" id="pelicula2">
+            <a href="seleccion_asientos.html">
+                <img src="/img/rapiña.png" alt="Película 2">
+                <h3>Raphinha</h3>
+            </a>
+        </div>
+        <div class="pelicula" id="pelicula3">
+            <a href="seleccion_asientos.html">
+                <img src="/img/descargaaaa.png" alt="Película 3">
+                <h3>Lewandowski</h3>
+            </a>
+        </div>
+        <div class="pelicula" id="pelicula4">
+            <a href="seleccion_asientos.html">
+                <img src="/img/olmo.png" alt="Película 4">
+                <h3>Olmo</h3>
+            </a>
+        </div>
+    </div>
 
-            <iframe src="footer.html"
-                onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
-
-        </body>
-    </html>
+    <script src="/js/java.js"></script>
