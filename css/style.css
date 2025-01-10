@@ -1,26 +1,25 @@
 * {
-    margin: 0;
-    padding: 0;   
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-color: black;
+body {
+  background-color: black;
 }
 
-p{
+p {
   display: flex;
   justify-content: center;
   color: #ffffff;
 }
 
-img{
+img {
   width: 2em;
   height: auto;
   display: block;
   margin: 0 auto;
   margin-bottom: 1em;
 }
-
 
 .interfuente {
   font-family: "Inter", serif;
@@ -29,17 +28,16 @@ img{
   font-style: normal;
 }
 
-.header{
+.header {
   display: flex;
   justify-content: space-between; /* Alinea los elementos a los extremos */
   align-items: center; /* Centra verticalmente los elementos */
   padding: 10px; /* Espaciado interno */
 }
 
-
-.icono{
+.icono {
   width: 5em;
-  height: 5em
+  height: 5em;
 }
 
 .minimalbutton {
@@ -58,7 +56,6 @@ img{
   background-color: darkred;
 }
 
-
 .miboton {
   background-color: transparent;
   border: 10px;
@@ -76,34 +73,30 @@ img{
 }
 
 nav {
-    background-color: rgb(0, 0, 0);
-    flex-wrap: wrap;
+  background-color: rgb(0, 0, 0);
+  flex-wrap: wrap;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    background-color: black;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background-color: black;
 }
 
 nav ul li {
-    padding: 20px 20px;
+  padding: 20px 20px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 nav ul li:hover {
   transform: scale(1.1); /* Aumenta el tamaño del elemento */
   transition: transform 0.2s; /* Suaviza la transición */
 }
-
-
-
-
 
 .buscador {
   display: flex;
@@ -142,14 +135,13 @@ nav ul li:hover {
   background-color: darkred;
 }
 
-footer{
+footer {
   color: #ffffff;
   display: flex;
   justify-content: space-around;
-
 }
 
-.contenedorimagen{
+.contenedorimagen {
   padding: 0;
   display: block;
   margin: 0 auto;
@@ -161,31 +153,31 @@ footer{
     flex-direction: column;
     width: 100%;
   }
-  
+
   nav ul.show {
     display: flex;
   }
-  
+
   .miboton {
     display: block;
   }
 }
 
 @media (max-width: 600px) {
-    nav ul {
+  nav ul {
     display: none;
     flex-direction: column;
     width: 100%;
   }
-  
+
   nav ul.show {
     display: flex;
   }
-  
+
   .miboton {
     display: block;
   }
-    nav {
-        background-color: rgb(0, 0, 0);
-    }
+  nav {
+    background-color: rgb(0, 0, 0);
+  }
 }

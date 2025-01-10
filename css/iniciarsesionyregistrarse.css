@@ -10,33 +10,20 @@
 
 /*! BUG: El fondo de la web se bugea al modificar el zoom de la pagina*/
 
-#sign_up_button {
-  width: auto;
-  font-size: 1em;
-  padding: 1rem;
-}
-
 body {
   font-family: var(--inter-font);
   color: var(--texto-color);
   background-image: url(/img/fondonetflix.jpg);
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5em;
-  background-color: rgba(0, 0, 0, 1);
-}
-
-header h1 {
-  color: var(--rojo-color);
-  font-family: var(--inter-fuente);
-}
-
 input {
   border-radius: 8px;
   padding: 0.8em;
+}
+
+footer {
+  display: grid;
+  place-self: center;
 }
 
 .flex-container {
@@ -68,7 +55,8 @@ input {
   align-items: center;
 }
 
-footer {
-  display: grid;
-  place-self: center;
+#sign_up_button {
+  width: auto;
+  font-size: 1em;
+  padding: 1rem;
 }
