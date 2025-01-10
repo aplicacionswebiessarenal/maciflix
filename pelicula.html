@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información de la Película</title>
-    <link rel="stylesheet" href="pelicula.css">
+    <link rel="stylesheet" href="css/pelicula.css">
 </head>
 <body>
-    <header>
-        <div id="logo">MACIFLIX</div>
-    </header>
+    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
     <div class="movie-details-container">
-        <h1 id="movie-title"></h1> <!-- Aquí se mostrará el título de la película -->
+        <h1 id="movie-title"></h1> Toy Story 3
         
-        <p>Disfruta de esta increíble película. Puedes añadirla a tu lista o ir al cine para verla.</p>
+        <p>Pequeña review de la pelicula</p>
+        <div>
+            
+        </div>
 
         <div class="options">
             <button onclick="addToList()">Añadir a mi lista</button>
@@ -22,5 +23,5 @@
         </div>
     </div>
 
-
+    <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
