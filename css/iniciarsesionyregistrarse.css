@@ -16,17 +16,6 @@ body {
   background-image: url(/img/fondonetflix.jpg);
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5em;
-}
-
-header h1 {
-  color: var(--rojo-color);
-  font-family: var(--inter-fuente);
-}
-
 input {
   border-radius: 8px;
   padding: 0.8em;
