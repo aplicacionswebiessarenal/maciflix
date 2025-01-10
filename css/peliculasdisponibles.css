@@ -59,11 +59,11 @@ h1 {
         0 0 20px #E50914 /* Sombra más difusa */
 }
 
-img:hover {
+img:hover.imagenes {
     width: 350px;
     height: 500px;
 }
 
-img{
+img.imagenes {
     transition: 1s;
 }

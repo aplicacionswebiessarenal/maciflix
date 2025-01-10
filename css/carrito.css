@@ -110,16 +110,15 @@ display: inline-block;
 width: 250px;
 height: 200PX;
 margin: 5px;
-
 }
 
-img:hover {
+.destacar:hover {
 width: 270px; ;
 height: 220px; ;
 }
 
 img{
-transition: 1s;
+transition: 3s;
 }
 
 #logo{
