@@ -36,6 +36,7 @@ h2 {
 .producto img {
     margin: 20px 0; /* Espaciado vertical alrededor de la imagen */
     height: 15em; /* Altura fija para las imágenes */
+    width: 15em;
     display: block; /* Asegura que la imagen se comporte correctamente */
 }
 
