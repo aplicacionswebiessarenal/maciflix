@@ -27,8 +27,6 @@ h1 {
     height: auto; /* Permite que la altura se ajuste automáticamente */
     margin-bottom: 70px;
     max-width: 100%;
-    margin-left: 90px;
-    margin-right: 90px;
 }
 
 .cine-individual img {
