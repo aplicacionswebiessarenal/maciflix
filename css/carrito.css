@@ -121,7 +121,20 @@ img {
   transition: 3s;
 }
 
-#logo {
-  width: 80px;
-  height: 80px;
+.logopago {
+  width: 50px;
+  height: 50px;
+  align-items: end;
+}
+
+#paypal {
+  width: 90px;
+  height: 60px;
+  align-items: end;
+}
+
+#bizum {
+  width: 70px;
+  height: 30px;
+  align-items: start;
 }
