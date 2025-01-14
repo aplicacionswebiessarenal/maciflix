@@ -30,6 +30,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2em;
 }
 
 .login {
@@ -59,4 +60,12 @@ footer {
   width: auto;
   font-size: 1em;
   padding: 1rem;
+  border: 1em;
+}
+
+.log_in_button {
+  width: auto;
+  font-size: 1em;
+  padding: 1rem;
+  margin: 1em;
 }
