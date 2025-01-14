@@ -5,15 +5,12 @@ body {
     color: white;
 }
 
-h2 {
-    text-align: left;
-    color: #E50914;
-}
-
 h1 {
     text-align: center;
     font-style: normal;
     font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .pelicula-individual img {
@@ -51,6 +48,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     font-weight: 600;
+    margin-bottom: 7em;
 }
 
 .highlight-peliculas {
