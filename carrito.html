@@ -10,13 +10,12 @@
   <iframe src="header.html"
   onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
   <body>
-    <img id="logo" src="img/logomaciflix.png">
     <h2>Productos</h2>
       <div class="producto">
         <span>Camiseta</span>
         <span>$10.00</span>
         <button onclick="addToCart('Camiseta', 10)">Añadir al carrito</button>
-      </div>
+      </div>  
       <div class="producto">
         <span>Manta</span>
         <span>$15.00</span>
@@ -83,11 +82,12 @@
       <button class="total">Confirmar transacion</button>
     </a>
     <h2>trending topping</h2>
+    <div>
       <img class="destacar" src="../img/macibarça.png">
       <img class="destacar" src="../img/gorilamaciflix.png">
       <img class="destacar" src="../img/mantaflix.png">
       <img class="destacar" src="../img/llaveroflix.png">
-      
+    </div>
       <iframe src="footer.html"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
