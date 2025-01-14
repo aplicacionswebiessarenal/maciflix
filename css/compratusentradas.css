@@ -45,6 +45,7 @@ body {
 }
 .carrusel {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center; /* Centra el carrusel */
     overflow: hidden; /* Oculta el desbordamiento */
     margin: 20px 0; /* Espacio arriba y abajo del carrusel */
