@@ -5,15 +5,12 @@ body {
     color: white;
 }
 
-h2 {
-    text-align: left;
-    color: #E50914;
-}
-
 h1 {
     text-align: center;
     font-style: normal;
     font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 .cine-individual {
