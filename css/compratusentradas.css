@@ -1,26 +1,17 @@
+@import url(/css/estilospersonalizados.css);
 .contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-  }
+    justify-content: center; }
 body {
     background-image:url(/img/fondocinepresencial.jpg);
-    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     color: #FFFFFF; /* Color de texto blanco */
-    font-family: Arial, sans-serif; /* Fuente general */
+    font-family: var(--inter-font)
     margin: 0; /* Elimina márgenes por defecto */
-    text-align: center; /* Centra el texto en el cuerpo */
-    font-family: sans-serif;
+    text-align: center; /* Centra el texto en el cuerpo */ 
 }
 
-.header {
-    display: flex;
-    flex-direction: column; /* Cambia a columna para centrar el contenido */
-    align-items: center; /* Centra horizontalmente */
-    position: relative; /* Permite posicionar el logo */
-    padding-top: 20px; /* Espacio en la parte superior */
-}
 
 .logo {
     position: absolute; /* Posiciona el logo en la parte superior izquierda */
@@ -34,13 +25,6 @@ body {
     margin-top: 60px; /* Espacio entre el logo y el título */
 }
 
-.titulo {
-    
-        font-size: 90px; /* Tamaño del título */
-        color: #E50914; /* Color del texto (puedes cambiarlo si lo deseas) */
-        text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 15px #242424; /* Efecto de brillo blanco */
-    
-}
 
 .subtitulo {
     font-size: 40px; /* Tamaño del subtítulo */
