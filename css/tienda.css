@@ -13,47 +13,69 @@ h1 {
 }
 
 h2 {
-    text-align: center; /* Centrar el texto */
-    font-weight: 900; /* Negrita para el h2 */
+    text-align: center; 
+    font-weight: 900; 
     height: 25px;
     color: white;
 }
 
 .productos_container {
-    display: flex; /* Usar flexbox para alinear productos en fila */
-    flex-wrap: wrap; /* Permitir que los productos se envuelvan en la siguiente línea si no hay suficiente espacio */
-    justify-content: center; /* Centrar productos horizontalmente */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
 .producto_container {
-    display: flex; /* Cada producto se comporta como un contenedor flex */
-    flex-direction: column; /* Alinear elementos dentro del producto en columna */
-    align-items: center; /* Centrar elementos dentro de cada producto */
-    margin: 20px; /* Espaciado alrededor de cada producto */
-    width: 250px; /* Ancho fijo para cada producto */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin: 20px;
+    width: 250px; 
 }
 
 .producto img {
-    margin: 20px 0; /* Espaciado vertical alrededor de la imagen */
-    height: 15em; /* Altura fija para las imágenes */
+    margin: 20px 0; 
+    height: 15em; 
     width: 15em;
-    display: block; /* Asegura que la imagen se comporte correctamente */
+    display: block; 
 }
 
 .producto p {
-    color: rgb(255, 255, 255); /* Color del texto */
-    margin-bottom: 10px; /* Espaciado debajo de cada párrafo */
+    color: rgb(255, 255, 255); 
+    margin-bottom: 10px; 
 }
 
 .nombre_productos{
     color: white;
+    text-align: center;
 }
 
 button:hover {
-    color: black;
+    color: rgb(255, 0, 0);
 }
 
 .botones {
-    background-color: red;
-    color: white;
+    background-color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.botones img {
+    background-color: rgb(255, 0, 0);
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.precio_carrito {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px; 
 }
