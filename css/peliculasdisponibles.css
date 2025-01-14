@@ -51,6 +51,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     font-weight: 600;
+    margin-bottom: 3em;
 }
 
 .highlight-peliculas {
