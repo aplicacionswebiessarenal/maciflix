@@ -11,20 +11,29 @@ body{
 
 .producto_detalle img{ 
     height: 30em;
+    width: 30em;
     margin-right: 20px;
+    border-radius: 10%;
 }
 
 .nombre_productos {
     font-size: 24px;
     font-weight: bold;
     display: flex;
-    justify-content: center;
+    text-align: center;
     flex-direction: column-reverse;
 }
 
 .información_product {
     margin-left: 20px;
     border: 1px solid red;
-    width: 30000000px;
+    border-radius: 5%;
+    width: 70em;
     height: 470px;
+}
+
+.información_product button, p {
+    text-align: end;
+    align-items: end;
+    align-content: end;
 }
