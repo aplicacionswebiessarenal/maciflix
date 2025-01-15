@@ -3,7 +3,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    background-color: black;
+    background-color: rgb(255, 0, 0);
     margin: 0;
 }
 
@@ -26,10 +26,12 @@ h2 {
 }
 
 .producto_container {
+    background-color: black;
     display: flex; 
     flex-direction: column; 
+    text-align: center;
     align-items: center;
-    margin: 20px;
+    margin: 20px; 
     width: 250px; 
 }
 
@@ -52,6 +54,14 @@ h2 {
 .nombre_productos{
     color: white;
     text-align: center;
+    margin: .5em;
+    padding: .5em;
+}
+
+.precio_carrito {
+    display: flex;
+    text-align: center;
+    padding-left: 3em;
 }
 
 button {
@@ -67,8 +77,9 @@ button:hover {
 
 .botones {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
+
 .boton_añadir_carrito .boton_ir_carrito{
     padding: 5px;
     border: 5px; 
@@ -85,9 +96,7 @@ button:hover {
 }
 
 .precio_carrito {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 150px; 
 }
 
