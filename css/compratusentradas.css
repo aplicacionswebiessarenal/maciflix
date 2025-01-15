@@ -7,9 +7,9 @@ body {
     background-image:url(/img/fondocinepresencial.jpg);
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     color: #FFFFFF; /* Color de texto blanco */
-    font-family: var(--inter-font)
+    font-family: var(--inter-font);
     margin: 0; /* Elimina márgenes por defecto */
-    text-align: center; /* Centra el texto en el cuerpo */ 
+    text-align: center; /* Centra el texto en el cuerpo */
 }
 
 
@@ -45,6 +45,7 @@ body {
 }
 .carrusel {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center; /* Centra el carrusel */
     overflow: hidden; /* Oculta el desbordamiento */
     margin: 20px 0; /* Espacio arriba y abajo del carrusel */
