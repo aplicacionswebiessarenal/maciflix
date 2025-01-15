@@ -34,10 +34,14 @@ h2 {
 }
 
 .producto img {
+    background-color: #ebe9e9;
     margin: 20px 0; 
     height: 15em; 
     width: 15em;
-    display: block; 
+    border-radius: 5%;
+    border-top-left-radius: 5%;
+    margin-bottom: 10px;
+    transition: 1s;
 }
 
 .producto p {
@@ -50,27 +54,34 @@ h2 {
     text-align: center;
 }
 
+button {
+    cursor: pointer;
+}
+
 button:hover {
     color: rgb(255, 0, 0);
+    transition: 0.5s;
+    box-shadow: 
+        0px 0px 10px red;
 }
 
 .botones {
-    background-color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    font-size: 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+}
+.boton_añadir_carrito .boton_ir_carrito{
+    padding: 5px;
+    border: 5px; 
 }
 
-.botones img {
-    background-color: rgb(255, 0, 0);
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-    margin-right: 10px;
+.boton_añadir_carrito {
+    padding: 5px;
+    border: 5px; 
+}
+
+.boton_ir_carrito {
+    padding: 5px;
+    border: 5px;
 }
 
 .precio_carrito {
@@ -78,4 +89,12 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     width: 150px; 
+}
+
+.producto img:hover {
+    height: 15.5em;
+    width: 15.5em;
+    box-shadow: 
+        0px 0px 10px red,
+        0px 0px 20px red;
 }
