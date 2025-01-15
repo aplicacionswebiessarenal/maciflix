@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     justify-content: center; }
 body {
-    background-image:url(/img/fondocinepresencial.jpg);
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     color: #FFFFFF; /* Color de texto blanco */
     font-family: var(--inter-font);
@@ -266,19 +265,15 @@ body.seleccion-asientos {
     background-color: #333;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  #formulario-pago label {
+  } #formulario-pago label {
     color: #ffffff;
   }
-  
   #formulario-pago input {
     color: #921111;
     border: 1px solid #fff;
     padding: 10px;
     border-radius: 5px;
   }
-  
   #boton-pagar {
     background-color: #4CAF50;
     color: #fff;
@@ -287,11 +282,10 @@ body.seleccion-asientos {
     border-radius: 5px;
     cursor: pointer;
   }
-  
   #boton-pagar:hover {
     background-color: #3e8e41;
   }
-  #boton-finalizar-compra {
+#boton-finalizar-compra {
     background-color: #E50914;
     color: #fff;
     padding: 10px 20px;
