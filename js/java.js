@@ -163,8 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
             asiento.addEventListener('click', () => seleccionarAsiento(asiento));
             asientosContainer.appendChild(asiento);
         }
-    }
-   
+    }  
 
 // Función para seleccionar o deseleccionar un asiento
 function seleccionarAsiento(asiento) {
@@ -205,9 +204,7 @@ if (cantidadEntradas.value >= 1) {
                 salaDeCine.style.display = 'none';
             }
         });
-    }
-
-   
+    }  
 });
 // Función para confirmar la selección de asientos
 function confirmarSeleccionAsientos() {
@@ -222,8 +219,7 @@ function confirmarSeleccionAsientos() {
 }
 const botonFinalizarCompra = document.getElementById('boton-finalizar-compra');
 
-botonFinalizarCompra.addEventListener('click', () => {
-  formularioPago.style.display = 'block';
+botonFinalizarCompra.addEventListener('click', () => { formularioPago.style.display = 'block';
 });
 
 // Asignar la función al botón de confirmar asientos

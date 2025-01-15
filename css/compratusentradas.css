@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     justify-content: center; }
 body {
-    background-image:url(/img/fondocinepresencial.jpg);
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     color: #FFFFFF; /* Color de texto blanco */
     font-family: var(--inter-font);
