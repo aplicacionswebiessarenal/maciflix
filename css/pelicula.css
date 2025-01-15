@@ -15,11 +15,28 @@ header {
     border-bottom: 1px solid red;
 }
 .movie-details-container{
-    width :100%;
+width :65%;
 font-size: 24px;
+border-width: 1px;
+border-style: solid;
+margin-top: 3%;
+padding: 10px 20px;
+background-image: url(/img/Toystory.png);
 }
 .movie-titile{
     color: black;
     font-size: 24px;
     font-style: normal;
+}
+.Resumen-pelicula{
+font-size: 15px;
+text-align: start;
+border-style: solid;
+width: 100%;
+border-width: 1px;
+border-bottom: 1;
+border-top: 0;
+border-left: 0;
+border-right: 0;
+margin-top: 2%;
 }
