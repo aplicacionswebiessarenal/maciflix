@@ -245,10 +245,3 @@ header {
   color: #aaa;
   font-size: 1rem;
 }
-
-@media (max-width: 1220px) {
-  .contenido-footer {
-    display: flex;
-    flex-direction: column;
-  }
-}
