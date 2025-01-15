@@ -246,3 +246,15 @@ header {
   color: #aaa;
   font-size: 1rem;
 }
+<<<<<<< HEAD
+=======
+
+/*
+Idea: Hacer que los links cambien de color al tener el raton encima
+
+footer a:hover {
+    color: blue;
+    transition: 0.5s; 
+}
+*/
+>>>>>>> parent of c357a58 (Arreglo del no-responsive footer parte 1)
