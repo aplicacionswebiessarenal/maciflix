@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 70px;
   padding: 0;
   background-color: #000000;
   color: rgb(255, 255, 255);
@@ -25,7 +25,7 @@ h2 {
 }
 
 .carrito {
-  margin-top: 20px;
+  margin-top: 50px;
   border-top: 2px solid #ffffff;
   padding-top: 10px;
 }
@@ -76,21 +76,6 @@ h2 {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 30fr 60fr;
-  grid-template-rows: repeat(1, 80px);
-  border-radius: 10px;
-  gap: 20px 20px;
-  margin: 20px 20px;
-  border-color: #e50914;
-  border-style: inset;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
-  justify-content: center;
-}
-
-.destacar {
   display: grid;
   grid-template-columns: 30fr 60fr;
   grid-template-rows: repeat(1, 80px);

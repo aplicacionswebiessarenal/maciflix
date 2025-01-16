@@ -224,6 +224,7 @@ header {
 
 .faq-pregunta {
   background-color: transparent;
+
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -245,3 +246,12 @@ header {
   color: #aaa;
   font-size: 1rem;
 }
+
+/*
+Idea: Hacer que los links cambien de color al tener el raton encima
+
+footer a:hover {
+    color: blue;
+    transition: 0.5s; 
+}
+*/
