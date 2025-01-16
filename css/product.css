@@ -6,6 +6,7 @@ body{
 h3 {
     margin-top: 1em;
 }
+
 .producto_detalle {
     display: flex;
     align-items: center;
@@ -36,21 +37,9 @@ h3 {
     position: relative;
 }
 
-.información_producto p {
-    padding: 1em;
-    justify-content: center;
-    text-align: center;
-}
-
 .botones_carrito {
     margin-top: 2em;
     display: flex;
     flex-direction: row-reverse;
     gap: 0.5rem;
-
-}
-
-
-.boton_añadir_carrito {
-
 }
