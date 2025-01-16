@@ -7,8 +7,8 @@ body {
 }
 header {
   display: flex;
-  flex-direction: column; /* Apilar elementos verticalmente */
-  align-items: center; /* Centrar horizontalmente */
+  flex-direction: column; 
+  align-items: center; 
   padding: 10px 20px;
   background-color: black;
   border-bottom: 1px solid red;
@@ -17,11 +17,11 @@ header {
   font-size: 24px;
   font-weight: bold;
   color: red;
-  margin-bottom: 20px; /* Separar el logo del buscador */
+  margin-bottom: 20px; 
 }
 #search-bar {
-  width: 100%; /* Asegura que el buscador ocupe todo el ancho disponible */
-  text-align: center; /* Centra el contenido */
+  width: 100%; 
+  text-align: center; 
 }
 #search-bar input {
   width: 70%;
@@ -100,7 +100,7 @@ header {
     padding: 20px 10px;
   }
   #search-bar input {
-    width: 90%; /* Ocupa más ancho en pantallas pequeñas */
+    width: 90%; 
   }
 }
 @media (max-width: 480px) {
