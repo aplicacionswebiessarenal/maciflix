@@ -66,9 +66,14 @@ h1 {
     padding-left: 50px;
 }
 
+.fotocine {
+    height: 400px; /* Set a fixed height to prevent layout shift */
+    width: 550px; /* Set a fixed width to prevent layout shift */
+}
+
 .fotocine img:hover {
-    height: 400px;
-    width: 550px;
+    height: 400px; /* Ensure the hovered image size matches the wrapper */
+    width: 550px; /* Ensure the hovered image size matches the wrapper */
 }
 
 .fotocine img{
@@ -83,4 +88,9 @@ span {
 .informacion-general {
     margin-top: 40px;
     font-weight: 400;
+    text-align: left;
+}
+
+.informacion-general span {
+    display: block;
 }
