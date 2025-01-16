@@ -246,3 +246,12 @@ header {
   color: #aaa;
   font-size: 1rem;
 }
+
+/*
+Idea: Hacer que los links cambien de color al tener el raton encima
+
+footer a:hover {
+    color: blue;
+    transition: 0.5s; 
+}
+*/
