@@ -50,6 +50,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     font-weight: 600;
+    margin-bottom: 7em;
 }
 
 .highlight-cines {
@@ -89,6 +90,7 @@ span {
     margin-top: 40px;
     font-weight: 400;
     text-align: left;
+    padding-left: 100px;
 }
 
 .informacion-general span {

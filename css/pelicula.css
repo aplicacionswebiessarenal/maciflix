@@ -8,14 +8,14 @@ body {
 
 header {
     display: flex;
-    flex-direction: column;
+    flex-direction: flex;
     align-items: center;
     padding: 10px 20px;
     background-color: black;
     border-bottom: 1px solid red;
 }
 .movie-details-container{
-width :65%;
+width :95%;
 font-size: 24px;
 border-width: 1px;
 border-style: solid;
@@ -27,16 +27,25 @@ background-image: url(/img/Toystory.png);
     color: black;
     font-size: 24px;
     font-style: normal;
+    width: 10%;
 }
 .Resumen-pelicula{
 font-size: 15px;
 text-align: start;
 border-style: solid;
-width: 100%;
+width: 70%;
 border-width: 1px;
 border-bottom: 1;
 border-top: 0;
 border-left: 0;
 border-right: 0;
 margin-top: 2%;
+}
+.Options{
+    text-align: start;
+    display: flex;
+    justify-content: flex;
+    align-items: start;
+    background-color: black;
+    border-bottom: 1px solid red;
 }
