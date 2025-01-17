@@ -5,6 +5,7 @@
 
 body {
   background-color: black;
+  font-family: "Inter", serif;
 }
 
 p {
@@ -19,13 +20,6 @@ img {
   display: block;
   margin: 0 auto;
   margin-bottom: 1em;
-}
-
-.interfuente {
-  font-family: "Inter", serif;
-  font-optical-sizing: auto;
-  font-weight: auto;
-  font-style: normal;
 }
 
 .header {
