@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Verifica si estamos en la página de selección de asientos
     if (window.location.pathname.includes('seleccion_asientos.html')) {
         const contenedorPelicula = document.getElementById('contenedor-pelicula');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const peliculas = document.querySelectorAll('.pelicula');
 
         peliculas.forEach(pelicula => {
-            pelicula.addEventListener('click', function() {
+            pelicula.addEventListener('click', function () {
                 const idPelicula = this.id;
                 const imagenPelicula = this.querySelector('img').src; // Obtiene la ruta de la imagen
                 const tituloPelicula = this.querySelector('h3').textContent; // Obtiene el título de la película
@@ -140,7 +140,7 @@ function calcularTotal() {
     const total = precioEntrada * cantidadEntradas;
     totalInput.value = total.toFixed(2) + '€';
 }
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const tipoEntradaSelect = document.getElementById('tipo-entrada');
     const salaDeCine = document.getElementById('sala-de-cine');
     const asientosContainer = document.querySelector('.asientos-container');
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cantidadEntradasInput = document.getElementById('cantidad-entradas');
     const ocultarSalaDeCineBtn = document.createElement('button');
     ocultarSalaDeCineBtn.textContent = 'Ocultar sala de cine';
-    ocultarSalaDeCineBtn.addEventListener('click', function() {
+    ocultarSalaDeCineBtn.addEventListener('click', function () {
         salaDeCine.style.display = 'none';
     });
     salaDeCine.appendChild(ocultarSalaDeCineBtn);
@@ -163,39 +163,39 @@ document.addEventListener('DOMContentLoaded', function() {
             asiento.addEventListener('click', () => seleccionarAsiento(asiento));
             asientosContainer.appendChild(asiento);
         }
-    }  
-
-// Función para seleccionar o deseleccionar un asiento
-function seleccionarAsiento(asiento) {
-    const cantidadEntradas = parseInt(cantidadEntradasInput.value);
-    const asientosSeleccionados = document.querySelectorAll('.asiento.seleccionado');
-
-    // Si el asiento ya está seleccionado, deseleccionarlo
-    if (asiento.classList.contains('seleccionado')) {
-        asiento.classList.remove('seleccionado');
-    } else {
-        // Si no está seleccionado, verificar que no se exceda el límite de entradas
-        if (asientosSeleccionados.length < cantidadEntradas) {
-            asiento.classList.add('seleccionado');
-        } else {
-            alert('No puedes seleccionar más asientos que la cantidad de entradas que has elegido.');
-        }
     }
-// Habilitar o deshabilitar el botón de confirmar según la selección
-if (confirmarAsientoBtn) {
-    confirmarAsientoBtn.disabled = asientosSeleccionados.length < 0;
-}
 
-// Verificar si la cantidad de entradas es mayor o igual a 1
-if (cantidadEntradas.value >= 1) {
-    // Código que se ejecuta si la cantidad de entradas es válida
-}
-    
-}
+    // Función para seleccionar o deseleccionar un asiento
+    function seleccionarAsiento(asiento) {
+        const cantidadEntradas = parseInt(cantidadEntradasInput.value);
+        const asientosSeleccionados = document.querySelectorAll('.asiento.seleccionado');
+
+        // Si el asiento ya está seleccionado, deseleccionarlo
+        if (asiento.classList.contains('seleccionado')) {
+            asiento.classList.remove('seleccionado');
+        } else {
+            // Si no está seleccionado, verificar que no se exceda el límite de entradas
+            if (asientosSeleccionados.length < cantidadEntradas) {
+                asiento.classList.add('seleccionado');
+            } else {
+                alert('No puedes seleccionar más asientos que la cantidad de entradas que has elegido.');
+            }
+        }
+        // Habilitar o deshabilitar el botón de confirmar según la selección
+        if (confirmarAsientoBtn) {
+            confirmarAsientoBtn.disabled = asientosSeleccionados.length < 0;
+        }
+
+        // Verificar si la cantidad de entradas es mayor o igual a 1
+        if (cantidadEntradas.value >= 1) {
+            // Código que se ejecuta si la cantidad de entradas es válida
+        }
+
+    }
 
     // Mostrar u ocultar la sala de cine según el tipo de entrada
     if (tipoEntradaSelect) {
-        tipoEntradaSelect.addEventListener('change', function() {
+        tipoEntradaSelect.addEventListener('change', function () {
             if (this.value === 'premium') {
                 salaDeCine.style.display = 'block';
                 generarAsientos();
@@ -204,7 +204,7 @@ if (cantidadEntradas.value >= 1) {
                 salaDeCine.style.display = 'none';
             }
         });
-    }  
+    }
 });
 // Función para confirmar la selección de asientos
 function confirmarSeleccionAsientos() {
@@ -219,13 +219,14 @@ function confirmarSeleccionAsientos() {
 }
 const botonFinalizarCompra = document.getElementById('boton-finalizar-compra');
 
-botonFinalizarCompra.addEventListener('click', () => { formularioPago.style.display = 'block';
+botonFinalizarCompra.addEventListener('click', () => {
+    formularioPago.style.display = 'block';
 });
 
 // Asignar la función al botón de confirmar asientos
 const confirmarAsientoBtn = document.getElementById('confirmar-asiento');
 if (confirmarAsientoBtn) {
     confirmarAsientoBtn.addEventListener('click', confirmarSeleccionAsientos);
-    
+
 }
 
