@@ -4,25 +4,17 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-}
-
-h1 {
-    margin: 0;
-    text-align: left;
-}
-
-h2 {
-    margin: 10px 0 0
-}
-
-.series-container {
+  }
+  
+  .series-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     padding: 20px;
-}
-
-.serie {
+  }
+  
+  .serie {
+    position: relative;
     background-color: #333;
     border-radius: 5px;
     text-align: center;
@@ -31,90 +23,121 @@ h2 {
     transition: transform 0.3s, background-color 0.3s;
     overflow: hidden;
     height: 380px;
-}
-
-.serie img {
+  }
+  
+  .serie img {
     width: 100%;
-    height: 100%; 
-    object-fit: cover; 
-}
-
-.serie span {
-    display: block;
-    padding: 5px 0; 
-}
-
-.serie:hover {
-    background-color: #555;
-    transform: scale(1.05);
-}
-
-.boton-volver {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e50914;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    transition: filter 0.3s;
+  }
+  
+  .serie:hover img {
+    filter: brightness(1);
+  }
+  
+  .serie span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 18px;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s; 
-}
-
-.boton-volver:hover {
-    background-color: #f40612;
-
-}
-
-.capitulos-container {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .serie:hover span {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .capitulos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; 
-    margin : 20px;
+    gap: 20px;
+    margin: 20px;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.capitulo {
+  }
+  
+  .capitulo {
     background-color: #f7f7f7;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.capitulo img {
-    width: 100%;
-    height: auto; 
-    border-radius: 10px 10px 0 0; 
-}
-
-.capitulo img {
+  }
+  
+  .capitulo img {
     width: 100px;
     height: auto;
     margin-right: 10px;
-}
-
-.capitulo span {
+  }
+  
+  .capitulo span {
     font-size: 18px;
     color: #333;
     padding: 10px;
-}
-
-@media (max-width: 900px) {
+  }
+  
+  /* Estilos para hacer que se parezca a la sección de series de Netflix */
+  
+  .series-container {
+    padding-top: 70px;
+  }
+  
+  .serie {
+    cursor: pointer;
+  }
+  
+  .serie:hover {
+    transform: scale(1.05);
+    background-color: #555;
+  }
+  
+  .capitulos-container {
+    background-color: #333;
+    padding: 20px;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .capitulo {
+    background-color: #444;
+    padding: 10px;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .capitulo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .capitulo span {
+    font-size: 14px;
+    color: #fff;
+    padding: 5px;
+  }
+  
+  /* Media queries para hacer que se adapte a diferentes tamaños de pantalla */
+  
+  @media (max-width: 900px) {
     .series-container {
-        grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
-}
-
-@media (max-width: 600px) {
+  }
+  
+  @media (max-width: 600px) {
     .series-container {
-        grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media (max-width: 400px) {
+  }
+  
+  @media (max-width: 400px) {
     .series-container {
-        grid-template-columns: 1fr; 
+      grid-template-columns: 1fr;
     }
-}
+  }
