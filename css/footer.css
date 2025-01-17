@@ -7,8 +7,8 @@ body {
 }
 header {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   padding: 10px 20px;
   background-color: black;
   border-bottom: 1px solid red;
@@ -17,11 +17,11 @@ header {
   font-size: 24px;
   font-weight: bold;
   color: red;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 #search-bar {
-  width: 100%; 
-  text-align: center; 
+  width: 100%;
+  text-align: center;
 }
 #search-bar input {
   width: 70%;
@@ -90,7 +90,7 @@ header {
 .popup-content button:hover {
   background-color: darkred;
 }
-.options {
+footer .options {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -100,7 +100,7 @@ header {
     padding: 20px 10px;
   }
   #search-bar input {
-    width: 90%; 
+    width: 90%;
   }
 }
 @media (max-width: 480px) {
