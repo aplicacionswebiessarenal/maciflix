@@ -139,6 +139,7 @@ body {
 .movie img {
     width: 100%;
     border-radius: 10px;
+    height: 100%;
 }
 
 .movie-details-container {
