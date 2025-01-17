@@ -96,3 +96,9 @@ span {
 .informacion-general span {
     display: block;
 }
+
+ul {
+    word-spacing: 0px;
+    line-height: 45px;
+    list-style: none;
+}
