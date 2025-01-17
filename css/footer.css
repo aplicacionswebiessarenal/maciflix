@@ -118,6 +118,7 @@ footer .options {
   flex-direction: row;
   align-content: stretch;
   justify-content: space-evenly;
+  margin-top: 1em
 }
 .contenido-footer {
   max-width: 1200px;
