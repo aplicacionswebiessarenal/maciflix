@@ -44,6 +44,7 @@ img {
   border-radius: 4px;
   text-transform: uppercase;
   margin-left: auto;
+  font-family: "Inter", serif;
 }
 
 .minimalbutton:hover {
