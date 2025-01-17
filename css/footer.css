@@ -2,13 +2,12 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background-color: black;
-  text-transform: capitalize;
   color: white;
 }
 header {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   padding: 10px 20px;
   background-color: black;
   border-bottom: 1px solid red;
@@ -17,11 +16,11 @@ header {
   font-size: 24px;
   font-weight: bold;
   color: red;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 #search-bar {
-  width: 100%; 
-  text-align: center; 
+  width: 100%;
+  text-align: center;
 }
 #search-bar input {
   width: 70%;
@@ -100,7 +99,7 @@ header {
     padding: 20px 10px;
   }
   #search-bar input {
-    width: 90%; 
+    width: 90%;
   }
 }
 @media (max-width: 480px) {
@@ -246,12 +245,3 @@ header {
   color: #aaa;
   font-size: 1rem;
 }
-
-/*
-Idea: Hacer que los links cambien de color al tener el raton encima
-
-footer a:hover {
-    color: blue;
-    transition: 0.5s; 
-}
-*/
