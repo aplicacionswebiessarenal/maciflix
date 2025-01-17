@@ -1,0 +1,240 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #141414;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  border-bottom: 1px solid red;
+}
+
+#logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie {
+  text-align: center;
+  cursor: pointer;
+}
+
+.movie img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.movie img:hover {
+  transform: scale(1.05);
+}
+
+.movie h3 {
+  margin: 10px 0 5px;
+}
+
+.movie span {
+  font-size: 14px;
+  color: gray;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: black;
+  padding: 20px;
+  border: 2px solid red;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.popup-content h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.popup-content button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.popup-content button:hover {
+  background-color: darkred;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.temporadas {
+  margin-top: 20px;
+}
+
+.temporada-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.temporada-button:hover {
+  background-color: #444;
+}
+
+.temporada-content {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.capitulos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.capitulo {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.capitulo img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.capitulo span {
+  font-size: 18px;
+  color: #333;
+  padding: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.modal img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+.imagen-serie {
+  width: 80px; /* Tamaño más pequeño */
+  height: auto;
+}
+
+.reproducir {
+  background-color: #e50914; /* Color rojo de Netflix */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reproducir:hover {
+  background-color: #f40612; /* Color más oscuro al pasar el mouse */
+}
+.imagen-serie {
+  width: 500px; /* Tamaño más pequeño */
+  height: auto;
+}
+
+.reproducir {
+  background-color: #e50914; /* Color rojo de Netflix */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reproducir:hover {
+  background-color: #f40612; /* Color más oscuro al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+  header {
+      padding: 20px 10px;
+  }
+  #search-bar input {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-container {
+      grid-template-columns: 1fr;
+  }
+}
