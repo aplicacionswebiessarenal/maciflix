@@ -3,6 +3,9 @@
     <head>
       <meta charset=UTF-8>
       <title>Carrito de la compra</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
       <link rel=stylesheet href=css/carrito.css>
       <link rel="stylesheet" href="../css/style.css">
       <link rel="stylesheet" href="../css/footer.css">
@@ -10,7 +13,7 @@
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </head>
     <body>
-      <h2>Productos</h2>
+      <h1>Carrito</h1>
         <div class="producto">
           <span>Camiseta</span>
           <span>$10.00</span>
@@ -27,7 +30,7 @@
           <button onclick="addToCart('Peluche', 20)">Añadir al carrito</button>
         </div>
         <div class="carrito">
-          <h2>Carrito de compras</h2>
+          <h2>Productos seleccionados</h2>
             <div id="carritoproducto"></div>
             <div class="total">Total: $<span id="total">0.00</span></div>
         </div>

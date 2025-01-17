@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 70px;
   padding: 0;
   background-color: #000000;
@@ -7,11 +7,14 @@ body {
 }
 
 h1 {
-  color: #e50914;
+  margin : 40px;
+  text-align: center;
+  color: #ffffff;
 }
 
 h2 {
-  color: #e50914;
+  text-align: center;
+  color: #ffffff;
   margin-top: 50px;
 }
 
@@ -27,7 +30,7 @@ h2 {
 
 .carrito {
   margin-top: 50px;
-  border-top: 2px solid #ffffff;
+  border-top: 2px solid #333333;
   padding-top: 10px;
 }
 
@@ -61,8 +64,8 @@ h2 {
 
 .metododepago {
   display: grid;
-  grid-template-columns: 70fr 60fr;
-  grid-template-rows: repeat(1, 60px);
+  grid-template-columns: 10fr 10fr;
+  grid-template-rows: repeat(1, 80px);
   border-radius: 10px;
   gap: 10px;
   margin: 70px;
@@ -124,3 +127,4 @@ img {
   height: 30px;
   align-items: start;
 }
+
