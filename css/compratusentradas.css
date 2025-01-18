@@ -98,6 +98,8 @@ body.seleccion-asientos {
 }
 /* Estilos para el título de la película */
 .seleccion-asientos .titulo-pelicula {
+    text-align: center;
+    margin-left: -5.3em;
     font-size: 40px;
     margin-bottom: 0px;
     color: #FFFFFF; /* Cambiamos el color a blanco */
@@ -115,7 +117,8 @@ body.seleccion-asientos {
 }
 
 .alineaintroduccion{
-    
+    justify-content: center;
+    text-align: center;
 
 }
 

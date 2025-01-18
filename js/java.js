@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         <span class="duracion">Duración: ${peliculaSeleccionada.duracion}</span>
                         <span class="calificacion">⭐ ${peliculaSeleccionada.calificacion}</span>
                     </div>
-                    <p class="introduccion">${peliculaSeleccionada.introduccion}</p>
+                    <div>
+                        <p class="introduccion">${peliculaSeleccionada.introduccion}</p>
+                    </div>
                 </div>
             `;
         } else {
