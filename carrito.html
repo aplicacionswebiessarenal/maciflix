@@ -29,8 +29,8 @@
           <span>$20.00</span>
           <button onclick="addToCart('Peluche', 20)">Añadir al carrito</button>
         </div>
-        <div class="carrito">
-          <h2>Productos seleccionados</h2>
+        <h2>Productos seleccionados</h2>
+        <div class="carrito" id="carrito">
             <div id="carritoproducto"></div>
             <div class="total">Total: $<span id="total">0.00</span></div>
         </div>
@@ -81,6 +81,7 @@
             updateCart();
           }
         </script>
+        <script src="js/botoncarrito.js"></script>
       <iframe src="footer.html"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </body>
