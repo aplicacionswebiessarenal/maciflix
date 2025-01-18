@@ -67,6 +67,7 @@ a{
 
 /* Fondo específico para la página de selección de asientos */
 body.seleccion-asientos {
+    text-align: center;
     background-color: #000000; /* Fondo negro mate */
     background-image: none; /* Elimina cualquier imagen de fondo */
 }
@@ -85,7 +86,6 @@ body.seleccion-asientos {
     justify-content: flex-end;
 }
 
-
 .seleccion-asientos .imagen-pelicula {
     width: 250px; /* Ajusta el ancho de la imagen */
     height:350px; /* Ajusta el alto de la imagen */
@@ -98,7 +98,6 @@ body.seleccion-asientos {
 }
 /* Estilos para el título de la película */
 .seleccion-asientos .titulo-pelicula {
-    text-align: center;
     margin-left: -6em;
     font-size: 40px;
     margin-bottom: 0px;
@@ -132,6 +131,8 @@ margin-left: -16em;
 
 
 .boton-seleccion-cine {
+    padding: 50px 50px;
+    justify-content: center;
     background-color: #E50914;
     color: #fff;
     padding: 10px 20px;
@@ -163,11 +164,13 @@ margin-left: -16em;
     justify-content: space-between;
 }
 .entradas-selector label {
+    padding: 10px 20px;
     color: #ff0000; /* Agrega esto para cambiar el texto "Entradas" a blanco */
     text-shadow: none !important;
 }
 
 .entradas-selector input {
+    
     background-color: #FFFFFF; /* Agrega esto para cambiar el fondo del campo de entradas a blanco */
     color: #000000; /* Agrega esto para cambiar el texto de los números de entradas a negro */
     text-shadow: none !important;
@@ -177,6 +180,7 @@ margin-left: -16em;
 }
 
 .total-selector {
+    padding: 10px 20px;
     bottom: 340px;
     left: 40px;
     margin-top: 1px;
