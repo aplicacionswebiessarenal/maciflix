@@ -10,7 +10,7 @@
         
     </head>
     <body class="seleccion-asientos">
-        <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>>
+        <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
                 <h2 class="subtitulo">Selección de Asientos</h2>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <label for="total">Total:</label>
             <input type="text" id="total" name="total" readonly>
         </div>
-        <div class="sala-de-cine" id="sala-de-cine" style="display: none;">
+        <div class="sala-de-cine" id="sala-de-cine" style="display:none;width: 500px; height: 226px;"> 
             <h3>Selecciona tu asiento:</h3>
             <div class="asientos-container">
                 <!-- Aquí se generarán los asientos dinámicamente -->
@@ -57,11 +57,12 @@
             <button class="confirmar-asiento" id="confirmar-asiento"
                 disabled>Confirmar Asientos</button>
         </div>
-
-        <button id="boton-finalizar-compra"
-            onclick="location.href='metododepago.html'">Finalizar
-            compra</button>
-
+        <div>
+            <button id="boton-finalizar-compra"
+                onclick="location.href='metododepago.html'">Finalizar
+                compra</button>
+             
+        <div>
         <script src="/js/java.js"></script>
         <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </body>

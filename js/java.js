@@ -59,6 +59,7 @@ function obtenerIntroduccion(idPelicula) {
                 duracion: "1h 55m",
                 calificacion: "8.3/10",
                 introduccion: "Un viaje lleno de adrenalina y superación personal. Raphinha demuestra que con esfuerzo y dedicación, cualquier obstáculo puede ser superado."
+   
             };
         case 'pelicula3':
             return {
