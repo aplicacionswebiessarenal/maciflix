@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda</title>
+    <title>Maciflix España - Tienda</title>
     <link rel="icon" type="image/x-icon" href="img/logomaciflix.png">
     <link rel="stylesheet" href="css/animacionboton.css" />
     <link rel="stylesheet" href="css/footer.css" />
@@ -11,10 +11,7 @@
     <link rel="stylesheet" href="css/tienda.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"rel="stylesheet"/>
   </head>
   <body>
     <iframe
@@ -38,9 +35,11 @@
             <p>20€</p>
           </div>
 
-          <div class="botones" class2="glow_on_hover">
+          <div class="botones">
             <div class="boton_añadir_carrito">
-              <button>Añadir al carrito</button>
+              <button class="glow_on_hover add-to-cart" data-id="1" data-name="Camiseta Maciflix" data-price="20.00">
+                Añadir al carrito
+              </button>
             </div>
 
             <div class="boton_ir_carrito">
@@ -245,5 +244,8 @@
       src="footer.html"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
     ></iframe>
+
+    <script src="/js/botoncarrito.js"></script>
+  
   </body>
 </html>
