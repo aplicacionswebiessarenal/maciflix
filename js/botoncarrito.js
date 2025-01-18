@@ -1,3 +1,6 @@
+// Solo Dios y gabito entienden como esto funciona sin romperse
+// https://shorturl.at/3cVGG
+
 const botones = document.querySelectorAll('.add-to-cart');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
