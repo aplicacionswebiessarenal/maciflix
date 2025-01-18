@@ -113,6 +113,13 @@ body.seleccion-asientos {
     color: #FFFFFF; /* Cambiamos el color a blanco */
     text-shadow: none; /* Quitamos el text-shadow */
 }
+
+.alineaintroduccion{
+    
+
+}
+
+
 .boton-seleccion-cine {
     background-color: #E50914;
     color: #fff;
