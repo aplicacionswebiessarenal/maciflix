@@ -99,13 +99,21 @@ body.seleccion-asientos {
 /* Estilos para el título de la película */
 .seleccion-asientos .titulo-pelicula {
     text-align: center;
-    margin-left: -5.3em;
+    margin-left: -6em;
     font-size: 40px;
     margin-bottom: 0px;
     color: #FFFFFF; /* Cambiamos el color a blanco */
     text-shadow: none; /* Quitamos el text-shadow */
     margin-top: 10px; /* Subimos el texto un poco más arriba */
 }
+
+.detalles-pelicula{
+
+text-align: center;
+margin-left: -16em;
+
+}
+
 
 /* Estilos para la introducción de la película */
 .seleccion-asientos .introduccion {
@@ -239,3 +247,5 @@ body.seleccion-asientos {
 #boton-finalizar-compra:hover {
     text-align: center;
     background-color: #C40000;}
+
+    
