@@ -5,7 +5,7 @@
 
 body {
   background-color: black;
-  font-family: "Inter", serif;
+  font-family: "Inter", sans-serif;
 }
 
 p {
@@ -176,32 +176,32 @@ footer {
     background-color: rgb(0, 0, 0);
   }
 }
-head{
+head {
   background-color: black;
 }
-section{
+section {
   display: flex;
   width: 600px;
   height: 430px;
 }
 
-section img{
-width: 0px;
-flex-grow: 1;
-object-fit: cover;
-opacity: .8;
-transition: .5s ease;
+section img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
 }
 
-section img:hover{
+section img:hover {
   cursor: crosshair;
-   width: 300px;
-   opacity: 1;
-   filter: contrast(120%);
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
 }
 
-.contenedorcarrusel{
+.contenedorcarrusel {
   display: grid;
-justify-content: center;
-justify-items: center;
+  justify-content: center;
+  justify-items: center;
 }
