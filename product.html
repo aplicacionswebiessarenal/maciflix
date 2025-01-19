@@ -25,23 +25,36 @@
         <div class="información_producto">
             <h3 class="nombre_productos">Camiseta Maciflix</h3>
             <p>Esta es una camiseta muy cómoda de nuestra marca personal Maciflix por ahora solo la vendemos en talla única.</p>
-            <p>Estamos preparando muchos más productos de la marca Maciflix para sacarlos a la venta dentro de poco habrá sorpresas.</p>
+            <p>Estamos preparando muchos más productos de la marca Maciflix para sacarlos a la venta dentro de poco habrá sorpresas al comprar esta camiseta entras en el sorteo de un producto sorpresa de la marca Maciflix.</p>
             
-            <p>20€</p>
             
-            <div class="botones_carrito">
-                    <button>Añadir al carrito</button>
+            <div class="botones">
+                <div class="precio_carrito">
+                    <p>20€</p>
+                </div>
+    
+                <div class="boton_añadir_carrito">
+                    <button class="glow_on_hover add-to-cart" 
+                            data-id="1" 
+                            data-name="Camiseta Maciflix"
+                            data-price="20.00"
+                            data-image="img/camiseta_maciflix.png">
+                    Añadir al carrito
+                    </button>
+                </div>
+    
+                <div class="boton_ir_carrito">
                     <a href="carrito.html">
-                            <button>
-                                Ir al carrito
-                            </button>
+                    <button class="glow_on_hover">Ir al carrito</button>
                     </a>
-            </div>
+                </div>
+                </div>
         </div>
     </div>
 
 
     <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
+    <script src="/js/botoncarrito.js"></script>
 </body>
 </html>
