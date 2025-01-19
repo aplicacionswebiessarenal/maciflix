@@ -16,11 +16,11 @@
 
 .subtitulo {
     text-align: center;
-    font-size: 40px; /* Tamaño del subtítulo */
-    color: #E50914; /* Color rojo similar a Netflix */
-    margin: 0; /* Elimina márgenes */
+    font-size: 40px; 
+    color: #E50914; 
+    margin: 0; 
     font-family:monospace;
-    text-shadow: 0 0 5px #1818189c,  0 0 15px #000000; /* Efecto de brillo blanco */
+    text-shadow: 0 0 5px #1818189c,  0 0 15px #000000; 
     
 }
 
@@ -31,54 +31,54 @@
 .carrusel {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centra el carrusel */
-    overflow: hidden; /* Oculta el desbordamiento */
-    margin: 20px 0; /* Espacio arriba y abajo del carrusel */
+    justify-content: center; 
+    overflow: hidden; 
+    margin: 20px 0; 
 }
 a{
     text-decoration: none;
 }
 .pelicula {
-    margin: 0 10px; /* Espacio entre las películas */
-    border: 5px solid #000000; /* Borde blanco brillante */
-    border-radius: 10px; /* Bordes redondeados */
-    transition: transform 0.3s; /* Efecto de transición */
+    margin: 0 10px; 
+    border: 5px solid #000000; 
+    border-radius: 10px; 
+    transition: transform 0.3s;
     text-shadow:0 0 5px #cf2812;
 }
 
 .pelicula:hover {
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    transform: scale(1.05); 
 }
 
 .pelicula img {
-    width: 400px; /* Ancho de las imágenes */
-    height: auto; /* Altura automática para mantener la proporción */
-    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    width: 400px; 
+    height: auto; 
+    border-radius: 10px 10px 0 0; 
 }
 
 .pelicula h3 {
     font-size: 30px;
-    color: #f5ebeb; /* Color del título de la película */
-    text-align: center; /* Centra el texto */
-    margin: 10px 0; /* Espacio arriba y abajo del título */
-    text-shadow:  0 0 10px #e000006b, 0 0 15px #db000000; /* Efecto de brillo blanco */
+    color: #f5ebeb; 
+    text-align: center; 
+    margin: 10px 0; 
+    text-shadow:  0 0 10px #e000006b, 0 0 15px #db000000; 
     
 }
 
 /* Fondo específico para la página de selección de asientos */
 body.seleccion-asientos {
     text-align: center;
-    background-color: #000000; /* Fondo negro mate */
-    background-image: none; /* Elimina cualquier imagen de fondo */
+    background-color: #000000; 
+    background-image: none; 
 }
 .seleccion-asientos .header {
-    padding-top: 5px; /* Reduce el espacio superior */
+    padding-top: 5px; 
 }
 
 
 .seleccion-asientos .subtitulo {
     font-size: 40px;
-    margin-top: 5px; /* Ajusta la posición del subtítulo */
+    margin-top: 5px; 
 }
 .seleccion-asientos .contenedor-pelicula {
     display: flex;
@@ -87,40 +87,36 @@ body.seleccion-asientos {
 }
 
 .seleccion-asientos .imagen-pelicula {
-    width: 250px; /* Ajusta el ancho de la imagen */
-    height:350px; /* Ajusta el alto de la imagen */
+    width: 250px; 
+    height:350px; 
     display: flex;
     justify-content: flex-end;
     border-radius: 10px;
-    object-fit: cover; /* Ajusta la imagen para que se adapte al contenedor */
-    border: 5px solid #fff; /* Agrega un marco blanco */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agrega una sombra para resaltar el marco */
+    object-fit: cover; 
+    border: 5px solid #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 /* Estilos para el título de la película */
 .seleccion-asientos .titulo-pelicula {
-    margin-left: -6em;
     font-size: 40px;
     margin-bottom: 0px;
-    color: #FFFFFF; /* Cambiamos el color a blanco */
-    text-shadow: none; /* Quitamos el text-shadow */
-    margin-top: 10px; /* Subimos el texto un poco más arriba */
+    color: #FFFFFF; 
+    text-shadow: none; 
+    margin-top: 10px; 
 }
 
 .detalles-pelicula{
 
 text-align: center;
-margin-left: -16em;
 
 }
 
 
 /* Estilos para la introducción de la película */
 .seleccion-asientos .introduccion {
-    margin-right: 250px;
-    font-size: 20px;
     line-height: 1.5;
-    color: #FFFFFF; /* Cambiamos el color a blanco */
-    text-shadow: none; /* Quitamos el text-shadow */
+    color: #FFFFFF; 
+    text-shadow: none; 
 }
 
 .alineaintroduccion{
@@ -204,16 +200,16 @@ margin-left: -16em;
 
 .asientos-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
-    gap: 5px; /* Espacio entre asientos */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 5px; 
     margin: 5px 0;
 }
 
 .asiento {
-    width: 90px; /* Ancho de los asientos */
-    height: 30px; /* Alto de los asientos */
+    width: 90px; 
+    height: 30px; 
     background-color: #555;
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 5px; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -223,7 +219,7 @@ margin-left: -16em;
 }
 
 .asiento.seleccionado {
-    background-color: #E50914; /* Color rojo para asientos seleccionados */
+    background-color: #E50914; /
 }
 .confirmar-asiento {
     background-color: #E50914;
@@ -253,3 +249,147 @@ margin-left: -16em;
     background-color: #C40000;}
 
     
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000; 
+    color: #ffffff; 
+}
+
+/* Subtítulos */
+.subtitulo {
+    text-align: center;
+    font-size: 2.5em; 
+    color: #E50914; 
+    margin: 20px 0; 
+    text-shadow: 0 0 5px #1818189c, 0 0 15px #000000; 
+}
+
+/* Contenedor de la película */
+.contenedor-pelicula {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0; 
+}
+
+/* Imagen de la película */
+.imagen-pelicula {
+    width: 100%; 
+    height: auto; 
+    max-width: 250px; 
+    border-radius: 10px; 
+    border: 5px solid #fff; 
+}
+
+/* Título de la película */
+.titulo-pelicula {
+    font-size: 1.8em; 
+    margin: 10px 0; 
+}
+
+/* Detalles de la película */
+.detalles-pelicula {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Selector de asientos */
+.sala-de-cine {
+    background-color: #333;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 10%; 
+}
+
+/* Estilo para el contenedor de asientos */
+.asientos-container {
+    display: grid;
+    gap: 10px; 
+}
+
+/* Estilo para cada asiento */
+.asiento {
+    background-color: #555;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1em; 
+}
+
+/* Asiento seleccionado */
+.asiento.seleccionado {
+    background-color: #E50914; 
+}
+
+/* Botones */
+.boton-seleccion-cine,
+.confirmar-asiento,
+#boton-finalizar-compra {
+    background-color: #E50914;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; 
+    font-size: 1em; 
+    margin: 10px 0; 
+    width: 100%; 
+    max-width: 200px; 
+}
+
+/* Cambiar color de los botones al pasar */
+#boton-finalizar-compra:hover,
+.boton-seleccion-cine:hover,
+.confirmar-asiento:hover {
+    background-color: #C40000; 
+}
+
+/* Estilos adaptativos */
+@media (min-width: 600px) {
+    .contenedor-pelicula {
+        justify-content: space-between; 
+    }
+
+    .imagen-pelicula {
+        max-width: 300px; 
+    }
+    
+    .asientos-container {
+        grid-template-columns: repeat(5, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .subtitulo {
+        font-size: 2em; 
+    }
+
+    .titulo-pelicula {
+        font-size: 1.5em; 
+    }
+
+    #boton-finalizar-compra,
+    .boton-seleccion-cine,
+    .confirmar-asiento {
+        min-width: 80%; 
+    }
+}
+.introduccion {
+    max-width: 600px; 
+    margin: 0 auto; 
+    line-height: 1.5;
+    color: #FFFFFF; 
+    text-shadow: none; 
+    text-align: center; 
+}
