@@ -25,11 +25,12 @@ h2 {
 
 
 .productos_container {
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-left: 12em;
+    margin-right: 12em;
+    gap: 2em;
 }
 
 .producto_container {
@@ -94,7 +95,6 @@ h2 {
 
 
 /* ? Estilos para botones*/
-
 
 
 button {
