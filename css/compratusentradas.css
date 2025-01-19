@@ -305,12 +305,15 @@ body {
     background-color: #333;
     border-radius: 10px;
     text-align: center;
-    margin: 20px 10%; 
+    margin: 0px 35%; 
+    display: none;
 }
 
 /* Estilo para el contenedor de asientos */
 .asientos-container {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px; 
 }
 
@@ -393,3 +396,4 @@ body {
     text-shadow: none; 
     text-align: center; 
 }
+
