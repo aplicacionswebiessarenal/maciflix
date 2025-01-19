@@ -31,8 +31,8 @@ h2 {
 
 .carrito {
   margin-top: 50px;
-  border-top: 2px solid #333333;
-  padding-top: 10px;
+  border-top: 2px solid #e50914;
+  margin-bottom: 40px;
 }
 
 .carritoproducto {
@@ -43,6 +43,7 @@ h2 {
 
 .total {
   font-weight: bold;
+  margin-bottom: 20px; 
   margin-top: 10px;
 }
 
@@ -158,4 +159,12 @@ img {
   align-self: center;
   display: flex;
   flex-direction: column;
+}
+
+#medio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
