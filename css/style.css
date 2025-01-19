@@ -161,6 +161,55 @@ footer {
     flex-direction: column;
     width: 100%;
   }
+  
+  @media (max-width: 1024px) {
+    input[type="search"] {
+      width: 75%;
+    }
+  
+    .contenedorcarrusel section img {
+      width: 140px;
+      height: 180px;
+    }
+  
+    button.minimal-button {
+      padding: 8px 18px;
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    input[type="search"] {
+      width: 80%;
+    }
+  
+    .contenedorcarrusel section img {
+      width: 120px;
+      height: 160px;
+    }
+  
+    button.minimal-button {
+      padding: 7px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    input[type="search"] {
+      width: 90%;
+    }
+  
+    .contenedorcarrusel section img {
+      width: 100px;
+      height: 140px;
+    }
+  
+    button.minimal-button {
+      padding: 6px 14px;
+      font-size: 13px;
+    }
+  }
+  
 
   nav ul.show {
     display: flex;
