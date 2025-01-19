@@ -397,3 +397,19 @@ body {
     text-align: center; 
 }
 
+.pelicula {
+    position: relative;
+    margin: 20px 10px; /* Aumentar margen vertical */
+    border: 5px solid #000000; 
+    border-radius: 10px; 
+    transition: transform 0.3s, box-shadow 0.3s;  
+    text-shadow: 0 0 5px #cf2812;
+}
+.pelicula:hover {
+    transform: scale(1.05); 
+    box-shadow: 
+        0 -15px 20px rgba(255, 0, 0, 0.8), /* Más sombra roja hacia arriba */
+        0 15px 20px rgba(255, 0, 0, 0.8),  /* Más sombra roja hacia abajo */
+        0 0 20px rgba(255, 0, 0, 0.5), 
+        0 0 30px rgba(255, 0, 0, 0.5);  /* Mantener sombras difusas */
+}
