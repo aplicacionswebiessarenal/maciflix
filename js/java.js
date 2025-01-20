@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         <span class="duracion">Duración: ${peliculaSeleccionada.duracion}</span>
                         <span class="calificacion">⭐ ${peliculaSeleccionada.calificacion}</span>
                     </div>
-                    <p class="introduccion">${peliculaSeleccionada.introduccion}</p>
+                    <div>
+                        <p class="introduccion">${peliculaSeleccionada.introduccion}</p>
+                    </div>
                 </div>
             `;
         } else {
@@ -48,31 +50,32 @@ function obtenerIntroduccion(idPelicula) {
     switch (idPelicula) {
         case 'pelicula1':
             return {
-                genero: "Drama Deportivo",
+                genero: "Ciencia Ficción",
                 duracion: "2h 10m",
                 calificacion: "8.7/10",
-                introduccion: "Una emocionante historia sobre un joven futbolista que lucha por alcanzar sus sueños en el mundo del fútbol profesional. Inspiradora y llena de momentos emotivos."
+                introduccion: "Entramos en el mundo Avatar de la mano de Jake Sully, un ex-Marine en silla de ruedas, que ha sido reclutado para viajar a Pandora, donde existe un mineral raro y muy preciado que puede solucionar la crisis energética existente en la Tierra."
             };
         case 'pelicula2':
             return {
-                genero: "Acción y Aventura",
+                genero: "Animación",
                 duracion: "1h 55m",
                 calificacion: "8.3/10",
-                introduccion: "Un viaje lleno de adrenalina y superación personal. Raphinha demuestra que con esfuerzo y dedicación, cualquier obstáculo puede ser superado."
+                introduccion: "Sonic vuelve a la gran pantalla por Navidad, con la aventura más emocionante hasta la fecha. Sonic, Knuckles y Tails se reúnen para enfrentarse a un nuevo y poderoso adversario, Shadow, un misterioso villano cuyos poderes no se parecen a nada de lo que nuestros héroes han conocido hasta ahora. Con sus facultades superadas en todos los sentidos, el Equipo Sonic tendrá que establecer una insólita alianza con la esperanza de detener a Shadow y proteger el planeta"
+   
             };
         case 'pelicula3':
             return {
-                genero: "Biografía",
+                genero: "Terror",
                 duracion: "2h 20m",
                 calificacion: "9.0/10",
-                introduccion: "La increíble vida de uno de los mejores delanteros del mundo. Una película que te sumerge en la carrera y los desafíos de Lewandowski."
+                introduccion: "Agobiados por la presencia de fantasmas en una mansión que compraron recientemente, una mujer y su hijo contratan a un sacerdote, un guía turístico, un historiador y un psíquico para que les ayuden a exorcizar el lugar."
             };
         case 'pelicula4':
             return {
-                genero: "Drama y Romance",
+                genero: "Ciencia Ficción",
                 duracion: "2h 05m",
                 calificacion: "8.5/10",
-                introduccion: "Una historia conmovedora sobre un talentoso mediocampista que lucha por equilibrar su carrera y su vida personal. Una película que te atrapará desde el primer minuto."
+                introduccion: "Cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial, Nick Fury, director de la Agencia SHIELD, decide reclutar a un equipo para salvar al mundo de un desastre casi seguro. Adaptación del cómic de Marvel Los Vengadores el legendario grupo de superhéroes formado por Ironman, Hulk, Thor y el Capitán América entre otros."
             };
         default:
             return {

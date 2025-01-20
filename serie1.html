@@ -93,7 +93,7 @@
                         <span>Capítulo 13</span>
                     </div>
                     <div class=" capitulo">
-                        <img src="img/valencia.png" alt="Capítulo 14">
+                        <img src="img/udlaspalmas.png" alt="Capítulo 14">
                         <span>Capítulo 14</span>
                     </div>
                     <div class="capitulo">
@@ -103,22 +103,11 @@
                 </div>
             </div>
         </div>
+        <div class="botonseries">
+            <a href="series.html" class="volveraseries">atras</a>
+        </div>
         <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </main>
-    <script>
-        // Script para manejar la visualización de las temporadas
-        document.querySelectorAll('.temporada-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const contentId = button.id.replace('button', 'content');
-                const content = document.getElementById(contentId);
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-
-        // Script para el botón de reproducir
-        document.querySelector('.reproducir').addEventListener('click', () => {
-            alert('Reproduciendo la serie...');
-        });
-    </script>
+    <script src="js/series.js"></script>
 </body>
 </html>
