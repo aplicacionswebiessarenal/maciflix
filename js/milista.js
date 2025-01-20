@@ -11,3 +11,12 @@ function hidePopup() {
 
 
 /*script para el faq.html*/
+function toggleRespuesta(button) {
+    const respuesta = button.nextElementSibling;
+  
+    if (respuesta.style.display === "none" || !respuesta.style.display) {
+      respuesta.style.display = "block";
+    } else {
+      respuesta.style.display = "none";
+    }
+  }

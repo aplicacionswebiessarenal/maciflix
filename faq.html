@@ -5,41 +5,49 @@
     <link rel="stylesheet" href="css/estilosmilista.css">
     <meta charset="UTF-8">
 </head>
-<body id="FAQ">
-    <div>
-        <a href="index.html" class="back-button">
-          ← Volver a Maciflix 
-    </div>
-    <h1>PREGUNTAS FRECUENTES </h1>
-    <section id="faq">
-        <h1>Preguntas Frecuentes</h1>
-        <div class="faq-item">
-            <button class="faq-pregunta">¿Cómo puedo registrarme en MACIFLIX?</button>
-            <div class="faq-respuesta">
-                <p>Para registrarte, haz clic en el botón "Registrarse" en la parte superior de nuestra página y sigue los pasos indicados.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-pregunta">¿Cuánto cuesta una suscripción?</button>
-            <div class="faq-respuesta">
-                <p>Los precios varían según el plan elegido. Consulta los detalles en nuestra página de planes.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-pregunta">¿Qué dispositivos son compatibles?</button>
-            <div class="faq-respuesta">
-                <p>MACIFLIX es compatible con Smart TVs, computadoras, tabletas, smartphones, y dispositivos de streaming como Chromecast.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-pregunta">¿Cómo cancelo mi suscripción?</button>
-            <div class="faq-respuesta">
-                <p>Puedes cancelar tu suscripción desde la sección "Mi cuenta" en nuestra página web. No hay cargos adicionales por cancelar.</p>
-            </div>
-        </div>
-    </section>
-      
-    <footer>
-    </footer>
-</body>
+    <body id="FAQ">
+    
+        <h1>PREGUNTAS FRECUENTES </h1>
+        <section id="faq">
+                <h1>Preguntas Frecuentes</h1>
+              
+                <div class="faq-item">
+                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
+                    ¿Cómo puedo registrarme en MACIFLIX?
+                  </button>
+                  <div class="faq-respuesta" style="display: none;">
+                    <p>Para registrarte, haz clic en el botón "Registrarse" en la parte superior de nuestra página y sigue los pasos indicados.</p>
+                  </div>
+                </div>
+              
+                <div class="faq-item">
+                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
+                    ¿Cuánto cuesta una suscripción?
+                  </button>
+                  <div class="faq-respuesta" style="display: none;">
+                    <p>Los precios varían según el plan elegido. Consulta los detalles en nuestra página de planes.</p>
+                  </div>
+                </div>
+              
+                <div class="faq-item">
+                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
+                    ¿Qué dispositivos son compatibles?
+                  </button>
+                  <div class="faq-respuesta" style="display: none;">
+                    <p>MACIFLIX es compatible con Smart TVs, computadoras, tabletas, smartphones, y dispositivos de streaming como Chromecast.</p>
+                  </div>
+                </div>
+              
+                <div class="faq-item">
+                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
+                    ¿Cómo cancelo mi suscripción?
+                  </button>
+                  <div class="faq-respuesta" style="display: none;">
+                    <p>Puedes cancelar tu suscripción desde la sección "Mi cuenta" en nuestra página web. No hay cargos adicionales por cancelar.</p>
+                  </div>
+                </div>
+        </section>
+              
+
+    </body>
 </html>

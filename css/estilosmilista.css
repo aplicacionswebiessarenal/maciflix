@@ -139,6 +139,7 @@ body {
   #FAQ {
     background-image: url("/img/maciflix.jpg");
     display: flex;
+    flex-direction: column;
   }
   #faq {
     background-color: #1e1e1e;
@@ -147,8 +148,6 @@ body {
     max-width: 800px;
     margin: 0 auto;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  
   }
   
   #faq h1 {
