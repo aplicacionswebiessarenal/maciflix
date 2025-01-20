@@ -7,7 +7,7 @@
     
     .body {
         margin: 0;
-        font-family: 'Inter', sans-serif;
+        font-family: var(--inter-fuente); 
         background-color: black;
         color: white;
         
@@ -19,7 +19,7 @@
     font-size: 40px; 
     color: #E50914; 
     margin: 0; 
-    font-family:monospace;
+    font-family: var(--inter-fuente);
     text-shadow: 0 0 5px #1818189c,  0 0 15px #000000; 
     
 }
@@ -257,7 +257,7 @@ text-align: center;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--inter-fuente);
     background-color: #000000; 
     color: #ffffff; 
 }
