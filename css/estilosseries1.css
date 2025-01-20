@@ -223,6 +223,9 @@ header {
 .reproducir:hover {
   background-color: #f40612; /* Color más oscuro al pasar el mouse */
 }
+.botonseries {
+
+}
 
 @media (max-width: 768px) {
   header {
