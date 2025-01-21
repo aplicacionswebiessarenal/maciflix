@@ -88,9 +88,11 @@ span {
 
 .informacion-general {
     margin-top: 40px;
-    font-weight: 400;
+    font-weight: 450;
     text-align: left;
-    padding-left: 100px;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 1em;
 }
 
 .informacion-general span {
@@ -118,7 +120,7 @@ span a:hover {
     list-style: none;
 }
 
-.redes_sociales img {
+.redes_sociales img{
     width: 30px;
     height: 30px; 
 }
