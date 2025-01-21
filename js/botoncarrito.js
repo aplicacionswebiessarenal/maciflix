@@ -37,7 +37,7 @@ if (window.location.pathname.includes('carrito.html')) {
 
     if (añadidocarrito.length > 0) {
         let total = 0;
-        añadidocarrito.forEach(producto => {
+        añadidocarrito.forEach((producto, index) => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('producto-carrito')
             productoDiv.innerHTML =`
@@ -45,6 +45,7 @@ if (window.location.pathname.includes('carrito.html')) {
                 <div class="detalle-producto">
                     <h3>${producto.name}</h3>
                     <p>Precio: $${producto.price.toFixed(2)}</p>
+                    <button class="eliminar-producto" data-index="${index}">Eliminar</button>
                 </div>
         `;
         carritoDiv.appendChild(productoDiv);
@@ -53,6 +54,15 @@ if (window.location.pathname.includes('carrito.html')) {
     });
     
 document.getElementById('total').textContent = total.toFixed(2);
+
+document.querySelectorAll('.eliminar-producto').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const index = e.target.getAttribute('data-index');
+        añadidocarrito.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(añadidocarrito));
+        window.location.reload();
+    });
+});
 } else {
         carritoDiv.innerHTML = '<p>Tu carrito está vacío.</p>';
     }
