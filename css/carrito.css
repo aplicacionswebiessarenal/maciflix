@@ -168,3 +168,13 @@ img {
   height: 100vh;
   margin: 0;
 }
+
+.imagen-producto {
+  display: grid;
+  border-width: 6px;
+  border-radius: 20px;
+  border-color: #e50914;
+  border-style: groove;
+  width: 7%;
+  height: 7%;
+}

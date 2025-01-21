@@ -103,10 +103,10 @@ ul {
     list-style: none;
 }
 
-span a{
+span a {
     color: white;
     text-decoration: none;
-    transition: color 0.7s;
+    transition: color 0.5s;
 }
 
 span a:hover {
