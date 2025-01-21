@@ -96,3 +96,33 @@ span {
 .informacion-general span {
     display: block;
 }
+
+ul {
+    word-spacing: 0px;
+    line-height: 45px;
+    list-style: none;
+}
+
+span a{
+    color: white;
+    text-decoration: none;
+    transition: color 0.7s;
+}
+
+span a:hover {
+    color:#E50914;
+}
+
+.redes_sociales {
+    gap: 10px;
+    list-style: none;
+}
+
+.redes_sociales img {
+    width: 30px;
+    height: 30px; 
+}
+
+.redes_sociales li {
+    display: inline;
+}
