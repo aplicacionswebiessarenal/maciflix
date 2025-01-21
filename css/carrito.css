@@ -68,9 +68,9 @@ h2 {
   display: grid;
   grid-template-columns: 10fr 10fr;
   grid-template-rows: repeat(1, 80px);
-  border-radius: 10px;
-  gap: 10px;
-  margin: 70px;
+  border-radius: 22px;
+  gap: 5px;
+  margin: 40px;
   border-color: #e50914;
   border-style: inset;
   align-items: center;
@@ -138,22 +138,25 @@ img {
 .cuadradito {
   display: flex;
   justify-content: center;
-  height: 10%;
+  height: 20%;
   width: 20%;
-  margin-bottom: 10%;
+  margin-bottom: 11%;
   padding: 10%;
   border-style: dotted;
   border: 3px solid #e50914;
   border-radius: 100px;
+  box-shadow: 
+  0 0 10px #E50914, 
+  0 0 20px #E50914
 }
 
 .cuadradito {
   display: grid;
-  grid-template-columns: 10fr 10fr;
+  grid-template-columns: 80px 80px;
   grid-template-rows: repeat(1, 80px);
   border-radius: 10px;
   gap: 10px;
-  margin: 70px;
+  margin: 30px;
   border-color: #e50914;
   border-style: center;
   align-self: center;
@@ -166,7 +169,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  margin: 10px;
 }
 
 .imagen-producto {
