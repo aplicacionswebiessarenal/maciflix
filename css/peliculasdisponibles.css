@@ -38,9 +38,7 @@ h1 {
     margin: 0;
     text-align: center;
     overflow-wrap: break-word;
-    max-width: 200px;
     white-space: normal;
-    padding-top: 20px;
 }
 
 .contenedor-de-peliculas{
@@ -48,7 +46,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     font-weight: 600;
-    margin-bottom: 7em;
+    margin-bottom: 15em;
 }
 
 .highlight-peliculas {
