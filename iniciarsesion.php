@@ -53,5 +53,7 @@
       src="footer.html"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
     ></iframe>
+
+    <? echo "Hola caracola "; ?>
   </body>
 </html>
