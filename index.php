@@ -1,0 +1,90 @@
+<?php include_once('conexion.php'); ?> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="indexbody">
+ 
+    <iframe
+      src="header.html"
+      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+    ></iframe>
+    <div class="buscador">
+      <input type="search" id="busqueda" placeholder="Buscar productos..." />
+      <button class="minimal-button" id="buscar">Buscar</button>
+    </div>
+    <div>
+      <div class="contenedorcarrusel">
+        <!--Aqui quiero meter el carrusel-->
+        <div>
+          <h2>Peliculas en nuestro catalogo</h2>
+        </div>
+        <section>
+        <?php 
+        $sql = "SELECT * FROM films WHERE home=1";
+        $result = $bbdd->query($sql);
+          if ($result->num_rows > 0) {
+            // hay información que mostrar
+            while ($row = $result->fetch_assoc()) {
+                echo "<img src='img/" . $row['img'] . "' alt='' />";
+            }
+          } else {
+
+              echo "Sin información ingresada aún";
+          }
+          ?>
+        </section>
+      </div>
+    </div>
+    <div class="contenedorcarrusel">
+      <!--Aqui quiero meter el carrusel-->
+      <div>
+        <h2>Series en nuestro catalogo</h2>
+      </div>
+      <section>
+        <img src="img/Toystory.png" alt="" />
+        <img src="img/cars 2.png" alt="" />
+        <img src="img/ice age 3.png" alt="" />
+        <img src="img/ready player one.png" alt="" />
+        <img src="img/nemo (2).png" alt="" />
+        <img src="img/toy story.png" alt="" />
+        <img src="img/cars 2.png" alt="" />
+        <img src="img/ice age 3.png" alt="" />
+        <img src="img/toy story.png" alt="" />
+        
+      </section>
+    </div>
+    <div class="contenedorcarrusel">
+      <!--Aqui quiero meter el carrusel-->
+      <div>
+        <h2>Cines de la compañia</h2>
+      </div>
+      <section>
+        <img src="img/cine1.png" alt="" />
+        <img src="img/cine2.png" alt="" />
+      </section>
+    </div>
+    <br>
+    <iframe
+      src="footer.html"
+      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+    ></iframe>
+  </body>
+</html>
+<?php $bbdd->close(); ?>
