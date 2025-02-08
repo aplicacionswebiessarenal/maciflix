@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 07-02-2025 a las 12:48:36
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Host: 127.0.0.1
+-- Generation Time: Feb 08, 2025 at 01:52 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `maciflix`
+-- Database: `maciflix`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -38,7 +38,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cinemas`
+-- Table structure for table `cinemas`
 --
 
 CREATE TABLE `cinemas` (
@@ -55,7 +55,7 @@ CREATE TABLE `cinemas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `cinemas`
+-- Dumping data for table `cinemas`
 --
 
 INSERT INTO `cinemas` (`id`, `name`, `img`, `address`, `email`, `timetable`, `telephone`, `instagram`, `twitter`, `facebook`) VALUES
@@ -65,7 +65,7 @@ INSERT INTO `cinemas` (`id`, `name`, `img`, `address`, `email`, `timetable`, `te
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `episodes`
+-- Table structure for table `episodes`
 --
 
 CREATE TABLE `episodes` (
@@ -79,7 +79,7 @@ CREATE TABLE `episodes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `episodes`
+-- Dumping data for table `episodes`
 --
 
 INSERT INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `season`, `id_serie`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `season`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `faq`
+-- Table structure for table `faq`
 --
 
 CREATE TABLE `faq` (
@@ -114,7 +114,7 @@ CREATE TABLE `faq` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `faq`
+-- Dumping data for table `faq`
 --
 
 INSERT INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
@@ -125,7 +125,7 @@ INSERT INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `films`
+-- Table structure for table `films`
 --
 
 CREATE TABLE `films` (
@@ -140,18 +140,18 @@ CREATE TABLE `films` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `films`
+-- Dumping data for table `films`
 --
 
 INSERT INTO `films` (`id`, `name`, `description`, `img`, `home`, `onsite`, `mylist`, `id_cinema`) VALUES
-(1, 'Terminator', 'Película futurista que hace las delicias de los amantes de la ciencia ficción.', NULL, 1, 0, 0, NULL),
-(2, 'Terminator 2', 'La secuela de la película Terminator que hace las delicias de todos los amantes de la primera película.', NULL, 1, 0, 0, 2),
-(3, 'Pearl Harbour', 'Vive la emocionante historia de amor entre una enfermera y un aviador enmarcada en el ataque de los japoneses a Pearl Harbour que desencadenó la entrada de EEUU a la Segunda Guerra Mundial. ', NULL, 1, 0, 0, 1);
+(1, 'Nemo', 'Pelicula de un pez y sus pezqueñines', 'Nemo.png', 1, 0, 0, NULL),
+(2, 'Toystory2', 'La historia de un playboy o algo asi, no se, no la he visto', 'Toystory.png', 1, 0, 0, 2),
+(3, 'Cars 2', 'La historia de un coche que puede hablar, lo que me hace plantearme que papel tienen los taxis en este nuevo mundo.', 'cars_2.png', 1, 0, 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `language`
+-- Table structure for table `language`
 --
 
 CREATE TABLE `language` (
@@ -160,7 +160,7 @@ CREATE TABLE `language` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `language`
+-- Dumping data for table `language`
 --
 
 INSERT INTO `language` (`id`, `name`) VALUES
@@ -171,7 +171,7 @@ INSERT INTO `language` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `payments`
+-- Table structure for table `payments`
 --
 
 CREATE TABLE `payments` (
@@ -184,7 +184,7 @@ CREATE TABLE `payments` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `payment_method`
+-- Table structure for table `payment_method`
 --
 
 CREATE TABLE `payment_method` (
@@ -193,7 +193,7 @@ CREATE TABLE `payment_method` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `payment_method`
+-- Dumping data for table `payment_method`
 --
 
 INSERT INTO `payment_method` (`id`, `name`) VALUES
@@ -203,7 +203,7 @@ INSERT INTO `payment_method` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -216,7 +216,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `description`, `price`, `img`, `stock`) VALUES
@@ -226,7 +226,7 @@ INSERT INTO `product` (`id`, `name`, `description`, `price`, `img`, `stock`) VAL
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sala`
+-- Table structure for table `sala`
 --
 
 CREATE TABLE `sala` (
@@ -237,7 +237,7 @@ CREATE TABLE `sala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `sala`
+-- Dumping data for table `sala`
 --
 
 INSERT INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
@@ -247,7 +247,7 @@ INSERT INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `series`
+-- Table structure for table `series`
 --
 
 CREATE TABLE `series` (
@@ -260,7 +260,7 @@ CREATE TABLE `series` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `series`
+-- Dumping data for table `series`
 --
 
 INSERT INTO `series` (`id`, `name`, `description`, `img`, `home`, `n_seasons`) VALUES
@@ -271,7 +271,7 @@ INSERT INTO `series` (`id`, `name`, `description`, `img`, `home`, `n_seasons`) V
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -287,153 +287,153 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `cinemas`
+-- Indexes for table `cinemas`
 --
 ALTER TABLE `cinemas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `episodes`
+-- Indexes for table `episodes`
 --
 ALTER TABLE `episodes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `faq`
+-- Indexes for table `faq`
 --
 ALTER TABLE `faq`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `films`
+-- Indexes for table `films`
 --
 ALTER TABLE `films`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `language`
+-- Indexes for table `language`
 --
 ALTER TABLE `language`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `payments`
+-- Indexes for table `payments`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `payment_method`
+-- Indexes for table `payment_method`
 --
 ALTER TABLE `payment_method`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `sala`
+-- Indexes for table `sala`
 --
 ALTER TABLE `sala`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `series`
+-- Indexes for table `series`
 --
 ALTER TABLE `series`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `cinemas`
+-- AUTO_INCREMENT for table `cinemas`
 --
 ALTER TABLE `cinemas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `episodes`
+-- AUTO_INCREMENT for table `episodes`
 --
 ALTER TABLE `episodes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de la tabla `faq`
+-- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `films`
+-- AUTO_INCREMENT for table `films`
 --
 ALTER TABLE `films`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `language`
+-- AUTO_INCREMENT for table `language`
 --
 ALTER TABLE `language`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `payments`
+-- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `payment_method`
+-- AUTO_INCREMENT for table `payment_method`
 --
 ALTER TABLE `payment_method`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `sala`
+-- AUTO_INCREMENT for table `sala`
 --
 ALTER TABLE `sala`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `series`
+-- AUTO_INCREMENT for table `series`
 --
 ALTER TABLE `series`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
