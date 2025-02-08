@@ -58,7 +58,20 @@
         <h2>Series en nuestro catalogo</h2>
       </div>
       <section>
-        <img src="img/Toystory.png" alt="" />
+      <?php 
+        $sql = "SELECT * FROM series WHERE home=1";
+        $result = $bbdd->query($sql);
+          if ($result->num_rows > 0) {
+            // hay información que mostrar
+            while ($row = $result->fetch_assoc()) {
+                echo "<img src='img/" . $row['img'] . "' alt='' />";
+            }
+          } else {
+
+              echo "Sin información ingresada aún";
+          }
+          ?>
+       <!-- <img src="img/Toystory.png" alt="" />
         <img src="img/cars 2.png" alt="" />
         <img src="img/ice age 3.png" alt="" />
         <img src="img/ready player one.png" alt="" />
@@ -67,17 +80,32 @@
         <img src="img/cars 2.png" alt="" />
         <img src="img/ice age 3.png" alt="" />
         <img src="img/toy story.png" alt="" />
+        !-->
         
       </section>
     </div>
     <div class="contenedorcarrusel">
-      <!--Aqui quiero meter el carrusel-->
       <div>
         <h2>Cines de la compañia</h2>
       </div>
       <section>
-        <img src="img/cine1.png" alt="" />
-        <img src="img/cine2.png" alt="" />
+      <?php 
+        $sql = "SELECT * FROM cinemas";
+        $result = $bbdd->query($sql);
+          if ($result->num_rows > 0) {
+            // hay información que mostrar
+            while ($row = $result->fetch_assoc()) {
+                echo "<img src='img/" . $row['img'] . "' alt='' />";
+            }
+          } else {
+
+              echo "Sin información ingresada aún";
+          }
+          ?>
+        <!--
+      <img src="img/cine1.png" alt="" />
+      <img src="img/cine2.png" alt="" />
+      -->
       </section>
     </div>
     <br>

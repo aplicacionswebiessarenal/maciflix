@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2025 at 01:52 PM
+-- Generation Time: Feb 08, 2025 at 02:12 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -59,8 +59,8 @@ CREATE TABLE `cinemas` (
 --
 
 INSERT INTO `cinemas` (`id`, `name`, `img`, `address`, `email`, `timetable`, `telephone`, `instagram`, `twitter`, `facebook`) VALUES
-(1, 'Cine Tampa', NULL, 'Carrer de l\'Olivar, 07001, Palma. Mallorca', 'contacto@cinesmallorca.com', 'Lunes 8:00 22:00\r\nMartes 8:00 22:00\r\nMiércoles 8:00 22:00\r\nJueves 8:00 22:00\r\nViernes 8:00 22:00\r\nSábado 8:00 00:00\r\nDomingo 8:00 00:00', '971 12 34 56', 'instagram.com', 'twitter.com', NULL),
-(2, 'Cine Cosmo', NULL, 'Carrer del Monestir, 5, 070234, Llucmajor. Mallorca', 'contacto@contactocosmo.com', 'Lunes 8:00 22:00\r\nMartes 8:00 22:00\r\nMiércoles 8:00 22:00\r\nJueves 8:00 22:00\r\nViernes 8:00 22:00\r\nSábado 8:00 00:00\r\nDomingo 8:00 00:00', '657 890 456', NULL, 'twitter.com/cosmos', 'facebook.com/cosmos');
+(1, 'Cine Tampa', 'cine1.png', 'Carrer de l\'Olivar, 07001, Palma. Mallorca', 'contacto@cinesmallorca.com', 'Lunes 8:00 22:00\r\nMartes 8:00 22:00\r\nMiércoles 8:00 22:00\r\nJueves 8:00 22:00\r\nViernes 8:00 22:00\r\nSábado 8:00 00:00\r\nDomingo 8:00 00:00', '971 12 34 56', 'instagram.com', 'twitter.com', NULL),
+(2, 'Cine Cosmo', 'cine2.png', 'Carrer del Monestir, 5, 070234, Llucmajor. Mallorca', 'contacto@contactocosmo.com', 'Lunes 8:00 22:00\r\nMartes 8:00 22:00\r\nMiércoles 8:00 22:00\r\nJueves 8:00 22:00\r\nViernes 8:00 22:00\r\nSábado 8:00 00:00\r\nDomingo 8:00 00:00', '657 890 456', NULL, 'twitter.com/cosmos', 'facebook.com/cosmos');
 
 -- --------------------------------------------------------
 
@@ -264,9 +264,9 @@ CREATE TABLE `series` (
 --
 
 INSERT INTO `series` (`id`, `name`, `description`, `img`, `home`, `n_seasons`) VALUES
-(1, 'Peaky Blinders', 'Peaky Blinders es una serie de televisión inglesa de drama histórico, emitida por el canal BBC Two. La serie está protagonizada por Cillian Murphy y se centra en una familia de gánsteres de Birmingham, durante los años veinte y del ascenso de su jefe, Thomas Shelby, un mafioso que dominará toda Inglaterra, después de afrontar una terrible guerra. Shelby, pese a ser un criminal y un mafioso, tiene rasgos antiheroicos, pues es un personaje ambivalente que, pese a su brutalidad, en muchas ocasiones es la única esperanza para terminar con otros villanos que pueden considerarse más viles y mezquinos que él', NULL, 1, 3),
-(2, 'Juego de tronos', 'Juego de tronos (en inglés: A Game of Thrones) es una novela de fantasía escrita por el autor estadounidense George R. R. Martin en 1996 y ganadora del premio Locus a la mejor novela de fantasía en 1997.1​ Se trata de la primera entrega de la serie de gran popularidad «Canción de hielo y fuego». La novela se caracteriza por su estética medieval,2​ la descripción de numerosos personajes bien detallados, la contraposición de puntos de vista de los múltiples protagonistas, su trama con giros inesperados y un uso sutil y moderado de los aspectos mágicos tan comunes en otras obras de fantasía heroica.', NULL, 1, 1),
-(3, 'El Señor de los Anillos: los Anillos de Poder', 'El Señor de los Anillos: los Anillos de Poder es una serie de televisión producida por Amazon Prime basada en las historias y el universo creado por J.R.R. Tolkien. La serie, creada por J.D. Payne y Patrick McKay, estará basada en acontecimientos anteriores a El Señor de los Anillos, concretamente durante la Segunda Edad del Sol.', NULL, 1, 2);
+(1, 'Peaky Blinders', 'Peaky Blinders es una serie de televisión inglesa de drama histórico, emitida por el canal BBC Two. La serie está protagonizada por Cillian Murphy y se centra en una familia de gánsteres de Birmingham, durante los años veinte y del ascenso de su jefe, Thomas Shelby, un mafioso que dominará toda Inglaterra, después de afrontar una terrible guerra. Shelby, pese a ser un criminal y un mafioso, tiene rasgos antiheroicos, pues es un personaje ambivalente que, pese a su brutalidad, en muchas ocasiones es la única esperanza para terminar con otros villanos que pueden considerarse más viles y mezquinos que él', 'peaky.jpg', 1, 3),
+(2, 'Juego de tronos', 'Juego de tronos (en inglés: A Game of Thrones) es una novela de fantasía escrita por el autor estadounidense George R. R. Martin en 1996 y ganadora del premio Locus a la mejor novela de fantasía en 1997.1​ Se trata de la primera entrega de la serie de gran popularidad «Canción de hielo y fuego». La novela se caracteriza por su estética medieval,2​ la descripción de numerosos personajes bien detallados, la contraposición de puntos de vista de los múltiples protagonistas, su trama con giros inesperados y un uso sutil y moderado de los aspectos mágicos tan comunes en otras obras de fantasía heroica.', 'trono.jpg', 1, 1),
+(3, 'El Señor de los Anillos: los Anillos de Poder', 'El Señor de los Anillos: los Anillos de Poder es una serie de televisión producida por Amazon Prime basada en las historias y el universo creado por J.R.R. Tolkien. La serie, creada por J.D. Payne y Patrick McKay, estará basada en acontecimientos anteriores a El Señor de los Anillos, concretamente durante la Segunda Edad del Sol.', 'anillo.jpg', 1, 2);
 
 -- --------------------------------------------------------
 
