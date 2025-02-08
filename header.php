@@ -18,13 +18,13 @@
     </div>
   <div class="header">
       <div>
-        <a href="index.html">
+        <a href="index.php">
           <img class="icono" src="img/logomaciflix.png" alt="icono"/>
         </a>
         <!--Icono Maciflix-->
       </div>
       <div>
-        <a href="iniciarsesion.html">
+        <a href="iniciarsesion.php">
           <button id="iniciosesión" class="minimalbutton">
             Iniciar Sesión
           </button>
@@ -39,16 +39,16 @@
     </button>
     <ul id="minav">
       <li>
-        <a href="peliculas.html">Peliculas</a>
+        <a href="peliculas.php">Peliculas</a>
       </li>
       <li>
-        <a href="series.html">Series</a>
+        <a href="series.php">Series</a>
       </li>
       <li>
-        <a href="cines.html">Cines</a>
+        <a href="cines.php">Cines</a>
       </li>
       <li>
-        <a href="tienda.html">Tienda</a>
+        <a href="tienda.php">Tienda</a>
       </li>
     </ul>
   </nav>

@@ -71,17 +71,6 @@
               echo "Sin información ingresada aún";
           }
           ?>
-       <!-- <img src="img/Toystory.png" alt="" />
-        <img src="img/cars 2.png" alt="" />
-        <img src="img/ice age 3.png" alt="" />
-        <img src="img/ready player one.png" alt="" />
-        <img src="img/nemo (2).png" alt="" />
-        <img src="img/toy story.png" alt="" />
-        <img src="img/cars 2.png" alt="" />
-        <img src="img/ice age 3.png" alt="" />
-        <img src="img/toy story.png" alt="" />
-        !-->
-        
       </section>
     </div>
     <div class="contenedorcarrusel">
@@ -102,15 +91,11 @@
               echo "Sin información ingresada aún";
           }
           ?>
-        <!--
-      <img src="img/cine1.png" alt="" />
-      <img src="img/cine2.png" alt="" />
-      -->
       </section>
     </div>
     <br>
     <iframe
-      src="footer.html"
+      src="footer.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
     ></iframe>
   </body>
