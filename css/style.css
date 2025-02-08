@@ -204,3 +204,12 @@ section img:hover {
   justify-content: center;
   justify-items: center;
 }
+
+.lengua {
+  width: 50px; /* Ajusta el tamaño del contenedor */
+  margin-left: auto; /* Mueve el contenedor a la derecha */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: end;
+}
+

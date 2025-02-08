@@ -8,20 +8,29 @@
   />
 </head>
 <header>
-  <body>
+<div class="lengua">
+    <select id="language-selector">
+        <option value="es">🇪🇸 Español</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="fr">🇫🇷 Français</option>
+    </select>
+
+    </div>
   <div class="header">
-      <a href="index.html">
-        <img class="icono" src="img/logomaciflix.png" alt="icono"/>
-      </a>
-      <!--Icono Maciflix-->
-    </div>
-    <div>
-      <a href="iniciarsesion.html">
-        <button id="iniciosesión" class="minimalbutton">
-          Iniciar Sesión
-        </button>
-      </a>
-    </div>
+      <div>
+        <a href="index.html">
+          <img class="icono" src="img/logomaciflix.png" alt="icono"/>
+        </a>
+        <!--Icono Maciflix-->
+      </div>
+      <div>
+        <a href="iniciarsesion.html">
+          <button id="iniciosesión" class="minimalbutton">
+            Iniciar Sesión
+          </button>
+        </a>
+      </div>
+    </div> 
   </div>
   <nav>
     <button class="miboton" id="miboton" onclick="minav.classList.toggle('show');">
