@@ -22,7 +22,7 @@
   <body id="indexbody">
  
     <iframe
-      src="header.html"
+      src="header.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
     ></iframe>
     <div class="buscador">
