@@ -1,5 +1,8 @@
+# Ignore the .vscode folder
 .vscode/
-.idea/
-.modell/
-.modell-usb/
-.version
+
+# Ignore the .webalizer file
+.webalizer
+
+# Ignore the xampp folder
+xampp/
