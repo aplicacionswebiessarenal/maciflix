@@ -1,2 +1,5 @@
 .vscode/
 .idea/
+.modell/
+.modell-usb/
+.version
