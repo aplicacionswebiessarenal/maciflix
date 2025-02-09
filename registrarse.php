@@ -19,13 +19,13 @@
   <body>
     <header>
       <iframe
-        src="/header.html"
+        src="/header.php"
         onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
       ></iframe>
     </header>
     <div class="flex-container">
       <div class="login">
-        <form>
+        <form method="post">
           <h2 id="title">Crea tu cuenta</h2>
           <input type="text" class="password" placeholder="Nombre de usuario" />
 
@@ -49,7 +49,7 @@
           <script src="/js/crearcuenta.js"></script>
           <div class="register">
             <h3>Ya tienes una cuenta?</h3>
-            <a href="/iniciarsesion.html">
+            <a href="/iniciarsesion.php">
               <button
                 type="button"
                 id="register"
@@ -64,9 +64,14 @@
     </div>
     <footer>
       <iframe
-        src="footer.html"
+        src="footer.php"
         onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
       ></iframe>
     </footer>
   </body>
 </html>
+
+<?php
+// Obtener información del formulario 
+
+?>

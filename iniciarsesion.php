@@ -21,7 +21,7 @@
   </head>
   <body>
     <iframe
-      src="/header.html"
+      src="/header.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
     ></iframe>
     <div class="flex-container">
@@ -41,7 +41,7 @@
           <script src="/js/iniciarsesion.js"></script>
           <div class="register">
             <h3>No tienes cuenta?</h3>
-            <a href="/registrarse.html" id="sign_up_button">
+            <a href="/registrarse.php" id="sign_up_button">
               <button type="button" class="glow_on_hover">Registrarse</button>
             </a>
           </div>
@@ -49,10 +49,8 @@
       </div>
     </div>
     <iframe
-      src="footer.html"
+      src="footer.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
     ></iframe>
-
-    <? echo "Hola caracola "; ?>
   </body>
 </html>
