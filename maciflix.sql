@@ -331,7 +331,7 @@ VALUES (
     1,
     'Terminator',
     'Película futurista que hace las delicias de los amantes de la ciencia ficción.',
-    'termintor.png',
+    'terminator.png',
     1,
     0,
     0,
@@ -484,8 +484,8 @@ CREATE TABLE IF NOT EXISTS `sala` (
 -- Dumping data for table `sala`
 --
 INSERT IGNORE INTO `sala` (`id`, `name`, `rows`, `columns`)
-VALUES (1, 'Sala 1', 15, 20),
-  (2, 'Sala 2', 7, 12);
+VALUES (1, 'Sala zaza 1', 15, 20),
+  (2, 'Sala edamame 2', 7, 12);
 -- --------------------------------------------------------
 --
 -- Table structure for table `series`
