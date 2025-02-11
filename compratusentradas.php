@@ -15,7 +15,7 @@ $username = "tu_usuario"; // Cambia esto por tu usuario de la base de datos
 $password = "tu_contraseña"; // Cambia esto por tu contraseña de la base de datos
 $dbname = "maciflix"; // Nombre de tu base de datos
 
-// Crear conexión
+// Crear conexión uwu
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
