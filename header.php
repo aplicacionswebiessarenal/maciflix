@@ -1,3 +1,4 @@
+<?php include_once('conexion.php'); ?> 
 <!DOCTYPE html>
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -8,14 +9,22 @@
   />
 </head>
 <header>
-<div class="lengua">
-    <select id="language-selector">
-        <option value="es">🇪🇸 Español</option>
-        <option value="en">🇬🇧 English</option>
-        <option value="fr">🇫🇷 Français</option>
-    </select>
 
-    </div>
+  <div class="lengua">
+    <select id="language-selector">
+    <?php 
+        $sql = "SELECT * FROM language;";
+        $result = $bbdd->query($sql);
+          if ($result->num_rows > 0) {
+            // hay información que mostrar
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value='".$row['name']. "'></option>";
+            }
+          }
+      ?>
+    </select>
+  </div>
+
   <div class="header">
       <div>
         <a href="index.php">
@@ -53,3 +62,4 @@
     </ul>
   </nav>
 </header>
+<?php $bbdd->close(); ?>
