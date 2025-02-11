@@ -28,11 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `cart` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id`) -- La clave primaria se define en una línea aparte
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -42,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
 --
 
 CREATE TABLE IF NOT EXISTS `cinemas` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `img` varchar(100) DEFAULT NULL,
   `address` varchar(100) NOT NULL,
@@ -51,7 +52,8 @@ CREATE TABLE IF NOT EXISTS `cinemas` (
   `telephone` varchar(100) NOT NULL,
   `instagram` varchar(100) DEFAULT NULL,
   `twitter` varchar(100) DEFAULT NULL,
-  `facebook` varchar(100) DEFAULT NULL
+  `facebook` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -69,13 +71,14 @@ INSERT IGNORE INTO `cinemas` (`id`, `name`, `img`, `address`, `email`, `timetabl
 --
 
 CREATE TABLE IF NOT EXISTS `episodes` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
   `duration` int(11) NOT NULL,
   `img` varchar(100) DEFAULT NULL,
   `season` int(11) NOT NULL,
-  `id_serie` int(11) NOT NULL
+  `id_serie` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -107,10 +110,11 @@ INSERT IGNORE INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `
 --
 
 CREATE TABLE IF NOT EXISTS `faq` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `question` text NOT NULL,
   `answer` text NOT NULL,
-  `language` int(11) NOT NULL DEFAULT 1
+  `language` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -118,9 +122,18 @@ CREATE TABLE IF NOT EXISTS `faq` (
 --
 
 INSERT IGNORE INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
-(1, '¿Qué es Maciflix?', 'Maciflix es una plataforma de video en streaming que te permite ver películas y series. Dispone de una tienda, online además de una opción de compra de entradas en cines.', 1),
-(2, 'What\'s Maciflix?', 'Maciflix is ​​a video streaming platform that allows you to watch movies and series. It has an online store as well as an option to buy tickets in cinemas.', 2),
-(3, 'Qu\'est-ce que Maciflix ?', 'Maciflix est une plateforme de streaming vidéo qui vous permet de regarder des films et des séries. Il dispose d\'une boutique en ligne ainsi que d\'une option d\'achat de billets dans les cinémas.', 3);
+(1, '¿Cómo puedo registrarme en MACIFLIX?', 'Para registrarte, haz clic en el botón \"Registrarse\" en la parte superior de nuestra página y sigue los pasos indicados.', 1),
+(2, 'How can I register for MACIFLIX?', 'To register, click the \"Register\" button at the top of our page and follow the indicated steps.', 2),
+(3, 'Comment puis-je m\inscrire sur MACIFLIX ?', 'Pour vous inscrire, cliquez sur le bouton \"S inscrire\" en haut de notre page et suivez les étapes indiquées.', 3),
+(4, '¿Cuánto cuesta una suscripción?', 'Los precios varían según el plan elegido. Consulta los detalles en nuestra página de planes.', 1),
+(5, 'How much does a subscription cost?', 'Prices vary depending on the chosen plan. Check the details on our plans page.', 2),
+(6, 'Combien coûte un abonnement?', 'Les prix varient en fonction du plan choisi. Consultez les détails sur notre page des plans.', 3),
+(7, '¿Qué dispositivos son compatibles?', 'MACIFLIX es compatible con Smart TVs, computadoras, tabletas, smartphones, y dispositivos de streaming como Chromecast.', 1),
+(8, 'What devices are compatible?', 'MACIFLIX is compatible with Smart TVs, computers, tablets, smartphones, and streaming devices like Chromecast.', 2),
+(9, 'Quels appareils sont compatibles?', 'MACIFLIX est compatible avec les Smart TVs, les ordinateurs, les tablettes, les smartphones et les appareils de streaming comme Chromecast.', 3),
+(10, '¿Cómo cancelo mi suscripción?', 'Puedes cancelar tu suscripción desde la sección \"Mi cuenta\" en nuestra página web. No hay cargos adicionales por cancelar.', 1),
+(11, 'How do I cancel my subscription?', 'You can cancel your subscription from the \"My Account\" section on our website. There are no additional charges for cancellation.', 2),
+(12, 'Comment puis-je annuler mon abonnement?', 'Vous pouvez annuler votre abonnement depuis la section \"Mon compte\" sur notre site web. Il n\'y a pas de frais supplémentaires pour l\'annulation.', 3);
 
 -- --------------------------------------------------------
 
@@ -129,14 +142,15 @@ INSERT IGNORE INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `films` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
   `img` varchar(100) DEFAULT NULL,
   `home` tinyint(1) NOT NULL DEFAULT 1,
   `onsite` tinyint(1) NOT NULL DEFAULT 0,
   `mylist` tinyint(1) NOT NULL DEFAULT 0,
-  `id_cinema` int(11) DEFAULT NULL
+  `id_cinema` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -155,8 +169,9 @@ INSERT IGNORE INTO `films` (`id`, `name`, `description`, `img`, `home`, `onsite`
 --
 
 CREATE TABLE IF NOT EXISTS `language` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -175,10 +190,11 @@ INSERT IGNORE INTO `language` (`id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `payments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
   `id_payment_method` int(11) NOT NULL,
-  `total` float NOT NULL
+  `total` float NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -188,8 +204,9 @@ CREATE TABLE IF NOT EXISTS `payments` (
 --
 
 CREATE TABLE IF NOT EXISTS `payment_method` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -207,12 +224,13 @@ INSERT IGNORE INTO `payment_method` (`id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `product` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
   `price` float NOT NULL,
   `img` varchar(100) DEFAULT NULL,
-  `stock` int(11) NOT NULL
+  `stock` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -230,10 +248,11 @@ INSERT IGNORE INTO `product` (`id`, `name`, `description`, `price`, `img`, `stoc
 --
 
 CREATE TABLE IF NOT EXISTS `sala` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `rows` int(11) NOT NULL,
-  `columns` int(11) NOT NULL
+  `columns` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -251,12 +270,13 @@ INSERT IGNORE INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `series` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
   `img` varchar(100) DEFAULT NULL,
   `home` tinyint(1) NOT NULL DEFAULT 0,
-  `n_seasons` int(11) NOT NULL DEFAULT 1
+  `n_seasons` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -275,7 +295,7 @@ INSERT IGNORE INTO `series` (`id`, `name`, `description`, `img`, `home`, `n_seas
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(1000) NOT NULL,
@@ -283,7 +303,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `payment_method` int(11) DEFAULT NULL,
   `name` varchar(100) NOT NULL,
   `surname1` varchar(100) NOT NULL,
-  `surname2` int(100) NOT NULL
+  `surname2` int(100) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
