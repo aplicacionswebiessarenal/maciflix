@@ -331,7 +331,7 @@ VALUES (
     1,
     'Terminator',
     'Película futurista que hace las delicias de los amantes de la ciencia ficción.',
-    'termintor.png',
+    'terminator.png',
     1,
     0,
     0,
