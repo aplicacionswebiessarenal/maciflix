@@ -1,3 +1,4 @@
+<?php include_once('conexion.php'); ?> 
 <!DOCTYPE html>
 <head><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +26,7 @@
                         <h3>AYUDA</h3>
                         <ul>
                             <li>
-                                <a href="FAQ.php"> FAQ</a>
+                            <a href="FAQ.php?lang=" + selectedLang>FAQ</a>
                             </li>
                             <li>
                                 <a href="FAQ.php"> POLITICA DE PRIVACIDAD</a>
@@ -83,5 +84,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="lengua">
+    <select id="language-selector">
+    <?php 
+        $sql = "SELECT * FROM language;";
+        $result = $bbdd->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value='".$row['id']."'>".$row['name']."</option>";
+            }          
+        }
+    ?>
+    </select>
+</div>        
     </footer>     
-            </body>
+</body>
+<?php $bbdd->close(); ?>
