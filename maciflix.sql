@@ -162,9 +162,12 @@ CREATE TABLE IF NOT EXISTS `films` (
 --
 
 INSERT IGNORE INTO `films` (`id`, `name`, `description`, `img`, `home`, `onsite`, `mylist`, `id_cinema`) VALUES
-(1, 'Nemo', 'Pelicula de un pez y sus pezqueñines', 'Nemo.png', 1, 0, 0, NULL),
-(2, 'Toystory2', 'La historia de un playboy o algo asi, no se, no la he visto', 'Toystory.png', 1, 0, 0, 2),
-(3, 'Cars 2', 'La historia de un coche que puede hablar, lo que me hace plantearme que papel tienen los taxis en este nuevo mundo.', 'cars_2.png', 1, 0, 0, 1);
+(1, 'Terminator', 'Película futurista que hace las delicias de los amantes de la ciencia ficción.', 'termintor.png', 1, 0, 0, 1),
+(2, 'Terminator 2', 'La secuela de la película Terminator que hace las delicias de todos los amantes de la primera película.', 'Terminator_2.png', 1, 0, 0, 1),
+(3, 'Pearl Harbor', 'Vive la emocionante historia de amor entre una enfermera y un aviador enmarcada en el ataque de los japoneses a Pearl Harbour que desencadenó la entrada de EEUU a la Segunda Guerra Mundial.', 'Pearl_Harbor', 1, 0, 0, 2),
+(4, 'Nemo', 'Pelicula de un pez y sus pezqueñines', 'Nemo.png', 1, 0, 0, 2),
+(5, 'Toystory2', 'La historia de un playboy o algo asi, no se, no la he visto', 'Toystory.png', 1, 0, 0, 2),
+(6, 'Cars 2', 'La historia de un coche que puede hablar, lo que me hace plantearme que papel tienen los taxis en este nuevo mundo.', 'cars_2.png', 1, 0, 0, 2);
 
 -- --------------------------------------------------------
 
