@@ -1,4 +1,3 @@
-<?php include_once('conexion.php'); ?> 
 <!DOCTYPE html>
 <head><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,19 +83,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="lengua">
-    <select id="language-selector">
-    <?php 
-        $sql = "SELECT * FROM language;";
-        $result = $bbdd->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<option value='".$row['id']."'>".$row['name']."</option>";
-            }          
-        }
-    ?>
-    </select>
-</div>        
     </footer>     
 </body>
-<?php $bbdd->close(); ?>
+<script>
+// Capturar el cambio de idioma
+document.getElementById("language-selector").addEventListener("change", function() {
+    var selectedLang = this.value; // Obtener el idioma seleccionado
+    
+    // Guardar en una variable
+    var idiomaSeleccionado = selectedLang;
+
+    console.log(idiomaSeleccionado); // Puedes ver el valor en la consola si lo necesitas
+});
+</script>
