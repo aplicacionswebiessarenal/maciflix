@@ -80,26 +80,21 @@ $base_datos = "maciflix";
 
 $conn = new mysqli($host, $usuario, $password, $base_datos);
 
-// Verificar la conexión
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
-// Obtener datos del formulario
 $usuario = $_POST["usuario"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 $confirm_password = $_POST["confirm_password"];
 
-// Validar que las contraseñas coincidan
 if ($password !== $confirm_password) {
     die("Las contraseñas no coinciden.");
 }
 
-// Encriptar la contraseña
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-// Insertar datos en la base de datos
 $sql = "INSERT INTO usuarios (usuario, email, password) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sss", $usuario, $email, $password_hash);
@@ -110,7 +105,6 @@ if ($stmt->execute()) {
     echo "Error al registrar: " . $conn->error;
 }
 
-// Cerrar conexión
 $stmt->close();
 $conn->close();
 ?>
