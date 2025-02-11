@@ -1,61 +1,84 @@
+<?php
+$servidor   = 'localhost';
+$usuario    = 'root';
+$contrasena = '';
+$bd         = 'maciflix';
+
+// Conexión a la base de datos
+$bbdd = new mysqli($servidor, $usuario, $contrasena, $bd);
+
+if ($bbdd->connect_error) {
+    die('Error en la conexión: ' . $bbdd->connect_error);
+}
+
+// Definir el idioma seleccionado
+$idioma = isset($_GET['lang']) ? (int)$_GET['lang'] : 1;
+
+// Obtener las preguntas frecuentes en el idioma seleccionado
+$sql = "SELECT question, answer FROM faq WHERE language = ?";
+$stmt = $bbdd->prepare($sql);
+$stmt->bind_param("i", $idioma);
+$stmt->execute();
+$resultado = $stmt->get_result();
+$preguntas = $resultado->fetch_all(MYSQLI_ASSOC);
+
+$stmt->close();
+$bbdd->close();
+?>
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <script src="js/milista.js"></script>   
-    <link rel="stylesheet" href="css/estilosmilista.css">
     <meta charset="UTF-8">
-    </head>
-    <body id="FAQ">
-        <div>
-            <a href="index.html" class="back-button">
-              ← Volver a Index
-            </a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilosmilista.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Preguntas Frecuentes</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body id="FAQ">
+  
+      <h1>PREGUNTAS FRECUENTES</h1>
+      
+      <form method="GET">
+      <label for="lang">Selecciona tu idioma:</label>
+      <select name="lang" id="lang" onchange="this.form.submit()">
+          <option value="1" <?= ($_GET['lang'] ?? 1) == 1 ? 'selected' : '' ?>>Español</option>
+          <option value="2" <?= ($_GET['lang'] ?? 1) == 2 ? 'selected' : '' ?>>English</option>
+          <option value="3" <?= ($_GET['lang'] ?? 1) == 3 ? 'selected' : '' ?>>Français</option>
+      </select>
+      </form>
+  <div id="faq">
+          <?php foreach ($preguntas as $faq): ?>
+              <div class="faq-item">
+                  <h3><?php echo htmlspecialchars($faq['question']); ?></h3>
+                  <p><?php echo htmlspecialchars($faq['answer']); ?></p>
+              </div>
+          <?php endforeach; ?>
+  </div>
+    <footer>
+        <div class="contenido-c">
+            <p>&copy; 2025 MACIFLIX Entertainment, A.W Todos los derechos reservados.</p>
         </div>
-        <h1>PREGUNTAS FRECUENTES </h1>
-        <section id="faq">
-                <h1>Preguntas Frecuentes</h1>
-              
-                <div class="faq-item">
-                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
-                    ¿Cómo puedo registrarme en MACIFLIX?
-                  </button>
-                  <div class="faq-respuesta" style="display: none;">
-                    <p>Para registrarte, haz clic en el botón "Registrarse" en la parte superior de nuestra página y sigue los pasos indicados.</p>
-                  </div>
-                </div>
-              
-                <div class="faq-item">
-                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
-                    ¿Cuánto cuesta una suscripción?
-                  </button>
-                  <div class="faq-respuesta" style="display: none;">
-                    <p>Los precios varían según el plan elegido. Consulta los detalles en nuestra página de planes.</p>
-                  </div>
-                </div>
-              
-                <div class="faq-item">
-                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
-                    ¿Qué dispositivos son compatibles?
-                  </button>
-                  <div class="faq-respuesta" style="display: none;">
-                    <p>MACIFLIX es compatible con Smart TVs, computadoras, tabletas, smartphones, y dispositivos de streaming como Chromecast.</p>
-                  </div>
-                </div>
-              
-                <div class="faq-item">
-                  <button class="faq-pregunta" onclick="toggleRespuesta(this)">
-                    ¿Cómo cancelo mi suscripción?
-                  </button>
-                  <div class="faq-respuesta" style="display: none;">
-                    <p>Puedes cancelar tu suscripción desde la sección "Mi cuenta" en nuestra página web. No hay cargos adicionales por cancelar.</p>
-                  </div>
-                </div>
-        </section>
-              
-        <footer>
-            <div class="contenido-c">
-                <p>&copy; 2025 MACIFLIX Entertainment, A.W Todos los derechos reservados.</p>
-            </div>
-        </footer>
-    </body>
+      </footer>
+        <script>
+  document.querySelectorAll('.faq-pregunta').forEach(button => {
+      button.addEventListener('click', () => {
+          let respuesta = button.nextElementSibling;
+
+          if (respuesta.style.display === 'block') {
+              respuesta.style.display = 'none';
+          } else {
+              // Primero ocultamos todas las respuestas antes de abrir una nueva
+              document.querySelectorAll('.faq-respuesta').forEach(resp => {
+                  resp.style.display = 'none';
+              });
+
+              respuesta.style.display = 'block';
+          }
+      });
+  });
+  </script>
+</body>
 </html>

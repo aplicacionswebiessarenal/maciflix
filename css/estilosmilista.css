@@ -175,8 +175,8 @@ footer p {
     display: flex;
     flex-direction: column;
   }
-  #FAQ h1 {
-    color: #ffffff;
+  h1 {
+    color: #000000;
   }
   #faq {
     background-color: #1e1e1e;
