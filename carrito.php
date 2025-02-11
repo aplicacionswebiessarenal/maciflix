@@ -12,6 +12,22 @@
       <iframe src="header.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </head>
+    <?php
+        $servidor   = 'localhost';
+        $usuario    = 'root';
+        $contrasena = '';
+        $bd = 'maciflix';
+
+        // se crea la conexión
+        $bbdd = new mysqli($servidor, $usuario, $contrasena, $bd);
+
+        // se valida la conexión
+
+        if ($bbdd->connect_error) {
+
+            die('Hubo un fallo en la conexión ' . $bbdd->connect_error);
+        };
+    ?>
     <body>
       <h1>Carrito</h1>
         <div class="producto">
