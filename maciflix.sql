@@ -122,18 +122,22 @@ CREATE TABLE IF NOT EXISTS `faq` (
 --
 
 INSERT IGNORE INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
-(1, '¿Cómo puedo registrarme en MACIFLIX?', 'Para registrarte, haz clic en el botón \"Registrarse\" en la parte superior de nuestra página y sigue los pasos indicados.', 1),
-(2, 'How can I register for MACIFLIX?', 'To register, click the \"Register\" button at the top of our page and follow the indicated steps.', 2),
-(3, 'Comment puis-je m\inscrire sur MACIFLIX ?', 'Pour vous inscrire, cliquez sur le bouton \"S inscrire\" en haut de notre page et suivez les étapes indiquées.', 3),
-(4, '¿Cuánto cuesta una suscripción?', 'Los precios varían según el plan elegido. Consulta los detalles en nuestra página de planes.', 1),
-(5, 'How much does a subscription cost?', 'Prices vary depending on the chosen plan. Check the details on our plans page.', 2),
-(6, 'Combien coûte un abonnement?', 'Les prix varient en fonction du plan choisi. Consultez les détails sur notre page des plans.', 3),
-(7, '¿Qué dispositivos son compatibles?', 'MACIFLIX es compatible con Smart TVs, computadoras, tabletas, smartphones, y dispositivos de streaming como Chromecast.', 1),
-(8, 'What devices are compatible?', 'MACIFLIX is compatible with Smart TVs, computers, tablets, smartphones, and streaming devices like Chromecast.', 2),
-(9, 'Quels appareils sont compatibles?', 'MACIFLIX est compatible avec les Smart TVs, les ordinateurs, les tablettes, les smartphones et les appareils de streaming comme Chromecast.', 3),
-(10, '¿Cómo cancelo mi suscripción?', 'Puedes cancelar tu suscripción desde la sección \"Mi cuenta\" en nuestra página web. No hay cargos adicionales por cancelar.', 1),
-(11, 'How do I cancel my subscription?', 'You can cancel your subscription from the \"My Account\" section on our website. There are no additional charges for cancellation.', 2),
-(12, 'Comment puis-je annuler mon abonnement?', 'Vous pouvez annuler votre abonnement depuis la section \"Mon compte\" sur notre site web. Il n\'y a pas de frais supplémentaires pour l\'annulation.', 3);
+(1, '¿Qué es Maciflix?', 'Maciflix es una plataforma de video en streaming que te permite ver películas y series. Dispone de una tienda, online además de una opción de compra de entradas en cines.', 1),
+(2, 'What\'s Maciflix?', 'Maciflix is ​​a video streaming platform that allows you to watch movies and series. It has an online store as well as an option to buy tickets in cinemas.', 2),
+(3, 'Qu\'est-ce que Maciflix ?', 'Maciflix est une plateforme de streaming vidéo qui vous permet de regarder des films et des séries. Il dispose d\'une boutique en ligne ainsi que d\'une option d\'achat de billets dans les cinémas.', 3),
+(4, '¿Cómo puedo registrarme en MACIFLIX?', 'Para registrarte, haz clic en el botón "Registrarse" en la parte superior de nuestra página y sigue los pasos indicados.', 1),
+(5, 'How can I register for MACIFLIX?', 'To register, click the "Register" button at the top of our page and follow the indicated steps.', 2),
+(6, 'Comment puis-je m\'inscrire sur MACIFLIX ?', 'Pour vous inscrire, cliquez sur le bouton "S inscrire" en haut de notre page et suivez les étapes indiquées.', 3),
+(7, '¿Cuánto cuesta una suscripción?', 'Los precios varían según el plan elegido. Consulta los detalles en nuestra página de planes.', 1),
+(8, 'How much does a subscription cost?', 'Prices vary depending on the chosen plan. Check the details on our plans page.', 2),
+(9, 'Combien coûte un abonnement?', 'Les prix varient en fonction du plan choisi. Consultez les détails sur notre page des plans.', 3),
+(10, '¿Qué dispositivos son compatibles?', 'MACIFLIX es compatible con Smart TVs, computadoras, tabletas, smartphones, y dispositivos de streaming como Chromecast.', 1),
+(11, 'What devices are compatible?', 'MACIFLIX is compatible with Smart TVs, computers, tablets, smartphones, and streaming devices like Chromecast.', 2),
+(12, 'Quels appareils sont compatibles?', 'MACIFLIX est compatible avec les Smart TVs, les ordinateurs, les tablettes, les smartphones et les appareils de streaming comme Chromecast.', 3),
+(13, '¿Cómo cancelo mi suscripción?', 'Puedes cancelar tu suscripción desde la sección "Mi cuenta" en nuestra página web. No hay cargos adicionales por cancelar.', 1),
+(14, 'How do I cancel my subscription?', 'You can cancel your subscription from the "My Account" section on our website. There are no additional charges for cancellation.', 2),
+(15, 'Comment puis-je annuler mon abonnement?', 'Vous pouvez annuler votre abonnement depuis la section "Mon compte" sur notre site web. Il n\'y a pas de frais supplémentaires pour l\'annulation.', 3);
+
 
 -- --------------------------------------------------------
 
