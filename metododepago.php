@@ -9,7 +9,7 @@
       <link rel=stylesheet href=css/carrito.css>
       <link rel="stylesheet" href="../css/style.css">
       <link rel="stylesheet" href="../css/footer.css">
-      <iframe src="header.html"
+      <iframe src="header.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </head>
       <body>
@@ -58,7 +58,7 @@
                   </a>
               </div>
           </div>
-        <iframe src="footer.html"
+        <iframe src="footer.php"
         onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
       </body>
   </html>
