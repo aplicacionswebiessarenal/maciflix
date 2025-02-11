@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `cart`
 --
 
-CREATE TABLE `cart` (
+CREATE TABLE IF NOT EXISTS `cart` (
   `id` int(11) NOT NULL,
   `id_pedido` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `cart` (
 -- Table structure for table `cinemas`
 --
 
-CREATE TABLE `cinemas` (
+CREATE TABLE IF NOT EXISTS `cinemas` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `img` varchar(100) DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `cinemas` (
 -- Dumping data for table `cinemas`
 --
 
-INSERT INTO `cinemas` (`id`, `name`, `img`, `address`, `email`, `timetable`, `telephone`, `instagram`, `twitter`, `facebook`) VALUES
+INSERT IGNORE INTO `cinemas` (`id`, `name`, `img`, `address`, `email`, `timetable`, `telephone`, `instagram`, `twitter`, `facebook`) VALUES
 (1, 'Cine Tampa', 'cine1.png', 'Carrer de l\'Olivar, 07001, Palma. Mallorca', 'contacto@cinesmallorca.com', 'Lunes 8:00 22:00\r\nMartes 8:00 22:00\r\nMiércoles 8:00 22:00\r\nJueves 8:00 22:00\r\nViernes 8:00 22:00\r\nSábado 8:00 00:00\r\nDomingo 8:00 00:00', '971 12 34 56', 'instagram.com', 'twitter.com', NULL),
 (2, 'Cine Cosmo', 'cine2.png', 'Carrer del Monestir, 5, 070234, Llucmajor. Mallorca', 'contacto@contactocosmo.com', 'Lunes 8:00 22:00\r\nMartes 8:00 22:00\r\nMiércoles 8:00 22:00\r\nJueves 8:00 22:00\r\nViernes 8:00 22:00\r\nSábado 8:00 00:00\r\nDomingo 8:00 00:00', '657 890 456', NULL, 'twitter.com/cosmos', 'facebook.com/cosmos');
 
@@ -68,7 +68,7 @@ INSERT INTO `cinemas` (`id`, `name`, `img`, `address`, `email`, `timetable`, `te
 -- Table structure for table `episodes`
 --
 
-CREATE TABLE `episodes` (
+CREATE TABLE IF NOT EXISTS `episodes` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE `episodes` (
 -- Dumping data for table `episodes`
 --
 
-INSERT INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `season`, `id_serie`) VALUES
+INSERT IGNORE INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `season`, `id_serie`) VALUES
 (1, 'Una sombra del pasado', 'Después de que el Señor Oscuro Morgoth es derrotado, el elfo Finrod muere buscando al sirviente de Morgoth, Sauron . La hermana de Finrod, Galadriel, jura continuar la búsqueda y encuentra una fortaleza abandonada en las tierras baldías del norte de Forodwaith que lleva la marca de Sauron. Sus compañeros insisten en regresar a la capital élfica, Lindon , donde el Gran Rey Gil-galad proclama que la guerra contra las fuerzas de Morgoth ha terminado. Le concede a Galadriel y su compañía el honor de navegar a Valinor , donde pueden vivir una vida eterna en paz. En las Tierras del Sur de la Tierra Media , los elfos vigilan a los hombres descendientes de aliados de Morgoth. Para la desaprobación de los demás elfos y hombres, el elfo Arondir se ha hecho amigo de la curandera humana Bronwyn. Juntos descubren que la aldea de Hordern ha sido destruida, mientras que el hijo de Bronwyn, Theo, encuentra una espada rota que lleva la marca de Sauron. Cerca de Valinor, Galadriel decide regresar y continuar la búsqueda de Sauron, saltando del barco a los Mares Divididos . Al mismo tiempo, dos Harfoots , Nori Brandyfoot y Poppy Proudfellow, descubren a un hombre extraño dentro de un cráter de meteorito.', 59, NULL, 1, 3),
 (2, 'A la deriva', 'Mientras nada de regreso a la Tierra Media, Galadriel se encuentra con una balsa con sobrevivientes humanos de un naufragio. Son atacados por un monstruo marino y solo uno sobrevive: Halbrand de las Tierras del Sur, que huye de los orcos . Él y Galadriel trabajan juntos para sobrevivir a una tormenta. Nori y Poppy mantienen al Extraño oculto de los otros Harfoots y le dan comida y refugio. Él no habla su idioma, pero usa luciérnagas y magia aparente para indicar que está buscando una constelación de estrellas que Nori no reconoce. Arondir investiga túneles debajo de Hordern y es capturado. Bronwyn regresa a su propia aldea, Tirharad, donde un orco la ataca a ella y a Theo. Lo matan y convencen al resto de la ciudad, incluido Waldreg, el dueño de la taberna, de que se vayan. Gil-galad envía al semielfo Elrond a Eregion para ayudar al gran herrero elfo Celebrimbor , que planea construir una nueva y poderosa forja. Elrond sugiere que busquen ayuda de los Enanos y se dirige a su amigo el Príncipe Durin IV en Khazad-dûm . Durin IV está enojado porque Elrond no lo ha visitado en 20 años, pero su esposa Disa lo convence de escuchar la propuesta de Elrond.', 57, NULL, 1, 3),
 (3, 'Los reyes elfos bajo el cielo', 'En los albores de la Segunda Edad, Sauron es traicionado y aparentemente asesinado por Adar y sus orcos. Sin embargo, sin que Adar lo sepa, el espíritu de Sauron persiste y recupera su forma física siglos después como Halbrand. Halbrand se une a un grupo de habitantes de las Tierras del Sur que huyen y luego naufraga en su viaje a través del mar, donde se encuentra por primera vez con Galadriel.', 57, NULL, 2, 3),
@@ -106,7 +106,7 @@ INSERT INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `season`
 -- Table structure for table `faq`
 --
 
-CREATE TABLE `faq` (
+CREATE TABLE IF NOT EXISTS `faq` (
   `id` int(11) NOT NULL,
   `question` text NOT NULL,
   `answer` text NOT NULL,
@@ -117,7 +117,7 @@ CREATE TABLE `faq` (
 -- Dumping data for table `faq`
 --
 
-INSERT INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
+INSERT IGNORE INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
 (1, '¿Qué es Maciflix?', 'Maciflix es una plataforma de video en streaming que te permite ver películas y series. Dispone de una tienda, online además de una opción de compra de entradas en cines.', 1),
 (2, 'What\'s Maciflix?', 'Maciflix is ​​a video streaming platform that allows you to watch movies and series. It has an online store as well as an option to buy tickets in cinemas.', 2),
 (3, 'Qu\'est-ce que Maciflix ?', 'Maciflix est une plateforme de streaming vidéo qui vous permet de regarder des films et des séries. Il dispose d\'une boutique en ligne ainsi que d\'une option d\'achat de billets dans les cinémas.', 3);
@@ -128,7 +128,7 @@ INSERT INTO `faq` (`id`, `question`, `answer`, `language`) VALUES
 -- Table structure for table `films`
 --
 
-CREATE TABLE `films` (
+CREATE TABLE IF NOT EXISTS `films` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE `films` (
 -- Dumping data for table `films`
 --
 
-INSERT INTO `films` (`id`, `name`, `description`, `img`, `home`, `onsite`, `mylist`, `id_cinema`) VALUES
+INSERT IGNORE INTO `films` (`id`, `name`, `description`, `img`, `home`, `onsite`, `mylist`, `id_cinema`) VALUES
 (1, 'Nemo', 'Pelicula de un pez y sus pezqueñines', 'Nemo.png', 1, 0, 0, NULL),
 (2, 'Toystory2', 'La historia de un playboy o algo asi, no se, no la he visto', 'Toystory.png', 1, 0, 0, 2),
 (3, 'Cars 2', 'La historia de un coche que puede hablar, lo que me hace plantearme que papel tienen los taxis en este nuevo mundo.', 'cars_2.png', 1, 0, 0, 1);
@@ -154,7 +154,7 @@ INSERT INTO `films` (`id`, `name`, `description`, `img`, `home`, `onsite`, `myli
 -- Table structure for table `language`
 --
 
-CREATE TABLE `language` (
+CREATE TABLE IF NOT EXISTS `language` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -163,7 +163,7 @@ CREATE TABLE `language` (
 -- Dumping data for table `language`
 --
 
-INSERT INTO `language` (`id`, `name`) VALUES
+INSERT IGNORE INTO `language` (`id`, `name`) VALUES
 (1, 'Español'),
 (2, 'English'),
 (3, 'Français');
@@ -174,7 +174,7 @@ INSERT INTO `language` (`id`, `name`) VALUES
 -- Table structure for table `payments`
 --
 
-CREATE TABLE `payments` (
+CREATE TABLE IF NOT EXISTS `payments` (
   `id` int(11) NOT NULL,
   `id_pedido` int(11) NOT NULL,
   `id_payment_method` int(11) NOT NULL,
@@ -187,7 +187,7 @@ CREATE TABLE `payments` (
 -- Table structure for table `payment_method`
 --
 
-CREATE TABLE `payment_method` (
+CREATE TABLE IF NOT EXISTS `payment_method` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -196,7 +196,7 @@ CREATE TABLE `payment_method` (
 -- Dumping data for table `payment_method`
 --
 
-INSERT INTO `payment_method` (`id`, `name`) VALUES
+INSERT IGNORE INTO `payment_method` (`id`, `name`) VALUES
 (1, 'Tarjeta de crédito'),
 (2, 'Bizum');
 
@@ -206,7 +206,7 @@ INSERT INTO `payment_method` (`id`, `name`) VALUES
 -- Table structure for table `product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
@@ -219,7 +219,7 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `description`, `price`, `img`, `stock`) VALUES
+INSERT IGNORE INTO `product` (`id`, `name`, `description`, `price`, `img`, `stock`) VALUES
 (1, 'Camiseta Maciflix', 'Lleva a Maciflix más cerca de tu corazón y permite que los más allegados sepan tus prioridades.', 45.99, NULL, 20),
 (2, 'Gorra Maciflix', 'No dejes que tu mente deje nunca de pensar en Maciflix. Pon tus neuronas a trabajar y no hagas spoiler!', 25.75, NULL, 10);
 
@@ -229,7 +229,7 @@ INSERT INTO `product` (`id`, `name`, `description`, `price`, `img`, `stock`) VAL
 -- Table structure for table `sala`
 --
 
-CREATE TABLE `sala` (
+CREATE TABLE IF NOT EXISTS `sala` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `rows` int(11) NOT NULL,
@@ -240,7 +240,7 @@ CREATE TABLE `sala` (
 -- Dumping data for table `sala`
 --
 
-INSERT INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
+INSERT IGNORE INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
 (1, 'Sala 1', 15, 20),
 (2, 'Sala 2', 7, 12);
 
@@ -250,7 +250,7 @@ INSERT INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
 -- Table structure for table `series`
 --
 
-CREATE TABLE `series` (
+CREATE TABLE IF NOT EXISTS `series` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
@@ -263,7 +263,7 @@ CREATE TABLE `series` (
 -- Dumping data for table `series`
 --
 
-INSERT INTO `series` (`id`, `name`, `description`, `img`, `home`, `n_seasons`) VALUES
+INSERT IGNORE INTO `series` (`id`, `name`, `description`, `img`, `home`, `n_seasons`) VALUES
 (1, 'Peaky Blinders', 'Peaky Blinders es una serie de televisión inglesa de drama histórico, emitida por el canal BBC Two. La serie está protagonizada por Cillian Murphy y se centra en una familia de gánsteres de Birmingham, durante los años veinte y del ascenso de su jefe, Thomas Shelby, un mafioso que dominará toda Inglaterra, después de afrontar una terrible guerra. Shelby, pese a ser un criminal y un mafioso, tiene rasgos antiheroicos, pues es un personaje ambivalente que, pese a su brutalidad, en muchas ocasiones es la única esperanza para terminar con otros villanos que pueden considerarse más viles y mezquinos que él', 'peaky.jpg', 1, 3),
 (2, 'Juego de tronos', 'Juego de tronos (en inglés: A Game of Thrones) es una novela de fantasía escrita por el autor estadounidense George R. R. Martin en 1996 y ganadora del premio Locus a la mejor novela de fantasía en 1997.1​ Se trata de la primera entrega de la serie de gran popularidad «Canción de hielo y fuego». La novela se caracteriza por su estética medieval,2​ la descripción de numerosos personajes bien detallados, la contraposición de puntos de vista de los múltiples protagonistas, su trama con giros inesperados y un uso sutil y moderado de los aspectos mágicos tan comunes en otras obras de fantasía heroica.', 'trono.jpg', 1, 1),
 (3, 'El Señor de los Anillos: los Anillos de Poder', 'El Señor de los Anillos: los Anillos de Poder es una serie de televisión producida por Amazon Prime basada en las historias y el universo creado por J.R.R. Tolkien. La serie, creada por J.D. Payne y Patrick McKay, estará basada en acontecimientos anteriores a El Señor de los Anillos, concretamente durante la Segunda Edad del Sol.', 'anillo.jpg', 1, 2);
@@ -274,7 +274,7 @@ INSERT INTO `series` (`id`, `name`, `description`, `img`, `home`, `n_seasons`) V
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -291,152 +291,7 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `cinemas`
---
-ALTER TABLE `cinemas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `episodes`
---
-ALTER TABLE `episodes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `faq`
---
-ALTER TABLE `faq`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `films`
---
-ALTER TABLE `films`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `language`
---
-ALTER TABLE `language`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `payments`
---
-ALTER TABLE `payments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `payment_method`
---
-ALTER TABLE `payment_method`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sala`
---
-ALTER TABLE `sala`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `series`
---
-ALTER TABLE `series`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `cinemas`
---
-ALTER TABLE `cinemas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `episodes`
---
-ALTER TABLE `episodes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `faq`
---
-ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `films`
---
-ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `language`
---
-ALTER TABLE `language`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `payments`
---
-ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `payment_method`
---
-ALTER TABLE `payment_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `sala`
---
-ALTER TABLE `sala`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `series`
---
-ALTER TABLE `series`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
