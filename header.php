@@ -18,8 +18,8 @@
           if ($result->num_rows > 0) {
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
-                echo "<option value='".$row['name']. "'></option>";
-            }
+              echo "<option value='".$row['name']."'>".$row['name']."</option>";
+          }          
           }
       ?>
     </select>
