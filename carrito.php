@@ -7,11 +7,27 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
       <link rel=stylesheet href=css/carrito.css>
-      <link rel="stylesheet" href="../css/style.css">
-      <link rel="stylesheet" href="../css/footer.css">
-      <iframe src="header.html"
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/footer.css">
+      <iframe src="header.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </head>
+    <?php
+        $servidor   = 'localhost';
+        $usuario    = 'root';
+        $contrasena = '';
+        $bd = 'maciflix';
+
+        // se crea la conexión
+        $bbdd = new mysqli($servidor, $usuario, $contrasena, $bd);
+
+        // se valida la conexión
+
+        if ($bbdd->connect_error) {
+
+            die('Hubo un fallo en la conexión ' . $bbdd->connect_error);
+        };
+    ?>
     <body>
       <h1>Carrito</h1>
         <div class="producto">
@@ -82,7 +98,7 @@
           }
         </script>
         <script src="js/botoncarrito.js"></script>
-      <iframe src="footer.html"
+      <iframe src="footer.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </body>
   </html>
