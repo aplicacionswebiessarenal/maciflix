@@ -29,7 +29,7 @@ $result = $bbdd->query($sql);
                 <h3 class="nombre_productos"><?= htmlspecialchars($product['name']) ?></h3>
 
                 <a href="product.php?id=<?= $product['id'] ?>">
-                    <img src="<?= htmlspecialchars($product['img'])?>" alt="<?= htmlspecialchars($product['name']) ?>" />
+                    <img src="img/<?= htmlspecialchars($product['img']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
                 </a>
 
                 <p><?= htmlspecialchars($product['description']) ?></p>
