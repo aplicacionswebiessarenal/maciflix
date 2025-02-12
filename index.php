@@ -1,4 +1,5 @@
 <?php include_once('conexion.php'); ?> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,7 +43,11 @@
           if ($result->num_rows > 0) {
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
-                echo "<img src='img/" . $row['img'] . "' alt='' />";
+              echo "<div>
+                      <a href='film.php?id=" . $row['id'] . "'>
+                        <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
+                      </a>
+                    </div>";
             }
           } else {
 
