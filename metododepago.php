@@ -53,7 +53,7 @@
               <div>
                 <img id=bizum src="../img/bizum.png">
                 <input type="tel" placeholder="numero de telefono" required>
-                  <a href="confirmacionpago.html">
+                  <a href="confirmacionpago.php">
                     <button class="total">Pagar</button>
                   </a>
               </div>
