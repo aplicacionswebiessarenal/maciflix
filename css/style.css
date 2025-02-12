@@ -184,9 +184,15 @@ section {
   height: 430px;
 }
 
-section img {
-  width: 0px;
+section {
   flex-grow: 1;
+  overflow: hidden;
+}
+
+section img {
+  width: 100%;
+  min-width: 100px;
+  height: 100%;
   object-fit: cover;
   opacity: 0.8;
   transition: 0.5s ease;
@@ -212,4 +218,3 @@ section img:hover {
   border-radius: 5px;
   text-align: end;
 }
-
