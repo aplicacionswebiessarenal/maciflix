@@ -51,7 +51,7 @@
             <div class="total">Total: $<span id="total">0.00</span></div>
         </div>
         <div>
-          <a href="metododepago.html">
+          <a href="metododepago.php">
             <button class="total">Confirmar transacion</button>
           </a>
         </div>
