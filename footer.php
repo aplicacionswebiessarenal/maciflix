@@ -1,3 +1,4 @@
+<?php include_once('conexion.php'); ?> 
 <!DOCTYPE html>
 <head><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,8 +84,7 @@
                         </div>
                     </div>
                 </div>
-    </footer>
-    </div>
+                </div>
                 <div class="lengua">
     <select id="language-selector">
     <?php 
@@ -97,7 +97,8 @@
         }
     ?>
     </select>
-</div>             
+</div>   
+    </footer>          
 </body>
 <script>
 // Capturar el cambio de idioma
@@ -110,3 +111,4 @@ document.getElementById("language-selector").addEventListener("change", function
     console.log(idiomaSeleccionado); // Puedes ver el valor en la consola si lo necesitas
 });
 </script>
+<?php $bbdd->close(); ?>
