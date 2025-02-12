@@ -83,7 +83,21 @@
                         </div>
                     </div>
                 </div>
-    </footer>     
+    </footer>
+    </div>
+                <div class="lengua">
+    <select id="language-selector">
+    <?php 
+        $sql = "SELECT * FROM language;";
+        $result = $bbdd->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value='".$row['id']."'>".$row['name']."</option>";
+            }          
+        }
+    ?>
+    </select>
+</div>             
 </body>
 <script>
 // Capturar el cambio de idioma
