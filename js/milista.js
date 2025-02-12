@@ -11,12 +11,19 @@ function hidePopup() {
 
 
 /*script para el faq.html*/
-function toggleRespuesta(button) {
-    const respuesta = button.nextElementSibling;
-  
-    if (respuesta.style.display === "none" || !respuesta.style.display) {
-      respuesta.style.display = "block";
-    } else {
-      respuesta.style.display = "none";
-    }
-  }
+  document.querySelectorAll('.faq-pregunta').forEach(button => {
+    button.addEventListener('click', () => {
+        let respuesta = button.nextElementSibling;
+
+        if (respuesta.style.display === 'block') {
+            respuesta.style.display = 'none';
+        } else {
+            // Primero ocultamos todas las respuestas antes de abrir una nueva
+            document.querySelectorAll('.faq-respuesta').forEach(resp => {
+                resp.style.display = 'none';
+            });
+
+            respuesta.style.display = 'block';
+        }
+    });
+});

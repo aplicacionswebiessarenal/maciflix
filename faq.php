@@ -33,11 +33,12 @@ $bbdd->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilosmilista.css">
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/milista.js"></script>   
     <title>Preguntas Frecuentes</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body id="FAQ">
+<body id="FAQ-body">
   
       <h1>PREGUNTAS FRECUENTES</h1>
       
@@ -52,8 +53,8 @@ $bbdd->close();
   <div id="faq">
           <?php foreach ($preguntas as $faq): ?>
               <div class="faq-item">
-                  <h3><?php echo htmlspecialchars($faq['question']); ?></h3>
-                  <p><?php echo htmlspecialchars($faq['answer']); ?></p>
+              <button class="faq-pregunta"><?php echo htmlspecialchars($faq['question']); ?></button>
+                  <p class="faq-respuesta"><?php echo htmlspecialchars($faq['answer']); ?></p>
               </div>
           <?php endforeach; ?>
   </div>
@@ -63,22 +64,22 @@ $bbdd->close();
         </div>
       </footer>
         <script>
-  document.querySelectorAll('.faq-pregunta').forEach(button => {
-      button.addEventListener('click', () => {
-          let respuesta = button.nextElementSibling;
+            document.querySelectorAll('.faq-pregunta').forEach(button => {
+                button.addEventListener('click', () => {
+                    let respuesta = button.nextElementSibling;
 
-          if (respuesta.style.display === 'block') {
-              respuesta.style.display = 'none';
-          } else {
-              // Primero ocultamos todas las respuestas antes de abrir una nueva
-              document.querySelectorAll('.faq-respuesta').forEach(resp => {
-                  resp.style.display = 'none';
-              });
+                    if (respuesta.style.display === 'block') {
+                        respuesta.style.display = 'none';
+                    } else {
+                        // Primero ocultamos todas las respuestas antes de abrir una nueva
+                        document.querySelectorAll('.faq-respuesta').forEach(resp => {
+                            resp.style.display = 'none';
+                        });
 
-              respuesta.style.display = 'block';
-          }
-      });
-  });
-  </script>
+                        respuesta.style.display = 'block';
+                    }
+                });
+            });
+         </script>
 </body>
 </html>

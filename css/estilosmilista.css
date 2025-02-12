@@ -170,8 +170,8 @@ footer p {
   font-size: 0.9rem;
 }
   /*estilos para FAQ.html*/
-  #FAQ {
-    background-image: url("/img/maciflix.jpg");
+  #FAQ-body {
+    background-image: url("img/maciflix.jpg");
     display: flex;
     flex-direction: column;
   }
