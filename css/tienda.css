@@ -62,18 +62,16 @@ h2 {
     height: 15em; 
     width: 15em;
     border-radius: 5%;
-    border-top-left-radius: 5%;
-    margin-bottom: 10px;
-    transition: 1s;
+    border: 1px solid #ccc;
+    transition: transform 1s ease, box-shadow 0.6s ease;
 }
 
 .producto img:hover {
-    margin: .7em;
-    height: 15.5em;
-    width: 15.5em;
+    transform: scale(1.05);
     box-shadow: 
-        0px 0px 10px red,
-        0px 0px 20px red;
+        0px -4px 10px rgb(218, 56, 56), 
+        0px 4px 10px rgb(218, 56, 56),  
+        0px 4px 15px rgb(218, 56, 56);
 }
 
 .producto p {
@@ -98,7 +96,6 @@ h2 {
 
 
 button {
-    cursor: pointer;
     padding: 0.4em;
 }
 
