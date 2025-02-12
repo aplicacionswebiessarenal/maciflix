@@ -20,7 +20,7 @@
                 <input type="text" placeholder="Numero de tarjeta" required>
                 <input type="CCV" placeholder="CCv" required>
                 <input type="date" placeholder="Fecha de caducidad" required>
-                <a href="confirmacionpago.html">
+                <a href="confirmacionpago.php">
                   <button class="total">Pagar</button>
                 </a>
               </div>
@@ -31,7 +31,7 @@
                 <img id=paypal src="../img/paypal.png">
                 <input type="email" placeholder="Correo electrónico" required>
                 <input type="password" placeholder="Contraseña" required>
-                <a href="confirmacionpago.html">
+                <a href="confirmacionpago.php">
                   <button class="total">Pagar</button>
                 </a>
               </div>
@@ -43,7 +43,7 @@
                 <input type="text" placeholder="Nombre y apellidos" required>
                 <input type="text" placeholder="Numero de cuenta" required>
                 <input type="text" placeholder="Asunto de compra" required>
-                <a href="confirmacionpago.html">
+                <a href="confirmacionpago.php">
                   <button class="total">Pagar</button>
                 </a>
               </div>
