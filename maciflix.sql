@@ -458,7 +458,7 @@ VALUES (
     'Camiseta Maciflix',
     'Lleva a Maciflix más cerca de tu corazón y permite que los más allegados sepan tus prioridades.',
     45.99,
-    NULL,
+    camiseta_maciflix.png,
     20
   ),
   (
