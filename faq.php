@@ -39,7 +39,8 @@ $bbdd->close();
 
 </head>
 <body id="FAQ-body">
-  
+<iframe src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
       <h1>PREGUNTAS FRECUENTES</h1>
       
       <form method="GET">
