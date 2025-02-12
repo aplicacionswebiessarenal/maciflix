@@ -1,114 +1,39 @@
+<?php include_once('conexion.php'); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maciflix</title>
+    <title>Maciflix - Series</title>
     <link rel="stylesheet" href="css/estilosseries.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
-    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <iframe src="header.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     <header>
-    <h1>
-        Series
-    </h1>
+        <h1>Series</h1>
     </header>
     <main>
-    <div class="series-container">
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/athletic.png" alt="Serie 1">
-                <span>Serie 1</span>
-            </a>
+        <div class="series-container">
+            <?php
+            $sql = "SELECT id, name, img FROM series"; // Asegúrate de que 'name' es la columna correcta
+            $result = $bbdd->query($sql);
+            while ($row = $result->fetch_assoc()): ?>
+                <div class="serie">
+                    <a href="serie1.php?id=<?= $row['id'] ?>">
+                        <img src="<?= htmlspecialchars($row['img']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
+                        <span><?= htmlspecialchars($row['name']) ?></span>
+                    </a>
+                </div>
+            <?php endwhile; ?>
         </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/atlmadrid.png" alt="Serie 2">
-                <span>Serie 2</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/barcelona.png" alt="Serie 3">
-                <span>Serie 3</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/betis.png" alt="Serie 4">
-                <span>Serie 4</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/celta.png" alt="Serie 5">
-                <span>Serie 5</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/getafe.png" alt="Serie 6">
-                <span>Serie 6</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/girona.png" alt="Serie 7">
-                <span>Serie 7</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/mallorca.png" alt="Serie 8">
-                <span>Serie 8</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/osasuna.png" alt="Serie 9">
-                <span>Serie 9</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/rayovallecano.png" alt="Serie 10">
-                <span>Serie 10</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/realmadrid.png" alt="Serie 11">
-                <span>Serie 11</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/realsociedad.png" alt="Serie 12">
-                <span>Serie 12</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/sevilla.png" alt="Serie 13">
-                <span>Serie 13</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/udlaspalmas.png" alt="Serie 14">
-                <span>Serie 14</span>
-            </a>
-        </div>
-        <div class="serie">
-            <a href="serie1.html">
-                <img src="img/villarreal.png" alt="Serie 15">
-                <span>Serie 15</span>
-            </a>
-        </div>
-    </div>
     </main>
     <footer>
-    <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        <iframe src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </footer>
+</body>
+</html>
+
+<?php $bbdd->close(); ?>

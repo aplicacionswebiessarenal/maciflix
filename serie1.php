@@ -1,113 +1,72 @@
+<?php include_once('conexion.php'); 
+
+// Obtener el ID de la serie seleccionada
+$id_serie = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+// Obtener detalles de la serie
+$sql_serie = "SELECT name AS title, img AS img FROM series WHERE id = ?";
+$stmt_serie = $bbdd->prepare($sql_serie);
+$stmt_serie->bind_param("i", $id_serie);
+$stmt_serie->execute();
+$result_serie = $stmt_serie->get_result();
+$serie = $result_serie->fetch_assoc();
+
+// Obtener capítulos de la serie
+$sql_capitulos = "SELECT title, img FROM capitulos WHERE serie_id = ?";
+$stmt_capitulos = $bbdd->prepare($sql_capitulos);
+$stmt_capitulos->bind_param("i", $id_serie);
+$stmt_capitulos->execute();
+$result_capitulos = $stmt_capitulos->get_result();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maciflix</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilosseries1.css">
+    <title><?= htmlspecialchars($serie['title']) ?></title>
+    <link rel="stylesheet" href="css/estilosseries1.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     <header>
-        <h1>Serie 1</h1>
+        <h1><?= htmlspecialchars($serie['title']) ?></h1>
     </header>
     <main>
         <div class="serie-detalle">
-            <img src="img/plantillama.png" alt="Plantilla Ma" class="imagen-serie">
+            <img src="<?= htmlspecialchars($serie['img']) ?>" alt="<?= htmlspecialchars($serie['title']) ?>" class="imagen-serie">
             <div class="detalle-serie">
-                <h2>Plantilla Mallorca</h2>
-                <p>El Real Club Deportivo Mallorca, comúnmente conocido como Mallorca, es un equipo de fútbol profesional con sede en Palma, la capital de la isla de Mallorca, en las Islas Baleares, España. Fundado en 1916, es uno de los clubes históricos del fútbol español y cuenta con una rica tradición y una base sólida de aficionados.</p>
-                <button class="reproducir">Reproducir</button>
+                <h2><?= htmlspecialchars($serie['title']) ?></h2>
+                <p>Descripción de la serie aquí.</p>
             </div>
         </div>
         
         <!-- Temporadas -->
         <div class="temporadas">
-            <button class="temporada-button" id="temporada-1-button">Temporada 1</button>
-            <div class="temporada-content" id="temporada-1-content">
-                <div class="capitulos-container">
+            <h3>Capítulos</h3>
+            <div class="capitulos-container">
+                <?php while ($capitulo = $result_capitulos->fetch_assoc()): ?>
                     <div class="capitulo">
-                        <img src="img/athletic.png" alt="Capítulo 1">
-                        <span>Capítulo 1</span>
+                        <img src="<?= htmlspecialchars($capitulo['img']) ?>" alt="<?= htmlspecialchars($capitulo['title']) ?>">
+                        <span><?= htmlspecialchars($capitulo['title']) ?></span>
                     </div>
-                    <div class="capitulo">
-                        <img src="img/atlmadrid.png" alt="Capítulo 2">
-                        <span>Capítulo 2</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/barcelona.png" alt="Capítulo 3">
-                        <span>Capítulo 3</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/betis.png" alt="Capítulo 4">
-                        <span>Capítulo 4</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/celta.png" alt="Capítulo 5">
-                        <span>Capítulo 5</span>
-                    </div>
-                </div>
-            </div>
-            <button class="temporada-button" id="temporada-2-button">Temporada 2</button>
-            <div class="temporada-content" id="temporada-2-content">
-                <div class="capitulos-container">
-                    <div class="capitulo">
-                        <img src="img/getafe.png" alt="Capítulo 6">
-                        <span>Capítulo 6</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/girona.png" alt="Capítulo 7">
-                        <span>Capítulo 7</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/mallorca.png" alt="Capítulo 8">
-                        <span>Capítulo 8</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/osasuna.png" alt="Capítulo 9">
-                        <span>Capítulo 9</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/rayovallecano.png" alt="Capítulo 10">
-                        <span>Capítulo 10</span>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="temporada-button" id="temporada-3-button">Temporada 3</button>
-            <div class="temporada-content" id="temporada-3-content">
-                <div class="capitulos-container">
-                    <div class="capitulo">
-                        <img src="img/realmadrid.png" alt="Capítulo 11">
-                        <span>Capítulo 11</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/realsociedad.png" alt="Capítulo 12">
-                        <span>Capítulo 12</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/sevilla.png" alt="Capítulo 13">
-                        <span>Capítulo 13</span>
-                    </div>
-                    <div class=" capitulo">
-                        <img src="img/udlaspalmas.png" alt="Capítulo 14">
-                        <span>Capítulo 14</span>
-                    </div>
-                    <div class="capitulo">
-                        <img src="img/villarreal.png" alt="Capítulo 15">
-                        <span>Capítulo 15</span>
-                    </div>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
         <div class="botonseries">
-            <a href="series.html" class="volveraseries">atras</a>
+            <a href="series.php" class="volveraseries">Atrás</a>
         </div>
-        <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </main>
-    <script src="js/series.js"></script>
+    <footer>
+        <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    </footer>
 </body>
 </html>
+
+<?php
+$stmt_serie->close();
+$stmt_capitulos->close();
+$bbdd->close();
+?>
