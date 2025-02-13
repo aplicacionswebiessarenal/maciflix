@@ -302,7 +302,7 @@ VALUES (
 -- --------------------------------------------------------
 --
 -- Table structure for table `films`
---
+-- Mas pull
 CREATE TABLE IF NOT EXISTS `films` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
