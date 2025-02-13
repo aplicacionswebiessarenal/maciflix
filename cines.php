@@ -13,14 +13,14 @@
     </head>
     <body>
     <!-- Titulo -->
-    <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <iframe src="header.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
         <h1>Cines disponibles</h1> 
     <!-- Las peliculas disponibles -->
         <div class="contenedor-de-cines">
             <div class="foto_y_nombre">
                 <div class="cine-individual" id="cine1">
                     <div class="fotocine">
-                        <a href="/peliculasdisponiblescines.html">
+                        <a href="/peliculasdisponiblescines.php">
                             <img src="/img/cine1.png" alt="Cine Tampa">
                         </a>
                     </div>
@@ -46,7 +46,7 @@
             <div class="foto_y_nombre">
                 <div class="cine-individual" id="cine1">
                     <div class="fotocine">
-                        <a href="/peliculasdisponiblescines.html">
+                        <a href="/peliculasdisponiblescines.php">
                             <img src="/img/cine2.png" alt="Cine Cosmo">
                         </a>
                     </div>
@@ -71,6 +71,6 @@
             </div>
         </div>
         <script src="/js/cines.js"></script>
-        <iframe src="footer.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        <iframe src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </body>
 </html>

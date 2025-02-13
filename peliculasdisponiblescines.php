@@ -12,28 +12,27 @@
         <link rel="stylesheet" href="../css/footer.css">
     </head>
     <body>
-        <iframe src="header.html"
-            onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        <iframe src="header.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
         <!-- Titulo -->
         <h1>Peliculas</h1>
         <!-- Las peliculas disponibles -->
         <div class="contenedor-de-peliculas">
             <div class="pelicula-individual">
-                <a href="compratusentradas.html"><img src="/img/avatar.png"
+                <a href="compratusentradas.php"><img src="/img/avatar.png"
                         alt="Avatar" class="imagenes"></a>
                 <div class="pelicula_detalles_1">
                     <div class="pelicula_titulo_1"><h2>Avatar</h2></div>
                 </div>
             </div>
             <div class="pelicula-individual">
-                <a href="compratusentradas.html"><img src="/img/sonic3.jpg"
+                <a href="compratusentradas.php"><img src="/img/sonic3.jpg"
                         alt="Sonic 3" class="imagenes"></a>
                 <div class="pelicula_detalles_1">
                     <div class="pelicula_titulo_1"><h2>Sonic 3</h2></div>
                 </div>
             </div>
             <div class="pelicula-individual">
-                <a href="compratusentradas.html"><img
+                <a href="compratusentradas.php"><img
                         src="/img/mansionenbrujada.jpeg" alt="Mansion Enbrujada"
                         class="imagenes">
                 </a>
@@ -42,7 +41,7 @@
                 </div>
             </div>
             <div class="pelicula-individual">
-                <a href="compratusentradas.html"><img src="/img/avengers.jpg"
+                <a href="compratusentradas.php"><img src="/img/avengers.jpg"
                         alt="avengers" class="imagenes"></a>
                 <div class="pelicula_detalles_1">
                     <div class="pelicula_titulo_1"><h2>Avengers</h2></div>
@@ -51,8 +50,7 @@
             <script src="/js/peliculasdisponibles.js"></script>
         </div>
         <iframe
-            src="footer.html"
-            onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+            src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
         ></iframe>
     </body>
 </html>
