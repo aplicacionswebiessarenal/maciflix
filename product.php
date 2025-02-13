@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maciflix España - Camiseta Maciflix</title>
+    <title>Maciflix España - <?= htmlspecialchars($product['name']) ?> </title>
     <link rel="icon" type="image/x-icon" href="img/logomaciflix.png">
     <link rel="stylesheet" href="css/animacionboton.css" />
     <link rel="stylesheet" href="css/footer.css">
@@ -20,11 +20,11 @@
 
     <div class="producto_detalle">
         <div class="imagen_producto">
-            <img src="img/camiseta_maciflix.png" alt="Camiseta Maciflix">
+            <img src="img/<?= htmlspecialchars($product['img']) ?>" alt="<?= htmlspecialchars($product['name'])?>">
         </div>
 
         <div class="información_producto">
-            <h3 class="nombre_productos">Camiseta Maciflix</h3>
+            <h3 class="nombre_productos"><?= htmlspecialchars($product['name']) ?></h3>
             <p>Esta es una camiseta muy cómoda de nuestra marca personal Maciflix por ahora solo la vendemos en talla única.</p>
             <p>Estamos preparando muchos más productos de la marca Maciflix para sacarlos a la venta dentro de poco habrá sorpresas al comprar esta camiseta entras en el sorteo de un producto sorpresa de la marca Maciflix.</p>
             
