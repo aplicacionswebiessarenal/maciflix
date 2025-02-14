@@ -55,49 +55,6 @@
             <button class="total">Confirmar transacion</button>
           </a>
         </div>
-        <script>
-          const cartItems = [];
-          const cartContainer = document.getElementById('carritoproducto');
-          const totalContainer = document.getElementById('total');
-          
-          function addToCart(productName, price) {
-            // Añade el producto al carrito
-            cartItems.push({ name: productName, price: price });
-            
-            // Hace que se vea lo que añades 
-            updateCart();
-          }
-          
-          function updateCart() {
-            // Hace que cuando pulses en un objeto no coja tambien el que has escogido previamente 
-            cartContainer.innerHTML = '';
-            
-            // Actualiza los elementos del carrito
-            let total = 0;
-            cartItems.forEach((item, index) => {
-              total += item.price;
-              const cartItem = document.createElement('div');
-              cartItem.classList.add('cart-item');
-              cartItem.innerHTML = `
-                <span>${item.name}</span>
-                <span>$${item.price.toFixed(2)}</span>
-                <button onclick="removeFromCart(${index})">Eliminar</button>
-              `;
-              cartContainer.appendChild(cartItem);
-            });
-            // Actualiza el total
-            totalContainer.textContent = total.toFixed(2);
-          }
-          
-          function removeFromCart(index) {
-            // Elimina el producto
-            cartItems.splice(index, 1);
-            
-            // Actualizar el carrito visualmente
-            updateCart();
-          }
-        </script>
-        <script src="js/botoncarrito.js"></script>
       <iframe src="footer.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </body>
