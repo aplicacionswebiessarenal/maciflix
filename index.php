@@ -1,10 +1,12 @@
 <?php include_once('conexion.php'); ?> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="img/logomaciflix.png">
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,7 +44,11 @@
           if ($result->num_rows > 0) {
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
-                echo "<img src='img/" . $row['img'] . "' alt='' />";
+              echo "<div>
+                      <a href='film.php?id=" . $row['id'] . "'>
+                        <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
+                      </a>
+                    </div>";
             }
           } else {
 
@@ -52,46 +58,57 @@
         </section>
       </div>
     </div>
-    <div class="contenedorcarrusel">
-      <!--Aqui quiero meter el carrusel-->
-      <div>
-        <h2>Series en nuestro catalogo</h2>
-      </div>
-      <section>
-      <?php 
+    <div>
+      <div class="contenedorcarrusel">
+        <!--Aqui quiero meter el carrusel-->
+        <div>
+          <h2>Series en nuestro catalogo</h2>
+        </div>
+        <section>
+        <?php 
         $sql = "SELECT * FROM series WHERE home=1";
         $result = $bbdd->query($sql);
           if ($result->num_rows > 0) {
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
-                echo "<img src='img/" . $row['img'] . "' alt='' />";
+              echo "<div>
+                      <a href='film.php?id=" . $row['id'] . "'>
+                        <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
+                      </a>
+                    </div>";
             }
           } else {
 
               echo "Sin información ingresada aún";
           }
           ?>
-      </section>
-    </div>
-    <div class="contenedorcarrusel">
-      <div>
-        <h2>Cines de la compañia</h2>
+        </section>
       </div>
-      <section>
-      <?php 
+    </div>
+    <div>
+      <div class="contenedorcarrusel">
+        <!--Aqui quiero meter el carrusel-->
+        <div>
+          <h2>Cines</h2>
+        </div>
+        <section>
+        <?php 
         $sql = "SELECT * FROM cinemas";
         $result = $bbdd->query($sql);
           if ($result->num_rows > 0) {
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
-                echo "<img src='img/" . $row['img'] . "' alt='' />";
+              echo "<div>
+                      <a href='film.php?id=" . $row['id'] . "'>
+                        <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
+                      </a>
+                    </div>";
             }
           } else {
 
               echo "Sin información ingresada aún";
           }
           ?>
-      </section>
     </div>
     <br>
     <iframe
