@@ -57,9 +57,9 @@
 
 </html>
 
-<?php
+<?php /*
 if ($conn->connect_error) {
-  die("Error de conexión: " . $conn->connect_error);
+die("Error de conexión: " . $conn->connect_error);
 }
 
 $usuario = $_POST["usuario"];
@@ -68,7 +68,7 @@ $password = $_POST["password"];
 $confirm_password = $_POST["confirm_password"];
 
 if ($password !== $confirm_password) {
-  die("Las contraseñas no coinciden.");
+die("Las contraseñas no coinciden.");
 }
 
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
@@ -78,11 +78,11 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("sss", var: $usuario, $email, $password_hash);
 
 if ($stmt->execute()) {
-  echo "Registro exitoso. <a href='iniciarsesion.php'>Inicia sesión aquí</a>";
+echo "Registro exitoso. <a href='iniciarsesion.php'>Inicia sesión aquí</a>";
 } else {
-  echo "Error al registrar: " . $conn->error;
+echo "Error al registrar: " . $conn->error;
 }
 
 $stmt->close();
 $conn->close();
-?>
+?>*/
