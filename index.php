@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="img/logomaciflix.png">
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,7 +45,7 @@
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
               echo "<div>
-                      <a href='film.php?id=" . $row['id'] . "'>
+                      <a href='pelicula.php?id=" . $row['id'] . "'>
                         <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
                       </a>
                     </div>";
@@ -71,7 +72,7 @@
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
               echo "<div>
-                      <a href='film.php?id=" . $row['id'] . "'>
+                      <a href='serie1.php?id=" . $row['id'] . "'>
                         <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
                       </a>
                     </div>";
@@ -98,7 +99,7 @@
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
               echo "<div>
-                      <a href='film.php?id=" . $row['id'] . "'>
+                      <a href='peliculasdisponiblescines.php?id=" . $row['id'] . "'>
                         <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
                       </a>
                     </div>";
