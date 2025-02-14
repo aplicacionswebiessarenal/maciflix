@@ -9,6 +9,62 @@
     <link rel="stylesheet" href="css/estilosseries.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <style>
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        .series-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .serie {
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 10px;
+            width: 300px;
+        }
+        .serie img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .serie:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+        .boton {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .boton:hover {
+            background-color: #f40612;
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function toggleDescription(id) {
+            const desc = document.getElementById('desc-' + id);
+            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
     <iframe src="header.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
@@ -17,17 +73,27 @@
     </header>
     <main>
         <div class="series-container">
-            <?php
-            $sql = "SELECT id, name, img FROM series"; // Asegúrate de que 'name' es la columna correcta
-            $result = $bbdd->query($sql);
+        <?php
+        $sql = "SELECT id, name, img, description FROM series"; 
+        $result = $bbdd->query($sql);
+
+        if ($result) {
             while ($row = $result->fetch_assoc()): ?>
                 <div class="serie">
-                    <a href="serie1.php?id=<?= $row['id'] ?>">
-                        <img src="<?= htmlspecialchars($row['img']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
+                    <a href="serie1.php?id=<?= htmlspecialchars($row['id']) ?>">
+                        <img src="img/<?= htmlspecialchars($row['img']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
                         <span><?= htmlspecialchars($row['name']) ?></span>
                     </a>
+                    <button class="boton" onclick="toggleDescription(<?= htmlspecialchars($row['id']) ?>)">Ver Detalles</button>
+                    <div class="description" id="desc-<?= htmlspecialchars($row['id']) ?>">
+                        <?= htmlspecialchars($row['description']) ?>
+                    </div>
                 </div>
-            <?php endwhile; ?>
+            <?php endwhile; 
+        } else {
+            echo "Error en la consulta: " . htmlspecialchars($bbdd->error);
+        }
+        ?>
         </div>
     </main>
     <footer>
@@ -35,5 +101,3 @@
     </footer>
 </body>
 </html>
-
-<?php $bbdd->close(); ?>
