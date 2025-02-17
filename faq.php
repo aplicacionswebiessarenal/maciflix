@@ -11,8 +11,11 @@ if ($bbdd->connect_error) {
     die('Error en la conexión: ' . $bbdd->connect_error);
 }
 
-// Definir el idioma seleccionado
-$idioma = isset($_GET['lang']) ? (int)$_GET['lang'] : 1;
+if (!isset($_GET['lang'])) {
+    header("Location: ?lang=1"); // Redirige a la misma página con ?lang=1
+    exit();
+}
+$idioma = (int)$_GET['lang'];
 
 // Obtener las preguntas frecuentes en el idioma seleccionado
 $sql = "SELECT question, answer FROM faq WHERE language = ?";
