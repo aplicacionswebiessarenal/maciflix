@@ -54,7 +54,10 @@ $bbdd->close();
   <div id="faq">
           <?php foreach ($preguntas as $faq): ?>
               <div class="faq-item">
-              <button class="faq-pregunta"><?php echo htmlspecialchars($faq['question']); ?></button>
+              <button class="faq-pregunta">
+                <?php echo htmlspecialchars($faq['question']); ?>
+                <span class="faq-icon">&#9660;</span> <!-- Icono de despliegue -->
+            </button>
                   <p class="faq-respuesta"><?php echo htmlspecialchars($faq['answer']); ?></p>
               </div>
           <?php endforeach; ?>

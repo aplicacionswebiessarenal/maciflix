@@ -147,9 +147,9 @@ footer p {
     margin-bottom: 10px;
     border-bottom: 1px solid #444;
     padding: 10px 0;
-  }
-  
-  .faq-pregunta {
+}
+
+.faq-pregunta {
     background-color: transparent;
     color: white;
     font-size: 1.2rem;
@@ -160,8 +160,14 @@ footer p {
     cursor: pointer;
     padding: 10px 0;
     transition: color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  .faq-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
   }
-  
   .faq-pregunta:hover {
     color: #ff5555;
   }
@@ -171,5 +177,4 @@ footer p {
     padding: 10px 0;
     color: #aaa;
     font-size: 1rem;
-
   }
