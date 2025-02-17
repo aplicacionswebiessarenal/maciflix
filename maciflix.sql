@@ -305,6 +305,17 @@ CREATE TABLE `users` (
   `surname2` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- -------------------------------------------------------
+
+CREATE TABLE `mi_lista` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `imagen` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+-- --------------------------------------------------------
 --
 -- Índices para tablas volcadas
 --
@@ -381,6 +392,9 @@ ALTER TABLE `series`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `mi_lista`
+  ADD PRIMARY KEY (`id`);
+
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -455,6 +469,9 @@ ALTER TABLE `series`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `mi_lista`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
