@@ -25,7 +25,7 @@
                         <div class="cine-individual">
                             <div class="fotocine">
                                 <a href="peliculasdisponiblescines.php?id=<?= $row['id'] ?>">
-                                    <img src="<?= htmlspecialchars($row['img']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
+                                    <img src="img/<?= htmlspecialchars($row['img']) ?>" alt="<?= htmlspecialchars($row['name']) ?>">
                                 </a>
                             </div>
                             <div class="cine_titulo">
