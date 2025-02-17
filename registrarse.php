@@ -27,16 +27,20 @@
     <div class="login">
       <form action="registrarse.php" method="POST">
         <h2 id="title">Crea tu cuenta</h2>
-        <input type="text" class="password" placeholder="Nombre de usuario" />
+        <form action="process.php" method="POST">
+          <input type="text" name="username" class="password" placeholder="Nombre de usuario" required />
 
-        <input type="email" id="email" placeholder="Email" required />
-        <input type="password" class="password" placeholder="Contraseña" required />
-        <input type="password" class="password" placeholder="Confirma Contraseña" required />
-        <input type="text" class="password" placeholder="Numero de tarjeta" />
-        <input type="text" class="password" placeholder="Dirección" />
-        <input type="text" class="password" placeholder="Nombre" />
-        <input type="text" class="password" placeholder="Apellido 1" />
-        <input type="text" class="password" placeholder="Apellido 2" />
+          <input type="email" name="email" id="email" placeholder="Email" required />
+          <input type="password" name="password" class="password" placeholder="Contraseña" required />
+          <input type="password" name="confirm_password" class="password" placeholder="Confirma Contraseña" required />
+          <input type="text" name="card_number" class="password" placeholder="Numero de tarjeta" />
+          <input type="text" name="address" class="password" placeholder="Dirección" />
+          <input type="text" name="first_name" class="password" placeholder="Nombre" required />
+          <input type="text" name="last_name1" class="password" placeholder="Apellido 1" required />
+          <input type="text" name="last_name2" class="password" placeholder="Apellido 2" required />
+
+          <button type="submit">Enviar</button>
+        </form>
         <button type="button" id="sign_up_button" class="glow_on_hover">
           Crear
         </button>
@@ -59,13 +63,12 @@
 </body>
 
 </html>
-<?php 
+<?php
 
 include_once("conexion.php");
 
 $conn = $bbdd;
 
-// TODO: Comprobar que la información realmente se esta recogiendo, literalmente esto ahora no pilla ninguna info pq soy retrasao y esta mal puesto
 $usuario = isset($_POST["usuario"]) ? $_POST["usuario"] : null;
 $email = isset($_POST["email"]) ? $_POST["email"] : null;
 $password = isset($_POST["password"]) ? $_POST["password"] : null;
@@ -73,13 +76,13 @@ $confirm_password = isset($_POST["confirm_password"]) ? $_POST["confirm_password
 $card = isset($_POST["?"]) ? $_POST["?"] : null;
 $address = isset($_POST["?"]) ? $_POST["?"] : null;
 $name = isset($_POST["?"]) ? $_POST["?"] : null;
-$firstSurname= isset($_POST["?"]) ? $_POST["?"] : null;
+$firstSurname = isset($_POST["?"]) ? $_POST["?"] : null;
 $secondSurname = isset($_POST["?"]) ? $_POST["?"] : null;
 
-if (!$usuario || !$email || !$password || !$confirm_password || $password!=$confirm_password) {
-    echo "<h1>Error: Missing fields</h1>";
-    exit; 
-} else 
+if (!$usuario || !$email || !$password || !$confirm_password || $password != $confirm_password) {
+  echo "<h1>Error: Missing fields</h1>";
+  exit;
+} else {
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
   // TODO: Modificar query SQL 
   $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
