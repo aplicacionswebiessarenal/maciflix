@@ -79,7 +79,7 @@ $first_name = $_POST['first_name'] ?? '';
 $last_name1 = $_POST['last_name1'] ?? '';
 $last_name2 = $_POST['last_name2'] ?? '';
 
-if (empty($username) || empty($email) || empty($password) || empty($confirm_pass) || empty($first_name) || empty($last_name1) || empty($last_name2)) {
+if (empty($username) || empty($email) || empty($password) || empty($confirm_pass) || empty($first_name) || empty($last_name1) || empty($last_name2) || $password != $confirm_pass) {
   die("Error: Todos los campos obligatorios deben ser completados.");
 } else {
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
