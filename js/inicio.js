@@ -1,4 +1,3 @@
-
 function showPopup(movie) {
     document.getElementById('popup').style.display = 'flex';
 }
