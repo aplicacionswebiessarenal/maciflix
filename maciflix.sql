@@ -215,7 +215,9 @@ CREATE TABLE `payment_method` (
 
 INSERT INTO `payment_method` (`id`, `name`) VALUES
 (1, 'Tarjeta de crédito'),
-(2, 'Bizum');
+(2, 'Paypal'),
+(3, 'Transferencia bancaria'),
+(4, 'Bizum');
 
 -- --------------------------------------------------------
 
