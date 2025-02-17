@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-02-2025 a las 13:30:45
+-- Tiempo de generación: 17-02-2025 a las 10:45:00
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -81,53 +81,26 @@ CREATE TABLE `episodes` (
 --
 -- Volcado de datos para la tabla `episodes`
 --
-INSERT IGNORE INTO `episodes` (
-    `id`,
-    `name`,
-    `description`,
-    `duration`,
-    `img`,
-    `season`,
-    `id_serie`
-  )
-VALUES (
-    (1, 'Episode 1.1', 'Thomas Shelby, el ambicioso cabecilla de una banda, reconoce una oportunidad para medrar gracias a un cargamento perdido de pistolas.', 56, NULL, 1, 1),
-(2, 'Episode 1.2', 'Thomas provoca a un capo local al amañar una carrera de caballos, iniciando una guerra contra una familia gitana. El inspector Campbell lleva a cabo una violenta redada.', 58, NULL, 1, 1),
-(3, 'Episode 1.3', 'Thomas planea acercarse a Billy Kimber en las carreras de Cheltenham, y sopesa la oferta de unos simpatizantes del IRA que quieren comprarle sus pistolas robadas.', 54, NULL, 1, 1),
-(4, 'Episode 2.1', 'Una bomba destruye el pub Garrison, guarida de Tommy Shelby, jefe del hampa de Birmingham chantajeado por el asesinato de un disidente irlandés.', 54, NULL, 2, 1),
-(5, 'Episode 2.2', 'Después de asesinar a un disidente irlandés, Tommy se convierte en una pieza más de las intrigas políticas del pérfido inspector Campbell.', 56, NULL, 2, 1),
-(6, 'Episode 2.3', 'Tommy se une al jefe del hampa londinense Alfie Solomons en un nuevo negocio, pero teme que el carácter inestable de Alfie pueda darle problemas.', 60, NULL, 2, 1),
-(7, 'Episode 3.1', 'El día de la boda de Tommy, un nuevo socio organiza una transacción secreta. Arthur ha encontrado a una mujer devota. Polly conoce a un hombre atractivo.', 61, NULL, 3, 1),
-(8, 'Episode 3.2', 'Una amenaza descuidada provoca una guerra. Tommy recibe una extraña recompensa, pero sus jefes exhiben su poder para mantenerlo a raya. Polly encarga un retrato.', 62, NULL, 3, 1),
-(9, 'Episode 3.3', 'Tommy viaja a Gales en busca de absolución y descubre a un traidor. Michael le coge el gusto a las armas. Arthur recibe buenas noticias.', 61, NULL, 3, 1),
-(10, 'Winter Is Coming', '«Winter Is Coming» es el primer episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 62 minutos y se estrenó el 17 de abril de 2011 en Estados Unidos.1​ Escrito por los creadores del programa David Benioff y D. B. Weiss a manera de fiel adaptación de los primeros capítulos del libro del mismo nombre redactado por George R. R. Martin, «Se acerca el invierno» contó con la dirección de Tim Van Patten, quien partió del trabajo hecho por el director Thomas McCarthy en un piloto inédito.2​\r\n\r\nAl ser el primer episodio de Juego de tronos, introduce al escenario y a los protagonistas de la historia, centrándose en la familia Stark y la manera en que su señor, Eddard, se involucra en las políticas de la corte una vez que el rey, Robert Baratheon, lo nombra como su Mano, en sustitución de su fallecido predecesor, Jon Arryn.', 102, NULL, 1, 2),
-(11, 'El Camino Real', '«El Camino Real» es el segundo episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 56 minutos y se transmitió por primera vez el 24 de abril de 2011. Fue escrito por David Benioff y D.B. Weiss, y dirigido por Tim Van Patten.2​\r\n\r\nLa mayor parte del episodio transcurre mientras los protagonistas se hallan viajando: Eddard Stark y sus hijas acompañan al séquito del rey rumbo a Desembarco del Rey para ocupar el puesto de Mano, Tyrion se une a Jon en su viaje hacia el Muro, y la recién casada Daenerys va con el khalasar de su esposo a la ciudad dothraki de Vaes Dothrak. Mientras tanto, en Invernalia, una dolida Catelyn Stark cuida de su inconsciente hijo Bran.', 100, NULL, 1, 2),
-(12, 'The North Remembers', '«The North Remembers» es el primer episodio de la segunda temporada de la serie de fantasía medieval Game of Thrones de HBO. Tiene una duración de 53 minutos y se estrenó el 1 de abril de 2012 en Estados Unidos. Fue escrito por sus creadores David Benioff y D. B. Weiss y dirigido por Alan Taylor.\r\n\r\nEl episodio continúa con los personajes de la primera temporada y sus historias, con la mayoría de los protagonistas separados por todos los Siete Reinos después de los dramáticos eventos acaecidos al final de la primera temporada. El episodio incluye a nuevos personajes localizados en Rocadragón, donde el hermano del Rey Robert, Stannis Baratheon, emerge como un nuevo pretendiente al trono.', 102, NULL, 1, 2),
-(13, 'Los reyes elfos bajo el cielo', 'En los albores de la Segunda Edad, Sauron es traicionado y aparentemente asesinado por Adar y sus orcos. Sin embargo, sin que Adar lo sepa, el espíritu de Sauron persiste y recupera su forma física siglos después como Halbrand. Halbrand se une a un grupo de habitantes de las Tierras del Sur que huyen y luego naufraga en su viaje a través del mar, donde se encuentra por primera vez con Galadriel.', 57, NULL, 2, 3),
-(14, 'Adar', 'Arondir es capturado. Galadriel y Halbrand exploran un reino legendario. A Elendil le encargan una nueva misión. Nori afronta las consecuencias.', 58, NULL, 1, 3),
-(15, 'Donde las estrellas son extrañas', 'La erupción del Monte del Destino provoca movimientos sísmicos en toda la Tierra Media, lo que provoca un terremoto en Khazad-Dum que destruye gran parte de la agricultura y la infraestructura de la ciudad. Esto amplía aún más la brecha entre Durin III y Durin IV, ya que ambos se muestran reacios a poner fin a su disputa. El Extraño, Nori y Poppy continúan su viaje hacia Rhun. La falta de comida y agua comienza a cansarlos, y el Extraño pronto colapsa por deshidratación. Poppy y Nori encuentran un pozo cerca, pero sin darse cuenta alertan a los jinetes enmascarados, a quienes habían evadido con éxito anteriormente. Al encontrar un bastón en el pozo, el Extraño revivido usa magia para ahuyentar a los jinetes. Celebrimbor, consciente de la falta de confianza en Halbrand, pero no de su verdadera naturaleza, rechaza sus solicitudes de reunirse, pero no obstante le permite quedarse en Eregion. Sin embargo, Halbrand finalmente consigue comunicarse con Celebrimbor, le cuenta sobre el éxito de los anillos élficos y \"revela\" que es Annatar, un enviado de los Valar y el Señor de los Dones. Como Annatar, Sauron le ordena a un Celebrimbor atónito que haga anillos para hombres. Al percibir el interés de Sauron en Celebrimbor, Gil-galad envía a Elrond y Galadriel a Eregion. Más tarde, Durin IV y Disa reciben una invitación de Celebrimbor para ir a Eregion.', 61, NULL, 2, 3),
-(16, 'El águila y el cetro', 'Isildur y un viejo amigo se reencuentran. Arondir lidia con el cambio. Míriel afronta una oposición en alza. Annatar aconseja a Celebrimbor.', 66, NULL, 2, 3),
-(17, 'Una sombra del pasado', 'Después de que el Señor Oscuro Morgoth es derrotado, el elfo Finrod muere buscando al sirviente de Morgoth, Sauron . La hermana de Finrod, Galadriel, jura continuar la búsqueda y encuentra una fortaleza abandonada en las tierras baldías del norte de Forodwaith que lleva la marca de Sauron. Sus compañeros insisten en regresar a la capital élfica, Lindon , donde el Gran Rey Gil-galad proclama que la guerra contra las fuerzas de Morgoth ha terminado. Le concede a Galadriel y su compañía el honor de navegar a Valinor , donde pueden vivir una vida eterna en paz. En las Tierras del Sur de la Tierra Media , los elfos vigilan a los hombres descendientes de aliados de Morgoth. Para la desaprobación de los demás elfos y hombres, el elfo Arondir se ha hecho amigo de la curandera humana Bronwyn. Juntos descubren que la aldea de Hordern ha sido destruida, mientras que el hijo de Bronwyn, Theo, encuentra una espada rota que lleva la marca de Sauron. Cerca de Valinor, Galadriel decide regresar y continuar la búsqueda de Sauron, saltando del barco a los Mares Divididos . Al mismo tiempo, dos Harfoots , Nori Brandyfoot y Poppy Proudfellow, descubren a un hombre extraño dentro de un cráter de meteorito.', 59, NULL, 1, 3),
-(18, 'A la deriva', 'Mientras nada de regreso a la Tierra Media, Galadriel se encuentra con una balsa con sobrevivientes humanos de un naufragio. Son atacados por un monstruo marino y solo uno sobrevive: Halbrand de las Tierras del Sur, que huye de los orcos . Él y Galadriel trabajan juntos para sobrevivir a una tormenta. Nori y Poppy mantienen al Extraño oculto de los otros Harfoots y le dan comida y refugio. Él no habla su idioma, pero usa luciérnagas y magia aparente para indicar que está buscando una constelación de estrellas que Nori no reconoce. Arondir investiga túneles debajo de Hordern y es capturado. Bronwyn regresa a su propia aldea, Tirharad, donde un orco la ataca a ella y a Theo. Lo matan y convencen al resto de la ciudad, incluido Waldreg, el dueño de la taberna, de que se vayan. Gil-galad envía al semielfo Elrond a Eregion para ayudar al gran herrero elfo Celebrimbor , que planea construir una nueva y poderosa forja. Elrond sugiere que busquen ayuda de los Enanos y se dirige a su amigo el Príncipe Durin IV en Khazad-dûm . Durin IV está enojado porque Elrond no lo ha visitado en 20 años, pero su esposa Disa lo convence de escuchar la propuesta de Elrond.', 57, NULL, 1, 3);
-
 
 INSERT INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `season`, `id_serie`) VALUES
-(1, 'Una sombra del pasado', 'Después de que el Señor Oscuro Morgoth es derrotado, el elfo Finrod muere buscando al sirviente de Morgoth, Sauron . La hermana de Finrod, Galadriel, jura continuar la búsqueda y encuentra una fortaleza abandonada en las tierras baldías del norte de Forodwaith que lleva la marca de Sauron. Sus compañeros insisten en regresar a la capital élfica, Lindon , donde el Gran Rey Gil-galad proclama que la guerra contra las fuerzas de Morgoth ha terminado. Le concede a Galadriel y su compañía el honor de navegar a Valinor , donde pueden vivir una vida eterna en paz. En las Tierras del Sur de la Tierra Media , los elfos vigilan a los hombres descendientes de aliados de Morgoth. Para la desaprobación de los demás elfos y hombres, el elfo Arondir se ha hecho amigo de la curandera humana Bronwyn. Juntos descubren que la aldea de Hordern ha sido destruida, mientras que el hijo de Bronwyn, Theo, encuentra una espada rota que lleva la marca de Sauron. Cerca de Valinor, Galadriel decide regresar y continuar la búsqueda de Sauron, saltando del barco a los Mares Divididos . Al mismo tiempo, dos Harfoots , Nori Brandyfoot y Poppy Proudfellow, descubren a un hombre extraño dentro de un cráter de meteorito.', 59, NULL, 1, 3),
-(2, 'A la deriva', 'Mientras nada de regreso a la Tierra Media, Galadriel se encuentra con una balsa con sobrevivientes humanos de un naufragio. Son atacados por un monstruo marino y solo uno sobrevive: Halbrand de las Tierras del Sur, que huye de los orcos . Él y Galadriel trabajan juntos para sobrevivir a una tormenta. Nori y Poppy mantienen al Extraño oculto de los otros Harfoots y le dan comida y refugio. Él no habla su idioma, pero usa luciérnagas y magia aparente para indicar que está buscando una constelación de estrellas que Nori no reconoce. Arondir investiga túneles debajo de Hordern y es capturado. Bronwyn regresa a su propia aldea, Tirharad, donde un orco la ataca a ella y a Theo. Lo matan y convencen al resto de la ciudad, incluido Waldreg, el dueño de la taberna, de que se vayan. Gil-galad envía al semielfo Elrond a Eregion para ayudar al gran herrero elfo Celebrimbor , que planea construir una nueva y poderosa forja. Elrond sugiere que busquen ayuda de los Enanos y se dirige a su amigo el Príncipe Durin IV en Khazad-dûm . Durin IV está enojado porque Elrond no lo ha visitado en 20 años, pero su esposa Disa lo convence de escuchar la propuesta de Elrond.', 57, NULL, 1, 3),
-(3, 'Los reyes elfos bajo el cielo', 'En los albores de la Segunda Edad, Sauron es traicionado y aparentemente asesinado por Adar y sus orcos. Sin embargo, sin que Adar lo sepa, el espíritu de Sauron persiste y recupera su forma física siglos después como Halbrand. Halbrand se une a un grupo de habitantes de las Tierras del Sur que huyen y luego naufraga en su viaje a través del mar, donde se encuentra por primera vez con Galadriel.', 57, NULL, 2, 3),
-(4, 'Donde las estrellas son extrañas', 'La erupción del Monte del Destino provoca movimientos sísmicos en toda la Tierra Media, lo que provoca un terremoto en Khazad-Dum que destruye gran parte de la agricultura y la infraestructura de la ciudad. Esto amplía aún más la brecha entre Durin III y Durin IV, ya que ambos se muestran reacios a poner fin a su disputa. El Extraño, Nori y Poppy continúan su viaje hacia Rhun. La falta de comida y agua comienza a cansarlos, y el Extraño pronto colapsa por deshidratación. Poppy y Nori encuentran un pozo cerca, pero sin darse cuenta alertan a los jinetes enmascarados, a quienes habían evadido con éxito anteriormente. Al encontrar un bastón en el pozo, el Extraño revivido usa magia para ahuyentar a los jinetes. Celebrimbor, consciente de la falta de confianza en Halbrand, pero no de su verdadera naturaleza, rechaza sus solicitudes de reunirse, pero no obstante le permite quedarse en Eregion. Sin embargo, Halbrand finalmente consigue comunicarse con Celebrimbor, le cuenta sobre el éxito de los anillos élficos y \"revela\" que es Annatar, un enviado de los Valar y el Señor de los Dones. Como Annatar, Sauron le ordena a un Celebrimbor atónito que haga anillos para hombres. Al percibir el interés de Sauron en Celebrimbor, Gil-galad envía a Elrond y Galadriel a Eregion. Más tarde, Durin IV y Disa reciben una invitación de Celebrimbor para ir a Eregion.', 61, NULL, 2, 3),
-(5, 'Winter Is Coming', '«Winter Is Coming» es el primer episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 62 minutos y se estrenó el 17 de abril de 2011 en Estados Unidos.1​ Escrito por los creadores del programa David Benioff y D. B. Weiss a manera de fiel adaptación de los primeros capítulos del libro del mismo nombre redactado por George R. R. Martin, «Se acerca el invierno» contó con la dirección de Tim Van Patten, quien partió del trabajo hecho por el director Thomas McCarthy en un piloto inédito.2​\r\n\r\nAl ser el primer episodio de Juego de tronos, introduce al escenario y a los protagonistas de la historia, centrándose en la familia Stark y la manera en que su señor, Eddard, se involucra en las políticas de la corte una vez que el rey, Robert Baratheon, lo nombra como su Mano, en sustitución de su fallecido predecesor, Jon Arryn.', 102, NULL, 1, 2),
-(6, 'El Camino Real', '«El Camino Real» es el segundo episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 56 minutos y se transmitió por primera vez el 24 de abril de 2011. Fue escrito por David Benioff y D.B. Weiss, y dirigido por Tim Van Patten.2​\r\n\r\nLa mayor parte del episodio transcurre mientras los protagonistas se hallan viajando: Eddard Stark y sus hijas acompañan al séquito del rey rumbo a Desembarco del Rey para ocupar el puesto de Mano, Tyrion se une a Jon en su viaje hacia el Muro, y la recién casada Daenerys va con el khalasar de su esposo a la ciudad dothraki de Vaes Dothrak. Mientras tanto, en Invernalia, una dolida Catelyn Stark cuida de su inconsciente hijo Bran.', 100, NULL, 1, 2),
-(7, 'The North Remembers', '«The North Remembers» es el primer episodio de la segunda temporada de la serie de fantasía medieval Game of Thrones de HBO. Tiene una duración de 53 minutos y se estrenó el 1 de abril de 2012 en Estados Unidos. Fue escrito por sus creadores David Benioff y D. B. Weiss y dirigido por Alan Taylor.\r\n\r\nEl episodio continúa con los personajes de la primera temporada y sus historias, con la mayoría de los protagonistas separados por todos los Siete Reinos después de los dramáticos eventos acaecidos al final de la primera temporada. El episodio incluye a nuevos personajes localizados en Rocadragón, donde el hermano del Rey Robert, Stannis Baratheon, emerge como un nuevo pretendiente al trono.', 102, NULL, 1, 2),
-(8, 'The Night Lands', '«The Night Lands» es el segundo episodio de la segunda temporada de la serie de fantasía medieval Game of Thrones de HBO. Tiene una duración de 51 minutos y se estrenó en 2 de abril de 2012 vía Internet por el servicio en línea de HBO GO en algunos países de Europa. Por televisión por suscripción se estrenó en Estados Unidos el 8 de abril de 2012. Fue escrito por sus creadores David Benioff y D. B. Weiss y dirigido por Alan Taylor. El episodio sigue con algunas de las historias del capítulo anterior: la caravana que se dirigía al Muro es detenida por la Guardia de la Ciudad, el Consejo recibe la carta con los términos de la paz de parte de Robb Stark, Daenerys espera por el regreso de los jinetes que ha enviado a explorar y Theon Greyjoy regresa a su hogar, las Islas del Hierro. \"Las tierras de la noche\" es el término usado en el lenguaje dothraki para muerte.', 101, NULL, 1, 2),
-(9, 'Episode 1', NULL, 56, NULL, 1, 1),
-(10, 'Episode 2', NULL, 58, NULL, 1, 1),
-(11, 'Episode 3', NULL, 54, NULL, 1, 1),
-(12, 'Episode 4', NULL, 54, NULL, 2, 1),
-(13, 'Episode 5', NULL, 56, NULL, 2, 1),
-(14, 'Episode 7', NULL, 60, NULL, 2, 1),
-(15, 'Episode 8', NULL, 61, NULL, 3, 1),
-(16, 'Episode 9', NULL, 62, NULL, 3, 1);
+(1, 'Episode 1.1', 'Thomas Shelby, el ambicioso cabecilla de una banda, reconoce una oportunidad para medrar gracias a un cargamento perdido de pistolas.', 56, 'peaky1.jpg', 1, 1),
+(2, 'Episode 1.2', 'Thomas provoca a un capo local al amañar una carrera de caballos, iniciando una guerra contra una familia gitana. El inspector Campbell lleva a cabo una violenta redada.', 58, 'peaky2.jpg', 1, 1),
+(3, 'Episode 1.3', 'Thomas planea acercarse a Billy Kimber en las carreras de Cheltenham, y sopesa la oferta de unos simpatizantes del IRA que quieren comprarle sus pistolas robadas.', 54, 'peaky3.jpg', 1, 1),
+(4, 'Episode 2.1', 'Una bomba destruye el pub Garrison, guarida de Tommy Shelby, jefe del hampa de Birmingham chantajeado por el asesinato de un disidente irlandés.', 54, 'peaky1.1.jpg', 2, 1),
+(5, 'Episode 2.2', 'Después de asesinar a un disidente irlandés, Tommy se convierte en una pieza más de las intrigas políticas del pérfido inspector Campbell.', 56, 'peaky1.2.jpg', 2, 1),
+(6, 'Episode 2.3', 'Tommy se une al jefe del hampa londinense Alfie Solomons en un nuevo negocio, pero teme que el carácter inestable de Alfie pueda darle problemas.', 60, 'peaky1.3.jpg', 2, 1),
+(7, 'Episode 3.1', 'El día de la boda de Tommy, un nuevo socio organiza una transacción secreta. Arthur ha encontrado a una mujer devota. Polly conoce a un hombre atractivo.', 61, 'peaky3.1.jpg', 3, 1),
+(8, 'Episode 3.2', 'Una amenaza descuidada provoca una guerra. Tommy recibe una extraña recompensa, pero sus jefes exhiben su poder para mantenerlo a raya. Polly encarga un retrato.', 62, 'peaky3.2.jpg', 3, 1),
+(9, 'Episode 3.3', 'Tommy viaja a Gales en busca de absolución y descubre a un traidor. Michael le coge el gusto a las armas. Arthur recibe buenas noticias.', 61, 'peaky3.3.jpg', 3, 1),
+(10, 'Winter Is Coming', '«Winter Is Coming» es el primer episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 62 minutos y se estrenó el 17 de abril de 2011 en Estados Unidos.1​ Escrito por los creadores del programa David Benioff y D. B. Weiss a manera de fiel adaptación de los primeros capítulos del libro del mismo nombre redactado por George R. R. Martin, «Se acerca el invierno» contó con la dirección de Tim Van Patten, quien partió del trabajo hecho por el director Thomas McCarthy en un piloto inédito.2​\r\n\r\nAl ser el primer episodio de Juego de tronos, introduce al escenario y a los protagonistas de la historia, centrándose en la familia Stark y la manera en que su señor, Eddard, se involucra en las políticas de la corte una vez que el rey, Robert Baratheon, lo nombra como su Mano, en sustitución de su fallecido predecesor, Jon Arryn.', 102, 'tronos1.jpg', 1, 2),
+(11, 'El Camino Real', '«El Camino Real» es el segundo episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 56 minutos y se transmitió por primera vez el 24 de abril de 2011. Fue escrito por David Benioff y D.B. Weiss, y dirigido por Tim Van Patten.2​\r\n\r\nLa mayor parte del episodio transcurre mientras los protagonistas se hallan viajando: Eddard Stark y sus hijas acompañan al séquito del rey rumbo a Desembarco del Rey para ocupar el puesto de Mano, Tyrion se une a Jon en su viaje hacia el Muro, y la recién casada Daenerys va con el khalasar de su esposo a la ciudad dothraki de Vaes Dothrak. Mientras tanto, en Invernalia, una dolida Catelyn Stark cuida de su inconsciente hijo Bran.', 100, 'tronos2.jpg', 1, 2),
+(12, 'The North Remembers', '«The North Remembers» es el primer episodio de la segunda temporada de la serie de fantasía medieval Game of Thrones de HBO. Tiene una duración de 53 minutos y se estrenó el 1 de abril de 2012 en Estados Unidos. Fue escrito por sus creadores David Benioff y D. B. Weiss y dirigido por Alan Taylor.\r\n\r\nEl episodio continúa con los personajes de la primera temporada y sus historias, con la mayoría de los protagonistas separados por todos los Siete Reinos después de los dramáticos eventos acaecidos al final de la primera temporada. El episodio incluye a nuevos personajes localizados en Rocadragón, donde el hermano del Rey Robert, Stannis Baratheon, emerge como un nuevo pretendiente al trono.', 102, 'tronos3.jpg', 1, 2),
+(13, 'Los reyes elfos bajo el cielo', 'En los albores de la Segunda Edad, Sauron es traicionado y aparentemente asesinado por Adar y sus orcos. Sin embargo, sin que Adar lo sepa, el espíritu de Sauron persiste y recupera su forma física siglos después como Halbrand. Halbrand se une a un grupo de habitantes de las Tierras del Sur que huyen y luego naufraga en su viaje a través del mar, donde se encuentra por primera vez con Galadriel.', 57, 'anillos1.jpg', 2, 3),
+(14, 'Adar', 'Arondir es capturado. Galadriel y Halbrand exploran un reino legendario. A Elendil le encargan una nueva misión. Nori afronta las consecuencias.', 58, 'anillos2.jpg', 1, 3),
+(15, 'Donde las estrellas son extrañas', 'La erupción del Monte del Destino provoca movimientos sísmicos en toda la Tierra Media, lo que provoca un terremoto en Khazad-Dum que destruye gran parte de la agricultura y la infraestructura de la ciudad. Esto amplía aún más la brecha entre Durin III y Durin IV, ya que ambos se muestran reacios a poner fin a su disputa. El Extraño, Nori y Poppy continúan su viaje hacia Rhun. La falta de comida y agua comienza a cansarlos, y el Extraño pronto colapsa por deshidratación. Poppy y Nori encuentran un pozo cerca, pero sin darse cuenta alertan a los jinetes enmascarados, a quienes habían evadido con éxito anteriormente. Al encontrar un bastón en el pozo, el Extraño revivido usa magia para ahuyentar a los jinetes. Celebrimbor, consciente de la falta de confianza en Halbrand, pero no de su verdadera naturaleza, rechaza sus solicitudes de reunirse, pero no obstante le permite quedarse en Eregion. Sin embargo, Halbrand finalmente consigue comunicarse con Celebrimbor, le cuenta sobre el éxito de los anillos élficos y \"revela\" que es Annatar, un enviado de los Valar y el Señor de los Dones. Como Annatar, Sauron le ordena a un Celebrimbor atónito que haga anillos para hombres. Al percibir el interés de Sauron en Celebrimbor, Gil-galad envía a Elrond y Galadriel a Eregion. Más tarde, Durin IV y Disa reciben una invitación de Celebrimbor para ir a Eregion.', 61, 'anillos3.jpg', 2, 3),
+(16, 'El águila y el cetro', 'Isildur y un viejo amigo se reencuentran. Arondir lidia con el cambio. Míriel afronta una oposición en alza. Annatar aconseja a Celebrimbor.', 66, 'anillos2.1.jpg', 2, 3),
+(17, 'Una sombra del pasado', 'Después de que el Señor Oscuro Morgoth es derrotado, el elfo Finrod muere buscando al sirviente de Morgoth, Sauron . La hermana de Finrod, Galadriel, jura continuar la búsqueda y encuentra una fortaleza abandonada en las tierras baldías del norte de Forodwaith que lleva la marca de Sauron. Sus compañeros insisten en regresar a la capital élfica, Lindon , donde el Gran Rey Gil-galad proclama que la guerra contra las fuerzas de Morgoth ha terminado. Le concede a Galadriel y su compañía el honor de navegar a Valinor , donde pueden vivir una vida eterna en paz. En las Tierras del Sur de la Tierra Media , los elfos vigilan a los hombres descendientes de aliados de Morgoth. Para la desaprobación de los demás elfos y hombres, el elfo Arondir se ha hecho amigo de la curandera humana Bronwyn. Juntos descubren que la aldea de Hordern ha sido destruida, mientras que el hijo de Bronwyn, Theo, encuentra una espada rota que lleva la marca de Sauron. Cerca de Valinor, Galadriel decide regresar y continuar la búsqueda de Sauron, saltando del barco a los Mares Divididos . Al mismo tiempo, dos Harfoots , Nori Brandyfoot y Poppy Proudfellow, descubren a un hombre extraño dentro de un cráter de meteorito.', 59, 'anillos2.2.jpg', 1, 3),
+(18, 'A la deriva', 'Mientras nada de regreso a la Tierra Media, Galadriel se encuentra con una balsa con sobrevivientes humanos de un naufragio. Son atacados por un monstruo marino y solo uno sobrevive: Halbrand de las Tierras del Sur, que huye de los orcos . Él y Galadriel trabajan juntos para sobrevivir a una tormenta. Nori y Poppy mantienen al Extraño oculto de los otros Harfoots y le dan comida y refugio. Él no habla su idioma, pero usa luciérnagas y magia aparente para indicar que está buscando una constelación de estrellas que Nori no reconoce. Arondir investiga túneles debajo de Hordern y es capturado. Bronwyn regresa a su propia aldea, Tirharad, donde un orco la ataca a ella y a Theo. Lo matan y convencen al resto de la ciudad, incluido Waldreg, el dueño de la taberna, de que se vayan. Gil-galad envía al semielfo Elrond a Eregion para ayudar al gran herrero elfo Celebrimbor , que planea construir una nueva y poderosa forja. Elrond sugiere que busquen ayuda de los Enanos y se dirige a su amigo el Príncipe Durin IV en Khazad-dûm . Durin IV está enojado porque Elrond no lo ha visitado en 20 años, pero su esposa Disa lo convence de escuchar la propuesta de Elrond.', 57, 'anillos2.3.jpg', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -185,9 +158,9 @@ CREATE TABLE `films` (
 --
 
 INSERT INTO `films` (`id`, `name`, `description`, `img`, `home`, `onsite`, `mylist`, `id_cinema`) VALUES
-(1, 'Terminator', 'Película futurista que hace las delicias de los amantes de la ciencia ficción.', 'terminator.png', 1, 0, 0, NULL),
-(2, 'Terminator 2', 'La secuela de la película Terminator que hace las delicias de todos los amantes de la primera película.', 'terminator_2.png', 1, 0, 0, 2),
-(3, 'Pearl Harbour', 'Vive la emocionante historia de amor entre una enfermera y un aviador enmarcada en el ataque de los japoneses a Pearl Harbour que desencadenó la entrada de EEUU a la Segunda Guerra Mundial. ', 'Pearl_Harbor.png', 1, 0, 0, 1),
+(1, 'Terminator', 'Película futurista que hace las delicias de los amantes de la ciencia ficción.', 'terminator.png', 1, 0, 0, 1),
+(2, 'Terminator 2', 'La secuela de la película Terminator que hace las delicias de todos los amantes de la primera película.', 'Terminator_2.png', 1, 0, 0, 1),
+(3, 'Pearl Harbor', 'Vive la emocionante historia de amor entre una enfermera y un aviador enmarcada en el ataque de los japoneses a Pearl Harbour que desencadenó la entrada de EEUU a la Segunda Guerra Mundial.', 'Pearl_Harbor.png', 1, 0, 0, 2),
 (4, 'Nemo', 'Pelicula de un pez y sus pezqueñines', 'Nemo.png', 1, 0, 0, 2),
 (5, 'Toystory2', 'La historia de un playboy o algo asi, no se, no la he visto', 'Toystory.png', 1, 0, 0, 2),
 (6, 'Cars 2', 'La historia de un coche que puede hablar, lo que me hace plantearme que papel tienen los taxis en este nuevo mundo.', 'cars_2.png', 1, 0, 0, 2);
@@ -262,30 +235,11 @@ CREATE TABLE `product` (
 --
 -- Volcado de datos para la tabla `product`
 --
-INSERT IGNORE INTO `product` (
-    `id`,
-    `name`,
-    `description`,
-    `price`,
-    `img`,
-    `stock`
-  )
-VALUES (
-    1,
-    'Camiseta Maciflix',
-    'Lleva a Maciflix más cerca de tu corazón y permite que los más allegados sepan tus prioridades.',
-    45.99,
-    'camiseta_maciflix.png',
-    20
-  ),
-  (
-    2,
-    'Gorra Maciflix',
-    'No dejes que tu mente deje nunca de pensar en Maciflix. Pon tus neuronas a trabajar y no hagas spoiler!',
-    25.75,
-    NULL,
-    10
-  );
+
+INSERT INTO `product` (`id`, `name`, `description`, `price`, `img`, `stock`) VALUES
+(1, 'Camiseta Maciflix', 'Lleva a Maciflix más cerca de tu corazón y permite que los más allegados sepan tus prioridades.', 45.99, 'camiseta_maciflix.png', 20),
+(2, 'Gorra Maciflix', 'No dejes que tu mente deje nunca de pensar en Maciflix. Pon tus neuronas a trabajar y no hagas spoiler!', 25.75, NULL, 10);
+
 -- --------------------------------------------------------
 
 --
@@ -304,8 +258,8 @@ CREATE TABLE `sala` (
 --
 
 INSERT INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
-(1, 'Sala 1', 15, 20),
-(2, 'Sala 2', 7, 12);
+(1, 'Sala zaza 1', 15, 20),
+(2, 'Sala edamame 2', 7, 12);
 
 -- --------------------------------------------------------
 
@@ -445,7 +399,7 @@ ALTER TABLE `cinemas`
 -- AUTO_INCREMENT de la tabla `episodes`
 --
 ALTER TABLE `episodes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=646;
 
 --
 -- AUTO_INCREMENT de la tabla `faq`

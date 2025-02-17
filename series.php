@@ -14,6 +14,18 @@
             background-color: #141414;
             color: white;
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-bottom: 1px solid #333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
         .series-container {
             display: flex;
@@ -29,15 +41,24 @@
             border-radius: 10px;
             padding: 10px;
             width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .serie img {
             width: 100%;
-            height: auto;
+            height: 400px; /* Set a fixed height for all images */
+            object-fit: cover; /* Ensure images cover the area */
             border-radius: 10px;
             transition: transform 0.3s;
         }
         .serie:hover {
             transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+        .serie a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.2em;
         }
         .boton {
             background-color: #e50914;
@@ -57,6 +78,15 @@
             display: none;
             margin-top: 10px;
             text-align: left;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #333;
         }
     </style>
     <script>

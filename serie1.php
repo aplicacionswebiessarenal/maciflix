@@ -19,7 +19,7 @@ if (!$serie) {
 }
 
 // Consulta para obtener los episodios de la serie
-$sql_episodes = "SELECT name, description, duration, season FROM episodes WHERE id_serie = ?";
+$sql_episodes = "SELECT name, description, duration, img, season FROM episodes WHERE id_serie = ?";
 $stmt_episodes = $bbdd->prepare($sql_episodes);
 $stmt_episodes->bind_param("i", $id_serie);
 $stmt_episodes->execute();
@@ -47,10 +47,14 @@ foreach ($episodes as $episode) {
             background-color: #141414;
             color: white;
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         header {
             text-align: center;
             padding: 20px;
+            background-color: #1f1f1f;
+            border-bottom: 1px solid #333;
         }
         .serie-header {
             display: flex;
@@ -87,9 +91,17 @@ foreach ($episodes as $episode) {
             border-radius: 10px;
             padding: 10px;
             transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .episode:hover {
             transform: scale(1.05);
+        }
+        .episode img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
         }
         .episode h3 {
             margin: 0;
@@ -110,6 +122,12 @@ foreach ($episodes as $episode) {
         }
         .reproducir:hover {
             background-color: #f40612;
+        }
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #333;
         }
     </style>
     <script>
@@ -137,6 +155,7 @@ foreach ($episodes as $episode) {
                 <ul class="episode-list">
                     <?php foreach ($seasonEpisodes as $episode): ?>
                         <li class="episode">
+                            <img src="img/<?= htmlspecialchars($episode['img']) ?>" alt="<?= htmlspecialchars($episode['name']) ?>">
                             <h3><?= htmlspecialchars($episode['name']) ?></h3>
                             <p><?= htmlspecialchars($episode['description']) ?></p>
                             <p>Duración: <?= htmlspecialchars($episode['duration']) ?> minutos</p>
