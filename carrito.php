@@ -29,49 +29,63 @@ if ($result_cart->num_rows > 0) {
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Carrito de la compra</title>
-    <link rel="stylesheet" href="css/carrito.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>Carrito</h1>
-    <div class="carrito">
-        <?php if (count($productos) > 0): ?>
-            <?php foreach ($productos as $producto): ?>
-                <div class="producto">
-                    <img src="<?= htmlspecialchars($producto['img']) ?>" alt="<?= htmlspecialchars($producto['name']) ?>">
-                    <h3 class="nombre_productos"><?= htmlspecialchars($producto['name']) ?></h3>
-                    <p>Precio: <?= number_format($producto['price'], 2) ?>€</p>
-                    <p>Cantidad: <?= $producto['quantity'] ?></p>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>No hay productos en el carrito.</p>
-        <?php endif; ?>
-    </div>
-    <div class="total">
-        <p>Total: 
-            <?php 
-            $total = 0;
-            foreach ($productos as $producto) {
-                $total += $producto['price'] * $producto['quantity'];
-            }
-            echo number_format($total, 2) . '€';
-            ?>
-        </p>
-    </div>
-    <div>
-        <a href="metododepago.php">
-            <button class="total">Confirmar transacción</button>
-        </a>
-    </div>
-</body>
-</html>
+  <html lang="es">
+    <head>
+      <meta charset=UTF-8>
+      <title>Carrito de la compra</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+      <link rel=stylesheet href=css/carrito.css>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/footer.css">
+      <iframe src="header.php"
+      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    </head>
+    <?php
+        $servidor   = 'localhost';
+        $usuario    = 'root';
+        $contrasena = '';
+        $bd = 'maciflix';
 
-<?php 
-// Cerrar la conexión
-$bbdd->close(); 
-?>
+        // se crea la conexión
+        $bbdd = new mysqli($servidor, $usuario, $contrasena, $bd);
+
+        // se valida la conexión
+
+        if ($bbdd->connect_error) {
+
+            die('Hubo un fallo en la conexión ' . $bbdd->connect_error);
+        };
+    ?>
+    <body>
+      <h1>Carrito</h1>
+        <div class="producto">
+          <span>Camiseta</span>
+          <span>$10.00</span>
+          <button onclick="addToCart('Camiseta', 10)">Añadir al carrito</button>
+        </div>
+        <div class="producto">
+          <span>Manta</span>
+          <span>$15.00</span>
+          <button onclick="addToCart('Manta', 15)">Añadir al carrito</button>
+        </div>
+        <div class="producto">
+          <span>Peluche</span>
+          <span>$20.00</span>
+          <button onclick="addToCart('Peluche', 20)">Añadir al carrito</button>
+        </div>
+        <h2>Productos seleccionados</h2>
+        <div class="carrito" id="carrito">
+            <div id="carritoproducto"></div>
+            <div class="total">Total: $<span id="total">0.00</span></div>
+        </div>
+        <div>
+          <a href="metododepago.php">
+            <button class="total">Confirmar transacion</button>
+          </a>
+        </div>
+      <iframe src="footer.php"
+      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    </body>
+  </html>
