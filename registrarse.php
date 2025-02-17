@@ -64,11 +64,6 @@
 include_once("conexion.php");
 
 $conn = $bbdd;
-
-if ($conn->connect_error) {
-  die("Error de conexión: " . $conn->connect_error);
-}
-
 $usuario = isset($_POST["usuario"]) ? $_POST["usuario"] : null;
 $email = isset($_POST["email"]) ? $_POST["email"] : null;
 $password = isset($_POST["password"]) ? $_POST["password"] : null;
