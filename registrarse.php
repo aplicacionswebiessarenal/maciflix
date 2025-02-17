@@ -63,7 +63,7 @@
 
 include_once("conexion.php");
 
-$conn = new mysqli($servidor, $usuario, $contrasena);
+$conn = $bbdd;
 
 if ($conn->connect_error) {
   die("Error de conexión: " . $conn->connect_error);
@@ -86,8 +86,6 @@ if (!$usuario || !$email || !$password || !$confirm_password || $password!=$conf
 
 if ($stmt->execute()) {
   echo "Registro exitoso";
-} else {
-  echo "Error al registrar: " . $conn->error;
 }
 
 $stmt->close();
