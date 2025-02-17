@@ -17,16 +17,6 @@
             margin: 0;
             padding: 0;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #1f1f1f;
-            border-bottom: 1px solid #333;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
         .series-container {
             display: flex;
             flex-wrap: wrap;
@@ -59,6 +49,7 @@
             display: block;
             margin-top: 10px;
             font-size: 1.2em;
+            padding: 10px; /* Add padding */
         }
         .boton {
             background-color: #e50914;
@@ -81,12 +72,6 @@
             background-color: #444;
             padding: 10px;
             border-radius: 5px;
-        }
-        footer {
-            background-color: #1f1f1f;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #333;
         }
     </style>
     <script>

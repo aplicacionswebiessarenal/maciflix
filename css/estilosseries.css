@@ -20,6 +20,7 @@ h1 {
 }
 
 .serie {
+  border-left: 50px;
   position: relative;
   background-color: #333; /* Fondo de cada serie */
   border-radius: 10px; /* Bordes redondeados */

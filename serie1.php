@@ -19,7 +19,7 @@ if (!$serie) {
 }
 
 // Consulta para obtener los episodios de la serie
-$sql_episodes = "SELECT name, description, duration, img, season FROM episodes WHERE id_serie = ?";
+$sql_episodes = "SELECT id, name, description, duration, img, season FROM episodes WHERE id_serie = ?";
 $stmt_episodes = $bbdd->prepare($sql_episodes);
 $stmt_episodes->bind_param("i", $id_serie);
 $stmt_episodes->execute();
@@ -50,33 +50,32 @@ foreach ($episodes as $episode) {
             margin: 0;
             padding: 0;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #1f1f1f;
-            border-bottom: 1px solid #333;
-        }
         .serie-header {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             text-align: center;
+            padding: 20px;
         }
         .serie-header img {
-            width: 200px;
+            width: 300px;
             height: auto;
             border-radius: 10px;
             margin-bottom: 20px;
         }
         .serie-header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
         }
         .serie-header p {
             font-size: 1.2em;
             margin: 10px 0;
             max-width: 800px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 10px;
         }
         .season {
             margin: 20px 0;
@@ -106,9 +105,17 @@ foreach ($episodes as $episode) {
         .episode h3 {
             margin: 0;
             font-size: 1.2em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 10px;
         }
         .episode p {
             font-size: 0.9em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 10px;
         }
         .reproducir {
             background-color: #e50914;
@@ -123,17 +130,55 @@ foreach ($episodes as $episode) {
         .reproducir:hover {
             background-color: #f40612;
         }
-        footer {
-            background-color: #1f1f1f;
-            padding: 20px;
+        .leer-mas {
+            background-color: transparent;
+            color: #e50914;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .season-selector {
+            margin: 20px 0;
             text-align: center;
-            border-top: 1px solid #333;
+        }
+        .season-selector select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #e50914;
+            background-color: #141414;
+            color: white;
         }
     </style>
     <script>
         function showNotification(episodeName) {
             alert('Reproduciendo ' + episodeName);
         }
+
+        function toggleDescription(id) {
+            const desc = document.getElementById('desc-' + id);
+            const btn = document.getElementById('btn-' + id);
+            if (desc.style.whiteSpace === 'nowrap') {
+                desc.style.whiteSpace = 'normal';
+                btn.innerText = 'Leer menos';
+            } else {
+                desc.style.whiteSpace = 'nowrap';
+                btn.innerText = 'Leer más';
+            }
+        }
+
+        function showSeason(seasonNumber) {
+            const seasons = document.querySelectorAll('.season');
+            seasons.forEach(season => {
+                season.style.display = 'none';
+            });
+            document.getElementById('season-' + seasonNumber).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSeason(1); // Show season 1 by default
+        });
     </script>
 </head>
 <body>
@@ -145,19 +190,32 @@ foreach ($episodes as $episode) {
         <div class="serie-header">
             <img src="img/<?= htmlspecialchars($serie['img']) ?>" alt="<?= htmlspecialchars($serie['title']) ?>">
             <h1><?= htmlspecialchars($serie['title']) ?></h1>
-            <p><?= htmlspecialchars($serie['description']) ?></p>
+            <p id="desc-0"><?= htmlspecialchars($serie['description']) ?></p>
+            <button class="leer-mas" id="btn-0" onclick="toggleDescription(0)">Leer más</button>
+            <button class="reproducir" onclick="showNotification('<?= htmlspecialchars($serie['title']) ?>')">Reproducir</button>
         </div>
     </header>
     <main>
+        <?php if (count($seasons) > 1): ?>
+            <div class="season-selector">
+                <label for="season-select">Selecciona una temporada:</label>
+                <select id="season-select" onchange="showSeason(this.value)">
+                    <?php foreach ($seasons as $seasonNumber => $seasonEpisodes): ?>
+                        <option value="<?= $seasonNumber ?>">Temporada <?= $seasonNumber ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        <?php endif; ?>
         <?php foreach ($seasons as $seasonNumber => $seasonEpisodes): ?>
-            <div class="season">
+            <div class="season" id="season-<?= $seasonNumber ?>" style="display: none;">
                 <h2>Temporada <?= $seasonNumber ?></h2>
                 <ul class="episode-list">
                     <?php foreach ($seasonEpisodes as $episode): ?>
                         <li class="episode">
                             <img src="img/<?= htmlspecialchars($episode['img']) ?>" alt="<?= htmlspecialchars($episode['name']) ?>">
                             <h3><?= htmlspecialchars($episode['name']) ?></h3>
-                            <p><?= htmlspecialchars($episode['description']) ?></p>
+                            <p id="desc-<?= htmlspecialchars($episode['id']) ?>"><?= htmlspecialchars($episode['description']) ?></p>
+                            <button class="leer-mas" id="btn-<?= htmlspecialchars($episode['id']) ?>" onclick="toggleDescription(<?= htmlspecialchars($episode['id']) ?>)">Leer más</button>
                             <p>Duración: <?= htmlspecialchars($episode['duration']) ?> minutos</p>
                             <button class="reproducir" onclick="showNotification('<?= htmlspecialchars($episode['name']) ?>')">Ver</button>
                         </li>
