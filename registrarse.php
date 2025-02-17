@@ -1,4 +1,3 @@
-<? include_once("/conexion.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,14 +25,18 @@
   </header>
   <div class="flex-container">
     <div class="login">
-      <form method="post">
+      <form action="registrarse.php" method="POST">
         <h2 id="title">Crea tu cuenta</h2>
         <input type="text" class="password" placeholder="Nombre de usuario" />
 
-        <input type="text" id="email" placeholder="Email" required />
+        <input type="email" id="email" placeholder="Email" required />
         <input type="password" class="password" placeholder="Contraseña" required />
         <input type="password" class="password" placeholder="Confirma Contraseña" required />
-
+        <input type="text" class="password" placeholder="Numero de tarjeta" />
+        <input type="text" class="password" placeholder="Dirección" />
+        <input type="text" class="password" placeholder="Nombre" />
+        <input type="text" class="password" placeholder="Apellido 1" />
+        <input type="text" class="password" placeholder="Apellido 2" />
         <button type="button" id="sign_up_button" class="glow_on_hover">
           Crear
         </button>
@@ -56,29 +59,33 @@
 </body>
 
 </html>
-
 <?php 
+
+include_once("conexion.php");
+
+$conn = new mysqli($servidor, $usuario, $contrasena);
+
 if ($conn->connect_error) {
   die("Error de conexión: " . $conn->connect_error);
 }
 
-$usuario = $_POST["usuario"];
-$email = $_POST["email"];
-$password = $_POST["password"];
-$confirm_password = $_POST["confirm_password"];
+$usuario = isset($_POST["usuario"]) ? $_POST["usuario"] : null;
+$email = isset($_POST["email"]) ? $_POST["email"] : null;
+$password = isset($_POST["password"]) ? $_POST["password"] : null;
+$confirm_password = isset($_POST["confirm_password"]) ? $_POST["confirm_password"] : null;
 
-if ($password !== $confirm_password) {
-  die("Las contraseñas no coinciden.");
+if (!$usuario || !$email || !$password || !$confirm_password || $password!=$confirm_password) {
+    echo "<h1>Error: Missing fields</h1>";
+    exit; 
+} else {
+  $password_hash = password_hash($password, PASSWORD_DEFAULT);
+  $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("sss", $usuario, $email, $password_hash);
 }
 
-$password_hash = password_hash($password, PASSWORD_DEFAULT);
-
-$sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", var: $usuario, $email, $password_hash);
-
 if ($stmt->execute()) {
-echo "Registro exitoso. <a href='iniciarsesion.php'>Inicia sesión aquí</a>";
+  echo "Registro exitoso";
 } else {
   echo "Error al registrar: " . $conn->error;
 }
