@@ -64,10 +64,17 @@
 include_once("conexion.php");
 
 $conn = $bbdd;
+
+// TODO: Comprobar que la información realmente se esta recogiendo, literalmente esto ahora no pilla ninguna info pq soy retrasao y esta mal puesto
 $usuario = isset($_POST["usuario"]) ? $_POST["usuario"] : null;
 $email = isset($_POST["email"]) ? $_POST["email"] : null;
 $password = isset($_POST["password"]) ? $_POST["password"] : null;
 $confirm_password = isset($_POST["confirm_password"]) ? $_POST["confirm_password"] : null;
+$card = isset($_POST["?"]) ? $_POST["?"] : null;
+$address = isset($_POST["?"]) ? $_POST["?"] : null;
+$name = isset($_POST["?"]) ? $_POST["?"] : null;
+$firstSurname= isset($_POST["?"]) ? $_POST["?"] : null;
+$secondSurname = isset($_POST["?"]) ? $_POST["?"] : null;
 
 if (!$usuario || !$email || !$password || !$confirm_password || $password!=$confirm_password) {
     echo "<h1>Error: Missing fields</h1>";
