@@ -69,31 +69,31 @@ include_once("conexion.php");
 
 $conn = $bbdd;
 
-$usuario = isset($_POST["usuario"]) ? $_POST["usuario"] : null;
-$email = isset($_POST["email"]) ? $_POST["email"] : null;
-$password = isset($_POST["password"]) ? $_POST["password"] : null;
-$confirm_password = isset($_POST["confirm_password"]) ? $_POST["confirm_password"] : null;
-$card = isset($_POST["?"]) ? $_POST["?"] : null;
-$address = isset($_POST["?"]) ? $_POST["?"] : null;
-$name = isset($_POST["?"]) ? $_POST["?"] : null;
-$firstSurname = isset($_POST["?"]) ? $_POST["?"] : null;
-$secondSurname = isset($_POST["?"]) ? $_POST["?"] : null;
+$username = $_POST['username'] ?? '';
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
+$confirm_pass = $_POST['confirm_password'] ?? '';
+$card_number = $_POST['card_number'] ?? '';
+$address = $_POST['address'] ?? '';
+$first_name = $_POST['first_name'] ?? '';
+$last_name1 = $_POST['last_name1'] ?? '';
+$last_name2 = $_POST['last_name2'] ?? '';
 
-if (!$usuario || !$email || !$password || !$confirm_password || $password != $confirm_password) {
-  echo "<h1>Error: Missing fields</h1>";
-  exit;
+if (empty($username) || empty($email) || empty($password) || empty($confirm_pass) || empty($first_name) || empty($last_name1) || empty($last_name2)) {
+  die("Error: Todos los campos obligatorios deben ser completados.");
 } else {
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
-  // TODO: Modificar query SQL 
-  $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
 
-  $stmt = $conn->prepare($sql);
-  // TODO: Modificar query SQL
-  $stmt->bind_param("sss", $usuario, $email, $password_hash);
+  $stmt = $conn->prepare("INSERT INTO users (username, email, password, card_number, address, first_name, last_name1, last_name2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $card_number, $address, $first_name, $last_name1, $last_name2);
+
 }
 
+// Checkear errores
 if ($stmt->execute()) {
-  echo "Registro exitoso";
+  echo "¡Registro exitoso!";
+} else {
+  echo "Error: " . $stmt->error;
 }
 
 $stmt->close();
