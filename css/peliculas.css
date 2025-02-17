@@ -29,7 +29,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 40px;
+    margin: 3;
 }
 
 .movie {
@@ -41,6 +42,7 @@ body {
     width: 100%;
     border-radius: 10px;
     transition: transform 0.3s;
+    margin: 2;
 }
 
 .movie img:hover {
@@ -48,12 +50,14 @@ body {
 }
 
 .movie h3 {
-    margin: 10px 0 5px;
+    margin:2;
+    padding: 20%;
 }
 
 .movie span {
     font-size: 14px;
     color: gray;
+    padding: 2;
 }
 
 .popup {
@@ -66,6 +70,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    padding: 5;
 }
 
 .popup-content {
@@ -80,6 +85,7 @@ body {
 .popup-content h2 {
     font-size: 18px;
     margin-bottom: 10px;
+    padding: 3;
 }
 
 .popup-content button {
@@ -109,7 +115,7 @@ body {
     }
 }
 body {
-    margin: 0;
+    margin: 3 ;
     font-family: 'Inter', sans-serif;
     background-color: black;
     color: white;

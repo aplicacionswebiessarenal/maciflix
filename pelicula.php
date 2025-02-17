@@ -1,3 +1,4 @@
+<? include_once("/conexion.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="css/pelicula.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
-</head>
+</head>     
 <body>
+
     <iframe src="header.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
     <div class="movie-details-container">
