@@ -81,8 +81,11 @@ if (!$usuario || !$email || !$password || !$confirm_password || $password!=$conf
     exit; 
 } else {
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
+  // TODO: Modificar query SQL 
   $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+
   $stmt = $conn->prepare($sql);
+  // TODO: Modificar query SQL
   $stmt->bind_param("sss", $usuario, $email, $password_hash);
 }
 
