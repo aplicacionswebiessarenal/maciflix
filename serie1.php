@@ -78,7 +78,7 @@ foreach ($episodes as $episode) {
             padding: 10px;
         }
         .season {
-            margin: 20px 0;
+            margin: 20px ;
         }
         .episode-list {
             display: grid;
