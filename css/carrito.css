@@ -41,6 +41,16 @@ h2 {
   margin-bottom: 10px;
 }
 
+.botoncito {
+  button::hover {
+    color: #094fe5;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .total {
   font-weight: bold;
   margin-bottom: 20px; 
