@@ -79,7 +79,7 @@ $secondSurname = isset($_POST["?"]) ? $_POST["?"] : null;
 if (!$usuario || !$email || !$password || !$confirm_password || $password!=$confirm_password) {
     echo "<h1>Error: Missing fields</h1>";
     exit; 
-} else {
+} else 
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
   // TODO: Modificar query SQL 
   $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
