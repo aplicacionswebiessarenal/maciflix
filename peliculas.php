@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
     $id = intval($_GET['id']); // Convertir a entero para evitar inyecciones SQL
 
     // Consulta para obtener la película por ID
-    $sql = "SELECT * FROM peliculas WHERE id = $id";
+    $sql = "SELECT * FROM films WHERE id = $id ?;
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
