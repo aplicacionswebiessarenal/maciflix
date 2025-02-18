@@ -39,9 +39,6 @@
           <input type="text" name="last_name1" class="password" placeholder="Apellido 1" required />
           <input type="text" name="last_name2" class="password" placeholder="Apellido 2" required />
           <button type="submit">Enviar</button>
-          <button type="button" id="sign_up_button" class="glow_on_hover">
-            Crear
-          </button>
         </form>
         <script src="/js/crearcuenta.js"></script>
         <div class="register">
@@ -86,15 +83,7 @@ if (empty($username) || empty($email) || empty($password) || empty($confirm_pass
   $stmt = $conn->prepare("INSERT INTO users (username, email, password, address, payment_method,name, surname1, surname2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
   $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $address, $card_number, $first_name, $last_name1, $last_name2);
 
+  $stmt->close();
+  $conn->close();
 }
-
-// Checkear errores
-if ($stmt->execute()) {
-  echo "¡Registro exitoso!";
-} else {
-  echo "Error: " . $stmt->error;
-}
-
-$stmt->close();
-$conn->close();
 ?>
