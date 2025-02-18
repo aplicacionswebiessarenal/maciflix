@@ -33,14 +33,13 @@
           <input type="email" name="email" id="email" placeholder="Email" required />
           <input type="password" name="password" class="password" placeholder="Contraseña" required />
           <input type="password" name="confirm_password" class="password" placeholder="Confirma Contraseña" required />
-          <input type="text" name="card_number" class="password" placeholder="Numero de tarjeta" />
+          <input type="text" name="payment_method" class="password" placeholder="Numero de tarjeta" />
           <input type="text" name="address" class="password" placeholder="Dirección" />
           <input type="text" name="first_name" class="password" placeholder="Nombre" required />
           <input type="text" name="last_name1" class="password" placeholder="Apellido 1" required />
           <input type="text" name="last_name2" class="password" placeholder="Apellido 2" required />
           <button type="submit">Enviar</button>
         </form>
-        <script src="/js/crearcuenta.js"></script>
         <div class="register">
           <h3>Ya tienes una cuenta?</h3>
           <a href="/iniciarsesion.php">
@@ -65,15 +64,16 @@ include_once("conexion.php");
 
 $conn = $bbdd;
 
-$username = $_POST['username'] ?? '';
-$email = $_POST['email'] ?? '';
-$password = $_POST['password'] ?? '';
-$confirm_pass = $_POST['confirm_password'] ?? '';
-$card_number = $_POST['card_number'] ?? '';
-$address = $_POST['address'] ?? '';
-$first_name = $_POST['first_name'] ?? '';
-$last_name1 = $_POST['last_name1'] ?? '';
-$last_name2 = $_POST['last_name2'] ?? '';
+$username = htmlspecialchars($_POST['username']);
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+$password = $_POST['password'];
+$confirm_pass = $_POST['confirm_password'];
+$address = htmlspecialchars($_POST['address']);
+$card_number = htmlspecialchars($_POST['payment_method']);
+$first_name = htmlspecialchars($_POST['first_name']);
+$last_name1 = htmlspecialchars($_POST['last_name1']);
+$last_name2 = htmlspecialchars($_POST['last_name2']);
+
 
 if (empty($username) || empty($email) || empty($password) || empty($confirm_pass) || empty($first_name) || empty($last_name1) || empty($last_name2) || $password != $confirm_pass) {
   die("Error: Todos los campos obligatorios deben ser completados.");
@@ -82,7 +82,7 @@ if (empty($username) || empty($email) || empty($password) || empty($confirm_pass
 
   $stmt = $conn->prepare("INSERT INTO users (username, email, password, address, payment_method,name, surname1, surname2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
   $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $address, $card_number, $first_name, $last_name1, $last_name2);
-
+  $stmt->execute();
   $stmt->close();
   $conn->close();
 }
