@@ -28,8 +28,8 @@ h1 {
 }
 
 .serie img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
   border-radius: 10px; /* Bordes redondeados para la imagen */
   transition: transform 0.3s; /* Efecto de hover en la imagen */
 }
@@ -38,11 +38,18 @@ h1 {
   transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
 
-.serie span {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 16px;
+.boton {
+  background-color: #e50914;
   color: white;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px; /* Espacio entre la imagen y el botón */
+  transition: background-color 0.3s;
+}
+
+.boton:hover {
+  background-color: #f40612;
 }

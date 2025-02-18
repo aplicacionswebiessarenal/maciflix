@@ -45,7 +45,7 @@
             // hay información que mostrar
             while ($row = $result->fetch_assoc()) {
               echo "<div>
-                      <a href='film.php?id=" . $row['id'] . "'>
+                      <a href='pelicula.php?id=" . $row['id'] . "'>
                         <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
                       </a>
                     </div>";

@@ -179,18 +179,16 @@ head {
 }
 section {
   display: flex;
-  width: 600px;
+  width: 570px;
   height: 430px;
-}
-
-section {
   flex-grow: 1;
   overflow: hidden;
 }
 
+
 section img {
   width: 100%;
-  min-width: 100px;
+  min-width: 95px;
   height: 100%;
   object-fit: cover;
   opacity: 0.8;

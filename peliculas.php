@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
   <html lang="es">
   <head>
     <meta charset="UTF-8">
@@ -76,4 +77,18 @@
       <iframe src="footer.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
+=======
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+>>>>>>> 3d959aaa0a3b231e8fbb8e1c5edae1e6c1a36ce4
 </html>
