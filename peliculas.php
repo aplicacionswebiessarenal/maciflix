@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <<<<<<< HEAD
   <html lang="es">
@@ -91,4 +92,20 @@
 </body>
 
 >>>>>>> 3d959aaa0a3b231e8fbb8e1c5edae1e6c1a36ce4
+=======
+<? include_once("/conexion.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!--AAAAAron espabila-->
+</body>
+
+>>>>>>> 46fe462fd09ff43293e0ace0a95b1d91305c1cdb
 </html>

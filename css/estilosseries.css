@@ -1,55 +1,82 @@
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #141414; /* Fondo oscuro */
-  color: white;
-  margin: 0;
-  padding: 0;
+    background-color: #141414;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-  text-align: center;
-  font-weight: 700;
-  margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 20px;
 }
 
 .series-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Espacio entre elementos */
-  padding: 20px; /* Espacio interno */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
 .serie {
-  position: relative;
-  background-color: #333; /* Fondo de cada serie */
-  border-radius: 10px; /* Bordes redondeados */
-  overflow: hidden; /* Oculta el desbordamiento */
-  transition: transform 0.3s; /* Efecto de hover */
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .serie img {
-  width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 10px; /* Bordes redondeados para la imagen */
-  transition: transform 0.3s; /* Efecto de hover en la imagen */
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
 }
 
 .serie:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.serie a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    padding: 10px;
 }
 
 .boton {
-  background-color: #e50914;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px; /* Espacio entre la imagen y el botón */
-  transition: background-color 0.3s;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 .boton:hover {
-  background-color: #f40612;
+    background-color: #f40612;
+}
+
+.description {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
 }

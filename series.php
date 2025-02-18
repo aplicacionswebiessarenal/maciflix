@@ -9,62 +9,7 @@
     <link rel="stylesheet" href="css/estilosseries.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <style>
-        body {
-            background-color: #141414;
-            color: white;
-            font-family: 'Inter', sans-serif;
-        }
-        .series-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-        .serie {
-            margin: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-            background-color: #333;
-            border-radius: 10px;
-            padding: 10px;
-            width: 300px;
-        }
-        .serie img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .serie:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-        }
-        .boton {
-            background-color: #e50914;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-        }
-        .boton:hover {
-            background-color: #f40612;
-        }
-        .description {
-            display: none;
-            margin-top: 10px;
-            text-align: left;
-        }
-    </style>
-    <script>
-        function toggleDescription(id) {
-            const desc = document.getElementById('desc-' + id);
-            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    <script src="js/series.js"></script>
 </head>
 <body>
     <iframe src="header.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
@@ -85,7 +30,7 @@
                         <span><?= htmlspecialchars($row['name']) ?></span>
                     </a>
                     <button class="boton" onclick="toggleDescription(<?= htmlspecialchars($row['id']) ?>)">Ver Detalles</button>
-                    <div class="description" id="desc-<?= htmlspecialchars($row['id']) ?>">
+                    <div class="description" id="desc-<?= htmlspecialchars($row['id']) ?>" style="display: none;">
                         <?= htmlspecialchars($row['description']) ?>
                     </div>
                 </div>

@@ -1,4 +1,3 @@
-<? include_once("/conexion.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,17 +25,21 @@
   </header>
   <div class="flex-container">
     <div class="login">
-      <form method="post">
+      <form action="registrarse.php" method="POST">
         <h2 id="title">Crea tu cuenta</h2>
-        <input type="text" class="password" placeholder="Nombre de usuario" />
+        <form action="process.php" method="POST">
+          <input type="text" name="username" class="password" placeholder="Nombre de usuario" required />
 
-        <input type="text" id="email" placeholder="Email" required />
-        <input type="password" class="password" placeholder="Contraseña" required />
-        <input type="password" class="password" placeholder="Confirma Contraseña" required />
-
-        <button type="button" id="sign_up_button" class="glow_on_hover">
-          Crear
-        </button>
+          <input type="email" name="email" id="email" placeholder="Email" required />
+          <input type="password" name="password" class="password" placeholder="Contraseña" required />
+          <input type="password" name="confirm_password" class="password" placeholder="Confirma Contraseña" required />
+          <input type="text" name="card_number" class="password" placeholder="Numero de tarjeta" />
+          <input type="text" name="address" class="password" placeholder="Dirección" />
+          <input type="text" name="first_name" class="password" placeholder="Nombre" required />
+          <input type="text" name="last_name1" class="password" placeholder="Apellido 1" required />
+          <input type="text" name="last_name2" class="password" placeholder="Apellido 2" required />
+          <button type="submit">Enviar</button>
+        </form>
         <script src="/js/crearcuenta.js"></script>
         <div class="register">
           <h3>Ya tienes una cuenta?</h3>
@@ -56,33 +59,31 @@
 </body>
 
 </html>
+<?php
 
-<?php 
-if ($conn->connect_error) {
-  die("Error de conexión: " . $conn->connect_error);
-}
+include_once("conexion.php");
 
-$usuario = $_POST["usuario"];
-$email = $_POST["email"];
-$password = $_POST["password"];
-$confirm_password = $_POST["confirm_password"];
+$conn = $bbdd;
 
-if ($password !== $confirm_password) {
-  die("Las contraseñas no coinciden.");
-}
+$username = $_POST['username'] ?? '';
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
+$confirm_pass = $_POST['confirm_password'] ?? '';
+$card_number = $_POST['card_number'] ?? '';
+$address = $_POST['address'] ?? '';
+$first_name = $_POST['first_name'] ?? '';
+$last_name1 = $_POST['last_name1'] ?? '';
+$last_name2 = $_POST['last_name2'] ?? '';
 
-$password_hash = password_hash($password, PASSWORD_DEFAULT);
-
-$sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", var: $usuario, $email, $password_hash);
-
-if ($stmt->execute()) {
-echo "Registro exitoso. <a href='iniciarsesion.php'>Inicia sesión aquí</a>";
+if (empty($username) || empty($email) || empty($password) || empty($confirm_pass) || empty($first_name) || empty($last_name1) || empty($last_name2) || $password != $confirm_pass) {
+  die("Error: Todos los campos obligatorios deben ser completados.");
 } else {
-  echo "Error al registrar: " . $conn->error;
-}
+  $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt->close();
-$conn->close();
+  $stmt = $conn->prepare("INSERT INTO users (username, email, password, address, payment_method,name, surname1, surname2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $address, $card_number, $first_name, $last_name1, $last_name2);
+
+  $stmt->close();
+  $conn->close();
+}
 ?>
