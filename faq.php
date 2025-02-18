@@ -1,14 +1,10 @@
 <?php
-$servidor   = 'localhost';
-$usuario    = 'root';
-$contrasena = '';
-$bd         = 'maciflix';
+include_once('conexion.php'); 
 
-// Conexión a la base de datos
-$bbdd = new mysqli($servidor, $usuario, $contrasena, $bd);
-
-if ($bbdd->connect_error) {
-    die('Error en la conexión: ' . $bbdd->connect_error);
+// Si 'lang' no está definido o está vacío, redirigir a español (1)
+if (!isset($_GET['lang']) || empty($_GET['lang'])) {
+    header("Location: ?lang=1");
+    exit();
 }
 
 // Definir el idioma seleccionado
@@ -54,7 +50,10 @@ $bbdd->close();
   <div id="faq">
           <?php foreach ($preguntas as $faq): ?>
               <div class="faq-item">
-              <button class="faq-pregunta"><?php echo htmlspecialchars($faq['question']); ?></button>
+              <button class="faq-pregunta">
+                <?php echo htmlspecialchars($faq['question']); ?>
+                <span class="faq-icon">&#9660;</span> 
+            </button>
                   <p class="faq-respuesta"><?php echo htmlspecialchars($faq['answer']); ?></p>
               </div>
           <?php endforeach; ?>
