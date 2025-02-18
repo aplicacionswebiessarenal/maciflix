@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
     <link rel="stylesheet" href="/css/peliculas.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/footer.css">ç
+    <link rel="stylesheet" href="../css/footer.css">
     <title><?php echo $pelicula['name']; ?></title>
 </head>
 
@@ -31,8 +31,6 @@
 
     $conn->close();
     ?>
-    <h1><?php echo $pelicula['name']; ?></h1>
-    <img src="<?php echo $pelicula['img']; ?>" alt="<?php echo $pelicula['name']; ?>">
 
     <iframe src="header.php"
         onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
