@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+<? include_once("/conexion.php"); ?>
 <!DOCTYPE html>
-<<<<<<< HEAD
+
   <html lang="es">
   <head>
     <meta charset="UTF-8">
@@ -14,6 +14,43 @@
        <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
+<?php
+// Obtener el ID de la película desde la URL
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']); // Convertir a entero para evitar inyecciones SQL
+
+    // Consulta para obtener la película por ID
+    $sql = "SELECT * FROM peliculas WHERE id = $id";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $pelicula = $result->fetch_assoc();
+    } else {
+        echo "Película no encontrada.";
+        exit;
+    }
+} else {
+    echo "ID no proporcionado.";
+    exit;
+}
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $pelicula['titulo']; ?></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><?php echo $pelicula['titulo']; ?></h1>
+    <img src="<?php echo $pelicula['imagen']; ?>" alt="<?php echo $pelicula['titulo']; ?>">
+    <p>Clasificación: <?php echo $pelicula['clasificacion']; ?></p>
+</body>
+</html>
+
 <iframe
       src="header.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
@@ -78,34 +115,4 @@
       <iframe src="footer.php"
       onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
-=======
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-
->>>>>>> 3d959aaa0a3b231e8fbb8e1c5edae1e6c1a36ce4
-=======
-<? include_once("/conexion.php"); ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-<!--AAAAAron espabila-->
-</body>
-
->>>>>>> 46fe462fd09ff43293e0ace0a95b1d91305c1cdb
 </html>
