@@ -1,12 +1,10 @@
 <?php 
 include_once('conexion.php'); 
 
-// Manejar la acción de añadir al carrito
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
-    $product_id = intval($_POST['product_id']); // Asegurar que sea un número válido
+    $product_id = intval($_POST['product_id']); 
     $quantity = 1;
 
-    // Verificar si el producto ya está en el carrito
     $check_sql = "SELECT id FROM cart WHERE id_product = ?";
     $stmt_check = $bbdd->prepare($check_sql);
     $stmt_check->bind_param("i", $product_id);
@@ -14,14 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     $stmt_check->store_result();
 
     if ($stmt_check->num_rows > 0) {
-        // Si ya existe, aumentar cantidad
         $update_sql = "UPDATE cart SET quantity = quantity + 1 WHERE id_product = ?";
         $stmt_update = $bbdd->prepare($update_sql);
         $stmt_update->bind_param("i", $product_id);
         $stmt_update->execute();
         $stmt_update->close();
     } else {
-        // Si no existe, agregar nuevo producto al carrito
         $insert_sql = "INSERT INTO cart (id_product, quantity) VALUES (?, ?)";
         $stmt_insert = $bbdd->prepare($insert_sql);
         $stmt_insert->bind_param("ii", $product_id, $quantity);
@@ -32,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     $stmt_check->close();
 }
 
-// Obtener productos de la base de datos
 $sql = "SELECT id, name, description, price, img, stock FROM product";
 $result = $bbdd->query($sql);
 ?> 
@@ -72,7 +67,6 @@ $result = $bbdd->query($sql);
                         <p><?= number_format($product['price'], 2) ?>€</p>
                     </div>
 
-                    <!-- Formulario para añadir al carrito -->
                     <div class="boton_añadir_carrito">
                         <form method="POST">
                             <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
