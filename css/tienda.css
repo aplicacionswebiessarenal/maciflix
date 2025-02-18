@@ -80,8 +80,7 @@ h2 {
 }
 
 .precio_carrito {
-    margin-right: none;
-    padding-right: none;
+    margin-right: 20px;
     width: 70px;
     height: 70px;
 }
