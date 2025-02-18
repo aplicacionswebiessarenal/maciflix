@@ -84,8 +84,8 @@ if (empty($username) || empty($email) || empty($password) || empty($confirm_pass
 } else {
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-  $stmt = $conn->prepare("INSERT INTO users (username, email, password, payment_method, address, first_name, last_name1, last_name2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-  $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $card_number, $address, $first_name, $last_name1, $last_name2);
+  $stmt = $conn->prepare("INSERT INTO users (username, email, password, address, payment_method,name, surname1, surname2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $address, $card_number, $first_name, $last_name1, $last_name2);
 
 }
 
