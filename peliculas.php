@@ -1,25 +1,25 @@
-<? include_once("/conexion.php"); ?>
 <!DOCTYPE html>
-  <html lang="es">
-  <head>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PELICULAS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
     <link rel="stylesheet" href="/css/peliculas.css">
     <link rel="stylesheet" href="../css/style.css">
-       <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <title><?php echo $pelicula['name']; ?></title>
 </head>
-<body>
-<?php
-// Obtener el ID de la película desde la URL
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']); // Convertir a entero para evitar inyecciones SQL
 
-    // Consulta para obtener la película por ID
-    $sql = "SELECT * FROM peliculas WHERE id = $id";
+<body>
+    <?php
+    require_once("conexion.php");
+    $conn = $bbdd;
+    $sql = "SELECT * FROM films WHERE id = 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -28,36 +28,15 @@ if (isset($_GET['id'])) {
         echo "Película no encontrada.";
         exit;
     }
-} else {
-    echo "ID no proporcionado.";
-    exit;
-}
 
-$conn->close();
-?>
+    $conn->close();
+    ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo $pelicula['titulo']; ?></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1><?php echo $pelicula['titulo']; ?></h1>
-    <img src="<?php echo $pelicula['imagen']; ?>" alt="<?php echo $pelicula['titulo']; ?>">
-    <p>Clasificación: <?php echo $pelicula['clasificacion']; ?></p>
-</body>
-</html>
-
-<iframe
-      src="header.php"
-      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
-    ></iframe>
-        <div id="search-bar">
-            <input type="text" placeholder="Buscar películas...">
-        </div>
-    </header>
+    <iframe src="header.php"
+        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <div id="search-bar">
+        <input type="text" placeholder="Buscar películas...">
+    </div>
     <div class="movies-container">
         <div class="movie" onclick="showPopup('Buscando a Nemo')">
             <img src="img/nemo.png" alt="Buscando a Nemo">
@@ -111,7 +90,8 @@ $conn->close();
             document.getElementById('popup').style.display = 'none';
         }
     </script>
-      <iframe src="footer.php"
-      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <iframe src="footer.php"
+        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
+
 </html>
