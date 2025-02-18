@@ -33,40 +33,10 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Mi Lista - Maciflix</title>
-   <style>
-    .pelicula {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-.pelicula img {
-    width: 100px;
-    height: 100px;
-    margin-right: 50px;
-}
-.boton {
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    margin-left: 10px;
-    cursor: pointer;
-    border: none;
-    margin-right: 20px;
-}
-.nombre {
-    margin-right: 20px;
 
-}
-#body-milista {
-    background-color: black;
-    color: white;
-}
-</style>
 </head>
 <body id="body-milista">
-    
+
 <iframe src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
     <h1>Mi Lista</h1>
@@ -74,7 +44,7 @@ $result = $conn->query($sql);
             <?php while ($row = $result->fetch_assoc()) { ?>
                 <div class="pelicula" id="pelicula-<?php echo $row['id']; ?>">
                     <img src="<?php echo $row['imagen']; ?>" alt="<?php echo $row['nombre']; ?>">
-                    <span class="nombre"><?php echo $row['nombre']; ?></span>
+                    <h1 class="nombre"><?php echo $row['nombre']; ?></h1>
                     <button class="boton ver" onclick="verPelicula('<?php echo $row['nombre']; ?>')">Ver</button>
                     <button class="boton quitar" onclick="quitarPelicula(<?php echo $row['id']; ?>)">Quitar</button>
                 </div>
@@ -98,9 +68,9 @@ $result = $conn->query($sql);
             }
         }
     </script>
-   
+<footer>
     <iframe src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>        
-   
+</footer>
 </body>
 </html>
 
