@@ -37,13 +37,10 @@
   color: white;
   margin-left: 5px;
 }
-@media (max-width: 768px) {
-    header {
-      padding: 20px 10px;
-    }
-    #search-bar input {
-      width: 90%; 
-    }
+@media (max-width: 480px) {
+  #footer{
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 480px) {
     .pelicula{
