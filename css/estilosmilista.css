@@ -6,9 +6,10 @@
     border: 1px solid #ccc;
 }
 .pelicula img {
-    width: 100px;
-    height: 100px;
-    margin-right: 50px;
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+    margin-right: 100px;
 }
 .boton {
     background-color: red;
@@ -17,18 +18,25 @@
     margin-left: 10px;
     cursor: pointer;
     border: none;
-    margin-right: 20px;
+    margin-left: 30px;
+    margin-right: 5px;
+}
+.boton.boton.ver {
+  margin-left: 20px;
+  margin-right: 5px;
 }
 .nombre {
-    margin-right: 20px;
-
+    margin-left: 20px;
+    margin-right: 70px ;
 }
 #body-milista {
     background-color: black;
     color: white;
 }
-
-
+#body-milista h1 {
+  color: white;
+  margin-left: 5px;
+}
 @media (max-width: 768px) {
     header {
       padding: 20px 10px;
@@ -38,7 +46,7 @@
     }
 }
 @media (max-width: 480px) {
-    .contenido-pelis {
+    .pelicula{
       grid-template-columns: 1fr;
     }
 }
@@ -173,3 +181,8 @@ footer p {
     color: #aaa;
     font-size: 1rem;
   }
+  @media (max-width: 480px) {
+    #FAQ-body{
+      grid-template-columns: 1fr;
+    }
+}

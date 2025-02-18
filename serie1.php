@@ -31,6 +31,14 @@ $seasons = [];
 foreach ($episodes as $episode) {
     $seasons[$episode['season']][] = $episode;
 }
+
+// Consulta para obtener otras series como sugerencia
+$sql_suggestions = "SELECT id, name, img FROM series WHERE id != ? LIMIT 2";
+$stmt_suggestions = $bbdd->prepare($sql_suggestions);
+$stmt_suggestions->bind_param("i", $id_serie);
+$stmt_suggestions->execute();
+$result_suggestions = $stmt_suggestions->get_result();
+$suggestions = $result_suggestions->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +52,7 @@ foreach ($episodes as $episode) {
     <link rel="stylesheet" href="css/footer.css">
     <script src="js/series.js"></script>
 </head>
+
 <body>
     <iframe
         src="header.php"
@@ -86,6 +95,20 @@ foreach ($episodes as $episode) {
                 </ul>
             </div>
         <?php endforeach; ?>
+
+        <div class="suggestions">
+            <h2>Otras series que te pueden gustar</h2>
+            <div class="suggestions-container">
+                <?php foreach ($suggestions as $suggestion): ?>
+                    <div class="suggestion">
+                        <a href="serie1.php?id=<?= htmlspecialchars($suggestion['id']) ?>">
+                            <img src="img/<?= htmlspecialchars($suggestion['img']) ?>" alt="<?= htmlspecialchars($suggestion['name']) ?>">
+                            <span><?= htmlspecialchars($suggestion['name']) ?></span>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
     </main>
     <footer>
         <iframe src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
@@ -96,5 +119,6 @@ foreach ($episodes as $episode) {
 <?php
 $stmt_serie->close();
 $stmt_episodes->close();
+$stmt_suggestions->close();
 $bbdd->close();
 ?>
