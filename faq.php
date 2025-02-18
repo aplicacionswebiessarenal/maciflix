@@ -1,15 +1,5 @@
 <?php
-$servidor   = 'localhost';
-$usuario    = 'root';
-$contrasena = '';
-$bd         = 'maciflix';
-
-// Conexión a la base de datos
-$bbdd = new mysqli($servidor, $usuario, $contrasena, $bd);
-
-if ($bbdd->connect_error) {
-    die('Error en la conexión: ' . $bbdd->connect_error);
-}
+include_once('conexion.php'); 
 
 // Si 'lang' no está definido o está vacío, redirigir a español (1)
 if (!isset($_GET['lang']) || empty($_GET['lang'])) {
@@ -62,7 +52,7 @@ $bbdd->close();
               <div class="faq-item">
               <button class="faq-pregunta">
                 <?php echo htmlspecialchars($faq['question']); ?>
-                <span class="faq-icon">&#9660;</span> <!-- Icono de despliegue -->
+                <span class="faq-icon">&#9660;</span> 
             </button>
                   <p class="faq-respuesta"><?php echo htmlspecialchars($faq['answer']); ?></p>
               </div>

@@ -33,50 +33,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Mi Lista - Maciflix</title>
-    <style>
-        .pelicula {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        .pelicula img {
-            width: 100px;
-            height: 100px;
-            margin-right: 50px;
-        }
-        .boton {
-            background-color: red;
-            color: white;
-            padding: 5px 10px;
-            margin-left: 10px;
-            cursor: pointer;
-            border: none;
-            margin-right: 20px;
-        }
-        .nombre {
-            margin-right: 20px;
-
-        }
-        #body-milista {
-            background-color: black;
-            color: white;
-        }
-        footer {
-        background-color: #111; 
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 60px;
-        border-top: 2px solid #ff0000; 
-        }
-
-        footer p {
-        margin: 0;
-        font-size: 0.9rem;
-        }
-    </style>
+   
 </head>
 <body id="body-milista">
     
