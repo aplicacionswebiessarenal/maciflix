@@ -38,12 +38,11 @@
           <input type="text" name="first_name" class="password" placeholder="Nombre" required />
           <input type="text" name="last_name1" class="password" placeholder="Apellido 1" required />
           <input type="text" name="last_name2" class="password" placeholder="Apellido 2" required />
-
           <button type="submit">Enviar</button>
+          <button type="button" id="sign_up_button" class="glow_on_hover">
+            Crear
+          </button>
         </form>
-        <button type="button" id="sign_up_button" class="glow_on_hover">
-          Crear
-        </button>
         <script src="/js/crearcuenta.js"></script>
         <div class="register">
           <h3>Ya tienes una cuenta?</h3>
