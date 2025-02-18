@@ -1,14 +1,12 @@
 <?php 
 include_once('conexion.php'); 
 
-// Verificar si se pasó un ID de producto en la URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Producto no encontrado.");
 }
 
 $id = intval($_GET['id']); 
 
-// Obtener los datos del producto desde la base de datos
 $sql = "SELECT id, name, description, price, img, stock FROM product WHERE id = ?";
 $stmt = $bbdd->prepare($sql);
 $stmt->bind_param("i", $id);
@@ -16,17 +14,14 @@ $stmt->execute();
 $result = $stmt->get_result();
 $product = $result->fetch_assoc();
 
-// Si no existe el producto, mostrar un mensaje y salir
 if (!$product) {
     die("Producto no encontrado.");
 }
 
-// Manejo del formulario para añadir al carrito
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     $product_id = intval($_POST['product_id']);
     $quantity = 1;
 
-    // Verificar si el producto ya está en el carrito
     $check_sql = "SELECT id FROM cart WHERE id_product = ?";
     $stmt_check = $bbdd->prepare($check_sql);
     $stmt_check->bind_param("i", $product_id);
@@ -34,14 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     $stmt_check->store_result();
 
     if ($stmt_check->num_rows > 0) {
-        // Si ya está en el carrito, aumentar cantidad
         $update_sql = "UPDATE cart SET quantity = quantity + 1 WHERE id_product = ?";
         $stmt_update = $bbdd->prepare($update_sql);
         $stmt_update->bind_param("i", $product_id);
         $stmt_update->execute();
         $stmt_update->close();
     } else {
-        // Si no está, insertarlo en el carrito
         $insert_sql = "INSERT INTO cart (id_product, quantity) VALUES (?, ?)";
         $stmt_insert = $bbdd->prepare($insert_sql);
         $stmt_insert->bind_param("ii", $product_id, $quantity);
@@ -50,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     }
 
     $stmt_check->close();
-    header("Location: product.php?id=$product_id&added=1"); // Redirigir para evitar reenvío de formulario
+    header("Location: product.php?id=$product_id&added=1"); 
     exit();
 }
 
@@ -90,7 +83,6 @@ $stmt->close();
                     <p><?= number_format($product['price'], 2) ?>€</p>
                 </div>
 
-                <!-- Formulario para añadir al carrito -->
                 <div class="boton_añadir_carrito">
                     <form method="POST">
                         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
@@ -105,7 +97,6 @@ $stmt->close();
                 </div>
             </div>
 
-            <!-- Mensaje de confirmación al añadir al carrito -->
             <?php if (isset($_GET['added']) && $_GET['added'] == 1): ?>
                 <p style="color: green;">¡Producto añadido al carrito!</p>
             <?php endif; ?>
