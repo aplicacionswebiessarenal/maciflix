@@ -17,40 +17,37 @@
         <h1>Peliculas</h1>
         <!-- Las peliculas disponibles -->
         <div class="contenedor-de-peliculas">
-            <div class="pelicula-individual">
-                <a href="compratusentradas.php"><img src="/img/avatar.png"
-                        alt="Avatar" class="imagenes"></a>
-                <div class="pelicula_detalles_1">
-                    <div class="pelicula_titulo_1"><h2>Avatar</h2></div>
-                </div>
-            </div>
-            <div class="pelicula-individual">
-                <a href="compratusentradas.php"><img src="/img/sonic3.jpg"
-                        alt="Sonic 3" class="imagenes"></a>
-                <div class="pelicula_detalles_1">
-                    <div class="pelicula_titulo_1"><h2>Sonic 3</h2></div>
-                </div>
-            </div>
-            <div class="pelicula-individual">
-                <a href="compratusentradas.php"><img
-                        src="/img/mansionenbrujada.jpeg" alt="Mansion Enbrujada"
-                        class="imagenes">
-                </a>
-                <div class="pelicula_detalles_1">
-                    <div class="pelicula_titulo_1"><h2>Mansión Enbrujada</h2></div>
-                </div>
-            </div>
-            <div class="pelicula-individual">
-                <a href="compratusentradas.php"><img src="/img/avengers.jpg"
-                        alt="avengers" class="imagenes"></a>
-                <div class="pelicula_detalles_1">
-                    <div class="pelicula_titulo_1"><h2>Avengers</h2></div>
-                </div>
-            </div>
-            <script src="/js/peliculasdisponibles.js"></script>
+            <?php
+                // Obtener el ID del cine desde la URL
+                $cine_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+                // Realizar la consulta para obtener las películas del cine
+                $sql = "SELECT id, name, img FROM films WHERE id_cinema = ?";
+                $stmt = $bbdd->prepare($sql);
+                $stmt->bind_param("i", $cine_id);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                // Verificar si hay resultados
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()): ?>
+                        <div class="pelicula-individual">
+                            <a href="compratusentradas.php?idcine=<?= $cine_id ?>&idpeli=<?= $row['id']?>"><img src="/img/<?= htmlspecialchars($row['img']) ?>" alt="<?= htmlspecialchars($row['name']) ?>" class="imagenes"></a>
+                            <div class="pelicula_detalles_1">
+                                <div class="pelicula_titulo_1"><h2><?= htmlspecialchars($row['name']) ?></h2></div>
+                            </div>
+                        </div>
+                    <?php endwhile;
+                } else {
+                    echo "<p>No hay películas disponibles para este cine.</p>";
+                }
+
+                // Cerrar la conexión
+                $stmt->close();
+                $bbdd->close();
+            ?>
         </div>
-        <iframe
-            src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
-        ></iframe>
+        <script src="/js/peliculasdisponibles.js"></script>
+        <iframe src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
     </body>
 </html>
