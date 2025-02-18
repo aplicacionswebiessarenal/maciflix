@@ -11,11 +11,26 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
     <link rel="stylesheet" href="/css/peliculas.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/footer.css">ç
     <title><?php echo $pelicula['name']; ?></title>
 </head>
 
 <body>
+    <?php
+    require_once("conexion.php");
+    $conn = $bbdd;
+    $sql = "SELECT * FROM films WHERE id = 1";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $pelicula = $result->fetch_assoc();
+    } else {
+        echo "Película no encontrada.";
+        exit;
+    }
+
+    $conn->close();
+    ?>
     <h1><?php echo $pelicula['name']; ?></h1>
     <img src="<?php echo $pelicula['img']; ?>" alt="<?php echo $pelicula['name']; ?>">
 
