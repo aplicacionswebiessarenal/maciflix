@@ -46,8 +46,8 @@ h2 {
     color: #094fe5;
   }
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-items: end;
   margin-top: 20px;
 }
 
@@ -182,12 +182,18 @@ img {
   margin: 10px;
 }
 
-.imagen-producto {
-  display: grid;
-  border-width: 6px;
-  border-radius: 20px;
-  border-color: #e50914;
-  border-style: groove;
-  width: 7%;
-  height: 7%;
+.producto img {
+  display: flex;
+  justify-content: center;
+  height: 20%;
+  width: 20%;
+  margin-top: 2%;
+  margin-bottom: 2%;;
+  border: 3px solid #e50914;
+  border-radius: 10px;
+}
+
+.producto img {
+width: 150px;
+height: 150px;
 }
