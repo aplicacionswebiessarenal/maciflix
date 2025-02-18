@@ -29,7 +29,6 @@
         exit;
     }
 
-    $conn->close();
     ?>
 
     <iframe src="header.php"
@@ -38,47 +37,23 @@
         <input type="text" placeholder="Buscar películas...">
     </div>
     <div class="movies-container">
-        <div class="movie" onclick="showPopup('Buscando a Nemo')">
-            <img src="img/nemo.png" alt="Buscando a Nemo">
-            <h3>Buscando a Nemo</h3>
-            <span>+3 años</span>
-        </div>
-        <div class="movie" onclick="showPopup('Cars 2')">
-            <img src="img/cars 2.png" alt="Cars 2">
-            <h3>Cars 2</h3>
-            <span>+3 años</span>
-        </div>
-        <div class="movie" onclick="showPopup('Ice Age 3')">
-            <img src="img/ice age 3.png" alt="Ice Age 3">
-            <h3>Ice Age 3</h3>
-            <span>+7 años</span>
-        </div>
-        <div class="movie" onclick="showPopup('Ready Player One')">
-            <img src="img/ready player one.png" alt="Ready Player One">
-            <h3>Ready Player One</h3>
-            <span>+12 años</span>
-        </div>
-        <div class="movie" onclick="showPopup('Toy Story 3')">
-            <img src="img/toy story.png" alt="Toy Story 3">
-            <h3>Toy Story 3</h3>
-            <span>+3 años</span>
-        </div>
-        <div class="movie" onclick="showPopup('Uncharted')">
-            <img src="img/uncharted.png" alt="Uncharted">
-            <h3>Uncharted</h3>
-            <span>+12 años</span>
-        </div>
-    </div>
+        <?php
+        $sql = "SELECT * FROM films WHERE home=1";
+        $result = $bbdd->query($sql);
+        if ($result->num_rows > 0) {
+            // hay información que mostrar
+            while ($row = $result->fetch_assoc()) {
+                echo "<div>
+                      <a href='pelicula.php?id=" . $row['id'] . "'>
+                        <img src='img/" . htmlspecialchars($row['img']) . "' alt='" . htmlspecialchars($row['name']) . "' />
+                      </a>
+                    </div>";
+            }
+        } else {
 
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h2>Opciones para la película</h2>
-            <p>Para ver esta película, por favor, inicia sesión.</p>
-            <div class="options">
-                <button onclick="location.href='pelicula.html'">Ver pelicula</button>
-            </div>
-            <button onclick="hidePopup()">Cerrar</button>
-        </div>
+            echo "Sin información ingresada aún";
+        }
+        ?>
     </div>
 
     <script>
