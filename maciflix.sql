@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2025 a las 13:09:38
+-- Tiempo de generación: 18-02-2025 a las 13:04:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -34,6 +34,15 @@ CREATE TABLE `cart` (
   `quantity` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cart`
+--
+
+INSERT INTO `cart` (`id`, `id_pedido`, `id_product`, `quantity`, `id_user`) VALUES
+(8, 0, 4, 1, 0),
+(9, 0, 2, 1, 0),
+(10, 0, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -95,12 +104,12 @@ INSERT INTO `episodes` (`id`, `name`, `description`, `duration`, `img`, `season`
 (10, 'Winter Is Coming', '«Winter Is Coming» es el primer episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 62 minutos y se estrenó el 17 de abril de 2011 en Estados Unidos.1​ Escrito por los creadores del programa David Benioff y D. B. Weiss a manera de fiel adaptación de los primeros capítulos del libro del mismo nombre redactado por George R. R. Martin, «Se acerca el invierno» contó con la dirección de Tim Van Patten, quien partió del trabajo hecho por el director Thomas McCarthy en un piloto inédito.2​\r\n\r\nAl ser el primer episodio de Juego de tronos, introduce al escenario y a los protagonistas de la historia, centrándose en la familia Stark y la manera en que su señor, Eddard, se involucra en las políticas de la corte una vez que el rey, Robert Baratheon, lo nombra como su Mano, en sustitución de su fallecido predecesor, Jon Arryn.', 102, 'tronos1.jpg', 1, 2),
 (11, 'El Camino Real', '«El Camino Real» es el segundo episodio de la serie de televisión de fantasía medieval Juego de tronos, de la cadena HBO. Tiene una duración de 56 minutos y se transmitió por primera vez el 24 de abril de 2011. Fue escrito por David Benioff y D.B. Weiss, y dirigido por Tim Van Patten.2​\r\n\r\nLa mayor parte del episodio transcurre mientras los protagonistas se hallan viajando: Eddard Stark y sus hijas acompañan al séquito del rey rumbo a Desembarco del Rey para ocupar el puesto de Mano, Tyrion se une a Jon en su viaje hacia el Muro, y la recién casada Daenerys va con el khalasar de su esposo a la ciudad dothraki de Vaes Dothrak. Mientras tanto, en Invernalia, una dolida Catelyn Stark cuida de su inconsciente hijo Bran.', 100, 'tronos2.jpg', 1, 2),
 (12, 'The North Remembers', '«The North Remembers» es el primer episodio de la segunda temporada de la serie de fantasía medieval Game of Thrones de HBO. Tiene una duración de 53 minutos y se estrenó el 1 de abril de 2012 en Estados Unidos. Fue escrito por sus creadores David Benioff y D. B. Weiss y dirigido por Alan Taylor.\r\n\r\nEl episodio continúa con los personajes de la primera temporada y sus historias, con la mayoría de los protagonistas separados por todos los Siete Reinos después de los dramáticos eventos acaecidos al final de la primera temporada. El episodio incluye a nuevos personajes localizados en Rocadragón, donde el hermano del Rey Robert, Stannis Baratheon, emerge como un nuevo pretendiente al trono.', 102, 'tronos3.jpg', 1, 2),
-(13, 'Los reyes elfos bajo el cielo', 'En los albores de la Segunda Edad, Sauron es traicionado y aparentemente asesinado por Adar y sus orcos. Sin embargo, sin que Adar lo sepa, el espíritu de Sauron persiste y recupera su forma física siglos después como Halbrand. Halbrand se une a un grupo de habitantes de las Tierras del Sur que huyen y luego naufraga en su viaje a través del mar, donde se encuentra por primera vez con Galadriel.', 57, 'anillos1.jpg', 2, 3),
-(14, 'Adar', 'Arondir es capturado. Galadriel y Halbrand exploran un reino legendario. A Elendil le encargan una nueva misión. Nori afronta las consecuencias.', 58, 'anillos2.jpg', 1, 3),
-(15, 'Donde las estrellas son extrañas', 'La erupción del Monte del Destino provoca movimientos sísmicos en toda la Tierra Media, lo que provoca un terremoto en Khazad-Dum que destruye gran parte de la agricultura y la infraestructura de la ciudad. Esto amplía aún más la brecha entre Durin III y Durin IV, ya que ambos se muestran reacios a poner fin a su disputa. El Extraño, Nori y Poppy continúan su viaje hacia Rhun. La falta de comida y agua comienza a cansarlos, y el Extraño pronto colapsa por deshidratación. Poppy y Nori encuentran un pozo cerca, pero sin darse cuenta alertan a los jinetes enmascarados, a quienes habían evadido con éxito anteriormente. Al encontrar un bastón en el pozo, el Extraño revivido usa magia para ahuyentar a los jinetes. Celebrimbor, consciente de la falta de confianza en Halbrand, pero no de su verdadera naturaleza, rechaza sus solicitudes de reunirse, pero no obstante le permite quedarse en Eregion. Sin embargo, Halbrand finalmente consigue comunicarse con Celebrimbor, le cuenta sobre el éxito de los anillos élficos y \"revela\" que es Annatar, un enviado de los Valar y el Señor de los Dones. Como Annatar, Sauron le ordena a un Celebrimbor atónito que haga anillos para hombres. Al percibir el interés de Sauron en Celebrimbor, Gil-galad envía a Elrond y Galadriel a Eregion. Más tarde, Durin IV y Disa reciben una invitación de Celebrimbor para ir a Eregion.', 61, 'anillos3.jpg', 2, 3),
-(16, 'El águila y el cetro', 'Isildur y un viejo amigo se reencuentran. Arondir lidia con el cambio. Míriel afronta una oposición en alza. Annatar aconseja a Celebrimbor.', 66, 'anillos2.1.jpg', 2, 3),
-(17, 'Una sombra del pasado', 'Después de que el Señor Oscuro Morgoth es derrotado, el elfo Finrod muere buscando al sirviente de Morgoth, Sauron . La hermana de Finrod, Galadriel, jura continuar la búsqueda y encuentra una fortaleza abandonada en las tierras baldías del norte de Forodwaith que lleva la marca de Sauron. Sus compañeros insisten en regresar a la capital élfica, Lindon , donde el Gran Rey Gil-galad proclama que la guerra contra las fuerzas de Morgoth ha terminado. Le concede a Galadriel y su compañía el honor de navegar a Valinor , donde pueden vivir una vida eterna en paz. En las Tierras del Sur de la Tierra Media , los elfos vigilan a los hombres descendientes de aliados de Morgoth. Para la desaprobación de los demás elfos y hombres, el elfo Arondir se ha hecho amigo de la curandera humana Bronwyn. Juntos descubren que la aldea de Hordern ha sido destruida, mientras que el hijo de Bronwyn, Theo, encuentra una espada rota que lleva la marca de Sauron. Cerca de Valinor, Galadriel decide regresar y continuar la búsqueda de Sauron, saltando del barco a los Mares Divididos . Al mismo tiempo, dos Harfoots , Nori Brandyfoot y Poppy Proudfellow, descubren a un hombre extraño dentro de un cráter de meteorito.', 59, 'anillos2.2.jpg', 1, 3),
-(18, 'A la deriva', 'Mientras nada de regreso a la Tierra Media, Galadriel se encuentra con una balsa con sobrevivientes humanos de un naufragio. Son atacados por un monstruo marino y solo uno sobrevive: Halbrand de las Tierras del Sur, que huye de los orcos . Él y Galadriel trabajan juntos para sobrevivir a una tormenta. Nori y Poppy mantienen al Extraño oculto de los otros Harfoots y le dan comida y refugio. Él no habla su idioma, pero usa luciérnagas y magia aparente para indicar que está buscando una constelación de estrellas que Nori no reconoce. Arondir investiga túneles debajo de Hordern y es capturado. Bronwyn regresa a su propia aldea, Tirharad, donde un orco la ataca a ella y a Theo. Lo matan y convencen al resto de la ciudad, incluido Waldreg, el dueño de la taberna, de que se vayan. Gil-galad envía al semielfo Elrond a Eregion para ayudar al gran herrero elfo Celebrimbor , que planea construir una nueva y poderosa forja. Elrond sugiere que busquen ayuda de los Enanos y se dirige a su amigo el Príncipe Durin IV en Khazad-dûm . Durin IV está enojado porque Elrond no lo ha visitado en 20 años, pero su esposa Disa lo convence de escuchar la propuesta de Elrond.', 57, 'anillos2.3.jpg', 1, 3);
+(13, 'Una sombra del pasado', 'Después de que el Señor Oscuro Morgoth es derrotado, el elfo Finrod muere buscando al sirviente de Morgoth, Sauron . La hermana de Finrod, Galadriel, jura continuar la búsqueda y encuentra una fortaleza abandonada en las tierras baldías del norte de Forodwaith que lleva la marca de Sauron. Sus compañeros insisten en regresar a la capital élfica, Lindon , donde el Gran Rey Gil-galad proclama que la guerra contra las fuerzas de Morgoth ha terminado. Le concede a Galadriel y su compañía el honor de navegar a Valinor , donde pueden vivir una vida eterna en paz. En las Tierras del Sur de la Tierra Media , los elfos vigilan a los hombres descendientes de aliados de Morgoth. Para la desaprobación de los demás elfos y hombres, el elfo Arondir se ha hecho amigo de la curandera humana Bronwyn. Juntos descubren que la aldea de Hordern ha sido destruida, mientras que el hijo de Bronwyn, Theo, encuentra una espada rota que lleva la marca de Sauron. Cerca de Valinor, Galadriel decide regresar y continuar la búsqueda de Sauron, saltando del barco a los Mares Divididos . Al mismo tiempo, dos Harfoots , Nori Brandyfoot y Poppy Proudfellow, descubren a un hombre extraño dentro de un cráter de meteorito.', 59, 'anillos2.2.jpg', 1, 3),
+(14, 'A la deriva', 'Mientras nada de regreso a la Tierra Media, Galadriel se encuentra con una balsa con sobrevivientes humanos de un naufragio. Son atacados por un monstruo marino y solo uno sobrevive: Halbrand de las Tierras del Sur, que huye de los orcos . Él y Galadriel trabajan juntos para sobrevivir a una tormenta. Nori y Poppy mantienen al Extraño oculto de los otros Harfoots y le dan comida y refugio. Él no habla su idioma, pero usa luciérnagas y magia aparente para indicar que está buscando una constelación de estrellas que Nori no reconoce. Arondir investiga túneles debajo de Hordern y es capturado. Bronwyn regresa a su propia aldea, Tirharad, donde un orco la ataca a ella y a Theo. Lo matan y convencen al resto de la ciudad, incluido Waldreg, el dueño de la taberna, de que se vayan. Gil-galad envía al semielfo Elrond a Eregion para ayudar al gran herrero elfo Celebrimbor , que planea construir una nueva y poderosa forja. Elrond sugiere que busquen ayuda de los Enanos y se dirige a su amigo el Príncipe Durin IV en Khazad-dûm . Durin IV está enojado porque Elrond no lo ha visitado en 20 años, pero su esposa Disa lo convence de escuchar la propuesta de Elrond.', 57, 'anillos2.3.jpg', 1, 3),
+(15, 'Adar', 'Arondir es capturado. Galadriel y Halbrand exploran un reino legendario. A Elendil le encargan una nueva misión. Nori afronta las consecuencias.', 58, 'anillos2.jpg', 1, 3),
+(16, 'Donde las estrellas son extrañas', 'La erupción del Monte del Destino provoca movimientos sísmicos en toda la Tierra Media, lo que provoca un terremoto en Khazad-Dum que destruye gran parte de la agricultura y la infraestructura de la ciudad. Esto amplía aún más la brecha entre Durin III y Durin IV, ya que ambos se muestran reacios a poner fin a su disputa. El Extraño, Nori y Poppy continúan su viaje hacia Rhun. La falta de comida y agua comienza a cansarlos, y el Extraño pronto colapsa por deshidratación. Poppy y Nori encuentran un pozo cerca, pero sin darse cuenta alertan a los jinetes enmascarados, a quienes habían evadido con éxito anteriormente. Al encontrar un bastón en el pozo, el Extraño revivido usa magia para ahuyentar a los jinetes. Celebrimbor, consciente de la falta de confianza en Halbrand, pero no de su verdadera naturaleza, rechaza sus solicitudes de reunirse, pero no obstante le permite quedarse en Eregion. Sin embargo, Halbrand finalmente consigue comunicarse con Celebrimbor, le cuenta sobre el éxito de los anillos élficos y \"revela\" que es Annatar, un enviado de los Valar y el Señor de los Dones. Como Annatar, Sauron le ordena a un Celebrimbor atónito que haga anillos para hombres. Al percibir el interés de Sauron en Celebrimbor, Gil-galad envía a Elrond y Galadriel a Eregion. Más tarde, Durin IV y Disa reciben una invitación de Celebrimbor para ir a Eregion.', 61, 'anillos3.jpg', 2, 3),
+(17, 'El águila y el cetro', 'Isildur y un viejo amigo se reencuentran. Arondir lidia con el cambio. Míriel afronta una oposición en alza. Annatar aconseja a Celebrimbor.', 66, 'anillos2.1.jpg', 2, 3),
+(18, 'Los reyes elfos bajo el cielo', 'En los albores de la Segunda Edad, Sauron es traicionado y aparentemente asesinado por Adar y sus orcos. Sin embargo, sin que Adar lo sepa, el espíritu de Sauron persiste y recupera su forma física siglos después como Halbrand. Halbrand se une a un grupo de habitantes de las Tierras del Sur que huyen y luego naufraga en su viaje a través del mar, donde se encuentra por primera vez con Galadriel.', 57, 'anillos1.jpg', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -278,8 +287,8 @@ CREATE TABLE `sala` (
 --
 
 INSERT INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
-(1, 'Sala zaza 1', 6, 6),
-(2, 'Sala edamame 2', 5, 7);
+(1, 'Sala zaza 1', 15, 20),
+(2, 'Sala edamame 2', 7, 12);
 
 -- --------------------------------------------------------
 
@@ -413,7 +422,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `cinemas`
@@ -425,7 +434,7 @@ ALTER TABLE `cinemas`
 -- AUTO_INCREMENT de la tabla `episodes`
 --
 ALTER TABLE `episodes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 
 --
 -- AUTO_INCREMENT de la tabla `faq`
