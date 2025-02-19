@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #141414; /* Fondo oscuro */
+            background-color:rgb(0, 0, 0); /* Fondo oscuro */
             color: white; /* Texto blanco */
             padding: 20px;
             margin: 0;
@@ -20,10 +20,10 @@
         .container {
             max-width: 800px;
             margin: auto;
-            background: #1c1c1c;
+            background:rgb(29, 28, 28);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
         h1 {
