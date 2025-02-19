@@ -63,27 +63,27 @@
 include_once("conexion.php");
 
 $conn = $bbdd;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$username = htmlspecialchars($_POST['username']);
-$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-$password = $_POST['password'];
-$confirm_pass = $_POST['confirm_password'];
-$address = htmlspecialchars($_POST['address']);
-$card_number = htmlspecialchars($_POST['payment_method']);
-$first_name = htmlspecialchars($_POST['first_name']);
-$last_name1 = htmlspecialchars($_POST['last_name1']);
-$last_name2 = htmlspecialchars($_POST['last_name2']);
+  $username = htmlspecialchars($_POST['username']);
+  $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $password = $_POST['password'];
+  $confirm_pass = $_POST['confirm_password'];
+  $address = htmlspecialchars($_POST['address']);
+  $card_number = htmlspecialchars($_POST['payment_method']);
+  $first_name = htmlspecialchars($_POST['first_name']);
+  $last_name1 = htmlspecialchars($_POST['last_name1']);
+  $last_name2 = htmlspecialchars($_POST['last_name2']);
 
 
-if (empty($username) || empty($email) || empty($password) || empty($confirm_pass) || empty($first_name) || empty($last_name1) || empty($last_name2) || $password != $confirm_pass) {
-  die("Error: Todos los campos obligatorios deben ser completados.");
-} else {
-  $password_hash = password_hash($password, PASSWORD_DEFAULT);
+  if (empty($username) || empty($email) || empty($password) || empty($confirm_pass) || empty($first_name) || empty($last_name1) || empty($last_name2) || $password != $confirm_pass) {
+    die("Error: Todos los campos obligatorios deben ser completados.");
+  } else {
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-  $stmt = $conn->prepare("INSERT INTO users (username, email, password, address, payment_method,name, surname1, surname2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-  $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $address, $card_number, $first_name, $last_name1, $last_name2);
-  $stmt->execute();
-  $stmt->close();
-  $conn->close();
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password, address, payment_method,name, surname1, surname2) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssss", $username, $email, $hashed_password, $address, $card_number, $first_name, $last_name1, $last_name2);
+    $stmt->close();
+  }
 }
 ?>
