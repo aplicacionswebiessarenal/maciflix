@@ -26,27 +26,27 @@ body {
 }
 
 .movies-container {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 20px;
-    margin: 3;
+    gap: 1;
+    padding: 2px;
+    margin: 1;
 }
 
 .movie {
     text-align: center;
     cursor: pointer;
-    width: 50%;
-    height: 50%;
+    width: auto;
+    height: auto;
 }
 
 .movie img {
-    width: 100%;
-    border-radius: 10px;
+    width: auto;
+    border-radius: 1px;
     transition: transform 0.3s;
-    margin: 2;
+    margin: 1;
 }
 
 .movie img:hover {
@@ -54,8 +54,8 @@ body {
 }
 
 .movie h3 {
-    margin:2;
-    padding: 20%;
+    margin: 1px;;
+    padding: 2%;
 }
 
 .movie span {
@@ -137,7 +137,7 @@ body {
 .movies-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
 }
 
