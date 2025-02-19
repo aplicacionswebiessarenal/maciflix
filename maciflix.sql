@@ -287,8 +287,8 @@ CREATE TABLE `sala` (
 --
 
 INSERT INTO `sala` (`id`, `name`, `rows`, `columns`) VALUES
-(1, 'Sala zaza 1', 15, 20),
-(2, 'Sala edamame 2', 7, 12);
+(1, 'Sala zaza 1', 6, 6),
+(2, 'Sala edamame 2', 7, 5);
 
 -- --------------------------------------------------------
 

@@ -44,13 +44,10 @@ function showNotification(episodeName) {
 
 function toggleDescription(id) {
     const desc = document.getElementById('desc-' + id);
-    const btn = document.getElementById('btn-' + id);
     if (desc.style.display === 'none' || desc.style.display === '') {
         desc.style.display = 'block';
-        if (btn) btn.innerText = 'Leer menos';
     } else {
         desc.style.display = 'none';
-        if (btn) btn.innerText = 'Leer más';
     }
 }
 

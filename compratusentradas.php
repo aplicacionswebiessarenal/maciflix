@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #141414; /* Fondo oscuro */
+            background-color: #000; /* Fondo negro */
             color: white; /* Texto blanco */
             padding: 20px;
             margin: 0;
@@ -55,9 +55,21 @@
         button:hover {
             background-color: #c40000; /* Rojo más oscuro al pasar el mouse */
         }
-        
-        
-        
+        .select-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .select-container::after {
+            content: '\f078'; /* Código del icono de FontAwesome */
+            font-family: 'FontAwesome';
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -66,33 +78,35 @@
         <h1>Compra tus Entradas</h1>
         <form action="seleccion_asientos.php" method="POST">
             <label for="sala">Elige una sala:</label>
-            <select name="sala" id="sala" required>
-                <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "maciflix";
+            <div class="select-container">
+                <select name="sala" id="sala" required>
+                    <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "maciflix";
 
-                $conn = new mysqli($servername, $username, $password, $dbname);
+                    $conn = new mysqli($servername, $username, $password, $dbname);
 
-                if ($conn->connect_error) {
-                    die("Conexión fallida: " . $conn->connect_error);
-                }
-
-                $sql = "SELECT id, name FROM sala";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                    if ($conn->connect_error) {
+                        die("Conexión fallida: " . $conn->connect_error);
                     }
-                } else {
-                    echo "<option value=''>No hay salas disponibles</option>";
-                }
 
-                $conn->close();
-                ?>
-            </select>
+                    $sql = "SELECT id, name FROM sala";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                        }
+                    } else {
+                        echo "<option value=''>No hay salas disponibles</option>";
+                    }
+
+                    $conn->close();
+                    ?>
+                </select>
+            </div>
             <button type="submit">Seleccionar sala</button>
         </form>
     </div>
