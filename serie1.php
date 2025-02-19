@@ -50,9 +50,8 @@ $suggestions = $result_suggestions->fetch_all(MYSQLI_ASSOC);
     <link rel="stylesheet" href="css/estilosseries1.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="css/footer.css">
-    <script src="js/series.js"></script>
+    <script src="js/serie1.js"></script>
 </head>
-
 <body>
     <iframe
         src="header.php"
@@ -63,7 +62,8 @@ $suggestions = $result_suggestions->fetch_all(MYSQLI_ASSOC);
             <img src="img/<?= htmlspecialchars($serie['img']) ?>" alt="<?= htmlspecialchars($serie['title']) ?>">
             <h1><?= htmlspecialchars($serie['title']) ?></h1>
             <p id="desc-0"><?= htmlspecialchars($serie['description']) ?></p>
-            <button class="leer-mas" id="btn-0" onclick="toggleDescription(0)">Leer más</button>
+            <button class="leer-mas" id="btn-mas-0" onclick="toggleDescription(0, 'mas')">Leer más</button>
+            <button class="leer-menos" id="btn-menos-0" onclick="toggleDescription(0, 'menos')" style="display: none;">Leer menos</button>
             <button class="reproducir" onclick="showNotification('<?= htmlspecialchars($serie['title']) ?>')">Reproducir</button>
         </div>
     </header>
@@ -87,7 +87,8 @@ $suggestions = $result_suggestions->fetch_all(MYSQLI_ASSOC);
                             <img src="img/<?= htmlspecialchars($episode['img']) ?>" alt="<?= htmlspecialchars($episode['name']) ?>">
                             <h3><?= htmlspecialchars($episode['name']) ?></h3>
                             <p id="desc-<?= htmlspecialchars($episode['id']) ?>"><?= htmlspecialchars($episode['description']) ?></p>
-                            <button class="leer-mas" id="btn-<?= htmlspecialchars($episode['id']) ?>" onclick="toggleDescription(<?= htmlspecialchars($episode['id']) ?>)">Leer más</button>
+                            <button class="leer-mas" id="btn-mas-<?= htmlspecialchars($episode['id']) ?>" onclick="toggleDescription(<?= htmlspecialchars($episode['id']) ?>, 'mas')">Leer más</button>
+                            <button class="leer-menos" id="btn-menos-<?= htmlspecialchars($episode['id']) ?>" onclick="toggleDescription(<?= htmlspecialchars($episode['id']) ?>, 'menos')" style="display: none;">Leer menos</button>
                             <p>Duración: <?= htmlspecialchars($episode['duration']) ?> minutos</p>
                             <button class="reproducir" onclick="showNotification('<?= htmlspecialchars($episode['name']) ?>')">Ver</button>
                         </li>
@@ -95,7 +96,6 @@ $suggestions = $result_suggestions->fetch_all(MYSQLI_ASSOC);
                 </ul>
             </div>
         <?php endforeach; ?>
-
         <div class="suggestions">
             <h2>Otras series que te pueden gustar</h2>
             <div class="suggestions-container">
