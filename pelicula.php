@@ -16,18 +16,31 @@ onload="this.before((this.contentDocument.body||this.contentDocument).children[0
 <?php
     require_once("conexion.php");
     $conn = $bbdd;
-    $sql = "SELECT * FROM films WHERE id = 1";
+    $sql = "SELECT * FROM films WHERE id =1";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        $pelicula = $result->fetch_assoc();
+    if ($result->num_rows >0) {
+        for ($i = 0; $i < $result->num_rows; $i++) {
+            $pelicula = $result->fetch_assoc();
+            echo ": " . $pelicula['name'] . "<br>";
+            // Agrega más campos si es necesario
+        }
     } else {
         echo "Película no encontrada.";
         exit;
     }
 
     ?>
-   
+    <div class="movie-details-container">
+        <h1 id="movie-title"></h1> 
+    </div>
+    <div class="Resumen-pelicula">
+        <p></p>
+    </div>
+    <div class="Options">
+        <button onclick="addToList()">Añadir a mi lista</button>
+        <button onclick="goToCinema()">Ir al cine</button>
+    </div>
     <iframe src="footer.php"
     onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
