@@ -41,7 +41,7 @@ if ($result && $result->num_rows > 0) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <iframe src="header.php"
-      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </head>
     
 <body>
@@ -87,6 +87,6 @@ if ($result && $result->num_rows > 0) {
     </div>
 
     <iframe src="footer.php"
-      onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
 </html>
