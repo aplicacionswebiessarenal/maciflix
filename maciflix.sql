@@ -535,8 +535,8 @@ CREATE TABLE IF NOT EXISTS `sala` (
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 INSERT IGNORE INTO `sala` (`id`, `name`, `rows`, `columns`)
-VALUES (1, 'Sala zaza 1', 15, 20),
-    (2, 'Sala edamame 2', 7, 12);
+VALUES (1, 'Sala zaza 1', 6, 6),
+    (2, 'Sala edamame 2', 5, 7);
 CREATE TABLE IF NOT EXISTS `series` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `name` varchar(100) NOT NULL,
