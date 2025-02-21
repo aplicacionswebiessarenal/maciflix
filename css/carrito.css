@@ -45,10 +45,8 @@ h2 {
   button::hover {
     color: #094fe5;
   }
-  display: flex;
-  justify-content: end;
-  align-items: end;
   margin-top: 20px;
+  margin-bottom: 2em;
 }
 
 .total {
@@ -79,8 +77,10 @@ h2 {
   grid-template-columns: 10fr 10fr;
   grid-template-rows: repeat(1, 80px);
   border-radius: 22px;
+  margin-left: 300px; 
+  margin-right: 300px;
+  margin-bottom: 20px;
   gap: 5px;
-  margin: 40px;
   border-color: #e50914;
   border-style: inset;
   align-items: center;
@@ -89,6 +89,7 @@ h2 {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  background-color: rgb(41, 41, 41);
 }
 
 .container {

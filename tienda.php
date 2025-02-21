@@ -5,6 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     $product_id = intval($_POST['product_id']); 
     $quantity = 1;
 
+    $pedido_id = 1;
+
     $check_sql = "SELECT id FROM cart WHERE id_product = ?";
     $stmt_check = $bbdd->prepare($check_sql);
     $stmt_check->bind_param("i", $product_id);
@@ -18,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
         $stmt_update->execute();
         $stmt_update->close();
     } else {
-        $insert_sql = "INSERT INTO cart (id_product, quantity) VALUES (?, ?)";
+        $insert_sql = "INSERT INTO cart (id_pedido, id_product, quantity) VALUES (?, ?, ?)";
         $stmt_insert = $bbdd->prepare($insert_sql);
-        $stmt_insert->bind_param("ii", $product_id, $quantity);
+        $stmt_insert->bind_param("iii", $pedido_id, $product_id, $quantity);
         $stmt_insert->execute();
         $stmt_insert->close();
     }
