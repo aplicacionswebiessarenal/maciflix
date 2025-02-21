@@ -1,6 +1,38 @@
 <?php
-session_start();
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "maciflix";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Eliminar película si se recibe el ID
+if (isset($_POST['delete']) && isset($_POST['id'])) {
+    $id = intval($_POST['id']);
+    $sql = "DELETE FROM mi_lista WHERE id = $id";
+    $conn->query($sql);
+    exit;
+}
+
+// Agregar nueva película si se envía el formulario
+if (isset($_POST['nombre']) && isset($_POST['imagen'])) {
+    $nombre = $conn->real_escape_string($_POST['nombre']);
+    $imagen = $conn->real_escape_string($_POST['imagen']);
+    $sql = "INSERT INTO mi_lista (nombre, imagen) VALUES ('$nombre', '$imagen')";
+    $conn->query($sql);
+    header("Location: ".$_SERVER['PHP_SELF']);
+    exit;
+}
+
+// Obtener la lista de películas
+$sql = "SELECT * FROM mi_lista";
+$result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,62 +40,50 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Lista - Maciflix</title>
     <link rel="stylesheet" href="css/estilosmilista.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <iframe src="header.php"
-        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+<body id="body-milista">
+    <?php include("header.php"); ?>
 
     <div class="container">
         <h1>Mi Lista</h1>
-
-        <div id="movies-list" class="movies-grid">
-            <!-- Las películas se cargarán dinámicamente aquí -->
+        <div id="lista">
+            <?php if ($result->num_rows > 0): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <div class="pelicula" id="pelicula-<?php echo $row['id']; ?>">
+                        <img src="img/<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>">
+                        <span class="nombre"><?php echo htmlspecialchars($row['nombre']); ?></span>
+                        <button class="boton ver" onclick="verPelicula('<?php echo htmlspecialchars($row['nombre']); ?>')">Ver</button>
+                        <button class="boton quitar" onclick="quitarPelicula(<?php echo $row['id']; ?>)">Quitar</button>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <p>No tienes películas en tu lista.</p>
+            <?php endif; ?>
         </div>
     </div>
 
-    <iframe src="footer.php"
-        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+    <?php include("footer.php"); ?>
 
     <script>
-        // Función para cargar y mostrar las películas guardadas
-        function loadMovies() {
-            const moviesList = document.getElementById('movies-list');
-            moviesList.innerHTML = ''; // Limpiar la lista
-            
-            // Obtener películas de localStorage
-            const movies = JSON.parse(localStorage.getItem('myMovies') || '[]');
-            
-            if (movies.length === 0) {
-                moviesList.innerHTML = '<p>No tienes películas en tu lista.</p>';
-                return;
-            }
-
-            movies.forEach(movie => {
-                const movieItem = document.createElement('div');
-                movieItem.className = 'movie-item';
-                movieItem.innerHTML = `
-                    <img src="img/${movie.img}" alt="${movie.name}">
-                    <h3>${movie.name}</h3>
-                    <button onclick="removeFromList(${movie.id})">Eliminar</button>
-                `;
-                moviesList.appendChild(movieItem);
-            });
+        function verPelicula(nombre) {
+            alert('Reproduciendo ' + nombre);
         }
-
-        // Función para eliminar una película de la lista
-        function removeFromList(movieId) {
-            if (confirm('¿Estás seguro de que quieres eliminar esta película de tu lista?')) {
-                let movies = JSON.parse(localStorage.getItem('myMovies') || '[]');
-                movies = movies.filter(movie => movie.id !== movieId);
-                localStorage.setItem('myMovies', JSON.stringify(movies));
-                loadMovies();
+        
+        function quitarPelicula(id) {
+            if (confirm('¿Seguro que quieres quitar esta película?')) {
+                fetch('', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: 'delete=true&id=' + id
+                }).then(() => {
+                    document.getElementById('pelicula-' + id).remove();
+                });
             }
         }
-
-        // Cargar películas al abrir la página
-        loadMovies();
     </script>
 </body>
 </html>
+
+<?php $conn->close(); ?>
