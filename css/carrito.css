@@ -27,8 +27,17 @@ h2 {
   border-style: inset;
   border: 1px solid #e50914;
   border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 300px; 
+  margin-right: 300px;
+  margin-bottom: 40px;
+  box-shadow: 
+  0 0 10px #E50914, /* Sombra difusa */
+  0 0 20px #E50914 /* Sombra más difusa */
 }
-
+.producto {
+  background-color: rgb(41, 41, 41);
+}
 .carrito {
   margin-top: 50px;
   border-top: 2px solid #e50914;
@@ -49,7 +58,18 @@ h2 {
   margin-bottom: 2em;
 }
 
+.centradito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
   margin-bottom: 20px; 
   margin-top: 10px;
@@ -77,9 +97,10 @@ h2 {
   grid-template-columns: 10fr 10fr;
   grid-template-rows: repeat(1, 80px);
   border-radius: 22px;
+  margin-top: 40px;
   margin-left: 300px; 
   margin-right: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   gap: 5px;
   border-color: #e50914;
   border-style: inset;
@@ -90,7 +111,11 @@ h2 {
   display: flex;
   flex-direction: column;
   background-color: rgb(41, 41, 41);
+  box-shadow: 
+  0 0 10px #E50914, /* Sombra difusa */
+  0 0 20px #E50914 /* Sombra más difusa */
 }
+
 
 .container {
   display: grid;
@@ -173,6 +198,7 @@ img {
   align-self: center;
   display: flex;
   flex-direction: column;
+  background-color: rgb(41, 41, 41);
 }
 
 #medio {
