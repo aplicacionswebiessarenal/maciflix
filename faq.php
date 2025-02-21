@@ -20,6 +20,24 @@ $preguntas = $resultado->fetch_all(MYSQLI_ASSOC);
 
 $stmt->close();
 $bbdd->close();
+// Traducciones de textos estáticos
+$textos = [
+    1 => [
+        'titulo' => 'Preguntas Frecuentes',
+        'selecciona' => 'Selecciona tu idioma:',
+        'footer' => '&copy; 2025 MACIFLIX Entertainment, A.W Todos los derechos reservados.'
+    ],
+    2 => [
+        'titulo' => 'Frequently Asked Questions',
+        'selecciona' => 'Select your language:',
+        'footer' => '&copy; 2025 MACIFLIX Entertainment, A.W All Rights Reserved.'
+    ],
+    3 => [
+        'titulo' => 'Questions Fréquentes',
+        'selecciona' => 'Sélectionnez votre langue :',
+        'footer' => '&copy; 2025 MACIFLIX Entertainment, A.W Tous droits réservés.'
+    ]
+];
 ?>
 
 <!DOCTYPE html>
@@ -37,10 +55,10 @@ $bbdd->close();
 <body id="FAQ-body">
 <iframe src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
-      <h1>PREGUNTAS FRECUENTES</h1>
-      
+<h1><?php echo $textos[$idioma]['titulo']; ?></h1>
+
       <form method="GET">
-      <label for="lang">Selecciona tu idioma:</label>
+      <label for="lang"><?php echo $textos[$idioma]['selecciona']; ?></label>
       <select name="lang" id="lang" onchange="this.form.submit()">
           <option value="1" <?= ($_GET['lang'] ?? 1) == 1 ? 'selected' : '' ?>>Español</option>
           <option value="2" <?= ($_GET['lang'] ?? 1) == 2 ? 'selected' : '' ?>>English</option>
@@ -60,7 +78,7 @@ $bbdd->close();
   </div>
     <footer>
         <div class="contenido-c">
-            <p>&copy; 2025 MACIFLIX Entertainment, A.W Todos los derechos reservados.</p>
+            <p><?php echo $textos[$idioma]['footer']; ?></p>
         </div>
       </footer>
         <script>
