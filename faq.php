@@ -39,7 +39,6 @@ $textos = [
     ]
 ];
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,7 +52,7 @@ $textos = [
 
 </head>
 <body id="FAQ-body">
-<iframe src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+<iframe class="iframe" src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
 <h1><?php echo $textos[$idioma]['titulo']; ?></h1>
 

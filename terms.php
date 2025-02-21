@@ -9,9 +9,9 @@
   <body id="body-terms"> 
   <iframe src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
-    <header id="header">
-      <h1>TERMS & CONDITONS MACIFLIX</h1>
-    </header>
+    
+      <h1 class="h1terms">TERMS & CONDITONS MACIFLIX</h1>
+
     <div class="contenido-terms">
         
           <p> <p>Última actualización: 20 Enero 2025<P> MACIFLIX DTC LATAM, LLC y/o sus empresas afiliadas (MACIFLIX) se complace en proporcionarle sus páginas web, software, aplicaciones, contenido, productos y servicios en cualquier medio, formato o canal, hoy conocido o a crearse en el futuro (“Servicios MACIFLIX”), pertenecientes a las marcas maciflix, ABC, ESPN, Marvel, Lucasfilm, FX, Searchlight Pictures, 20th Century Studios, National Geographic, Star u otra marca propiedad de, o bajo licencia de maciflix. Las referencias a los Servicios maciflix También incluyen cualquier elemento de los Servicios MACIFLIX

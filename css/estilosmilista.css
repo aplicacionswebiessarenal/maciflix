@@ -63,6 +63,9 @@
     font-size: 14px;
     text-decoration: none;
   }
+  .h1terms {
+    color: #ffffff;
+  }
   .back-button:hover {
     background-color: #0a0000;
   }
@@ -80,23 +83,9 @@
     color: #ffffff;
     padding: 10px 15px;
   }
-  header {
-    background-color: #fffcfc; 
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 2px solid #ff0000; 
-}
- header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-#avisolegal{
-  background-color: #000000;
-  color:#ffffff
-}
-#avisolegal h1 {
-    display: flex;
-    flex-direction: center;
+ 
+  #body-aviso h1 {
+    color: rgb(255, 255, 255);
   }
   .contenido-c {
     width: 90%;
@@ -126,6 +115,7 @@ footer p {
   h1 {
     color: #000000;
   }
+
   #faq {
     background-color: #1e1e1e;
     color: white;

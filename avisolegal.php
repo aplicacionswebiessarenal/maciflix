@@ -7,12 +7,12 @@
       <meta charset="UTF-8">
   </head>
   <body id="body-aviso">
+  
   <iframe src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+   
 
-    </div>
-    <header>
       <h1>AVISO LEGAL </h1>
-    </header>
+
     <div id="avisolegal">
           <article>
             <h2> Información General</h2>
