@@ -57,7 +57,7 @@
     <form action="confirmacionpago.php" method="POST">
       <div>
         <img id=bizum src="../img/bizum.png">
-        <input type="tel" name="telefono" placeholder="numero de telefono" required>
+        <input type="tel" name="telefono" placeholder="Numero de telefono" required>
         <input type="hidden" name="metodo_pago" value="bizum">
         <button type="submit" class="botoncito">Pagar</button>
       </div>
