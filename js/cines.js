@@ -8,3 +8,12 @@ movieImages.forEach(image => {
         image.classList.remove('highlight-cines'); // Elimina la clase 'highlight' al salir el mouse
     });
 });
+
+function toggleDescription(id) {
+    const desc = document.getElementById('desc-' + id);
+    if (desc.style.display === 'none' || desc.style.display === '') {
+        desc.style.display = 'block';
+    } else {
+        desc.style.display = 'none';
+    }
+}
