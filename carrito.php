@@ -80,7 +80,7 @@ if ($result && $result->num_rows > 0) {
             </span>
         </div>
     </div>
-    <div>
+    <div class="centradito">
         <a href="metododepago.php">
             <button class="total">Confirmar transacción</button>
         </a>
