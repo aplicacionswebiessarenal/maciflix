@@ -1,415 +1,225 @@
-@import url(/css/estilospersonalizados.css);
-.contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-}
-    
-    .body {
-        margin: 0;
-        font-family: var(--inter-fuente); 
-        background-color: black;
-        color: white;
-        
-    }
-    
-
-.subtitulo {
-    text-align: center;
-    font-size: 40px; 
-    color: #E50914; 
-    margin: 0; 
-    font-family: var(--inter-fuente);
-    text-shadow: 0 0 5px #1818189c,  0 0 15px #000000; 
-    
-}
-
-.otrosubtitulo {
-    text-align: center;
-}
-
-.carrusel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    overflow: hidden; 
-    margin: 20px 0; 
-}
-a{
-    text-decoration: none;
-}
-.pelicula {
-    margin: 0 10px; 
-    border: 5px solid #000000; 
-    border-radius: 10px; 
-    transition: transform 0.3s;
-    text-shadow:0 0 5px #cf2812;
-}
-
-.pelicula:hover {
-    transform: scale(1.05); 
-}
-
-.pelicula img {
-    width: 400px; 
-    height: auto; 
-    border-radius: 10px 10px 0 0; 
-}
-
-.pelicula h3 {
-    font-size: 30px;
-    color: #f5ebeb; 
-    text-align: center; 
-    margin: 10px 0; 
-    text-shadow:  0 0 10px #e000006b, 0 0 15px #db000000; 
-    
-}
-
-/* Fondo específico para la página de selección de asientos */
-body.seleccion-asientos {
-    text-align: center;
-    background-color: #000000; 
-    background-image: none; 
-}
-.seleccion-asientos .header {
-    padding-top: 5px; 
-}
-
-
-.seleccion-asientos .subtitulo {
-    font-size: 40px;
-    margin-top: 5px; 
-}
-.seleccion-asientos .contenedor-pelicula {
-    display: flex;
-    margin: 0px;
-    justify-content: flex-end;
-}
-
-.seleccion-asientos .imagen-pelicula {
-    width: 250px; 
-    height:350px; 
-    display: flex;
-    justify-content: flex-end;
-    border-radius: 10px;
-    object-fit: cover; 
-    border: 5px solid #fff; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-}
-/* Estilos para el título de la película */
-.seleccion-asientos .titulo-pelicula {
-    font-size: 40px;
-    margin-bottom: 0px;
-    color: #FFFFFF; 
-    text-shadow: none; 
-    margin-top: 10px; 
-}
-
-.detalles-pelicula{
-
-text-align: center;
-
-}
-
-
-/* Estilos para la introducción de la película */
-.seleccion-asientos .introduccion {
-    line-height: 1.5;
-    color: #FFFFFF; 
-    text-shadow: none; 
-}
-
-.alineaintroduccion{
-    justify-content: center;
-    text-align: center;
-
-}
-
-
-.boton-seleccion-cine {
-    padding: 50px 50px;
-    justify-content: center;
-    background-color: #E50914;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.opciones-cine {
-    display: none;
-    margin-top: 10px;
-}
-
-.opcion-cine {
-    background-color: #273a1b;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.opcion-cine.seleccionado {
-    background-color: #E50914;
-    color: #fff;
-}
-.cine-selector {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.entradas-selector label {
-    padding: 10px 20px;
-    color: #ff0000; /* Agrega esto para cambiar el texto "Entradas" a blanco */
-    text-shadow: none !important;
-}
-
-.entradas-selector input {
-    
-    background-color: #FFFFFF; /* Agrega esto para cambiar el fondo del campo de entradas a blanco */
-    color: #000000; /* Agrega esto para cambiar el texto de los números de entradas a negro */
-    text-shadow: none !important;
-}
-.tipo-entrada-selector {
-    color: #E50914;
-}
-
-.total-selector {
-    padding: 10px 20px;
-    bottom: 340px;
-    left: 40px;
-    margin-top: 1px;
-    text-shadow: none !important;
-    color: #ff0000;
-}
-.total-selector input {
-    width: 60px;
-    padding: 0px;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    font-size: 16px;
-    text-align: right;
-}
-.sala-de-cine {
-    background-color: #333;
-    border-radius: 10px;
-    text-align: center;
-    margin: 10px;
-}
-
-.asientos-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 5px; 
-    margin: 5px 0;
-}
-
-.asiento {
-    width: 90px; 
-    height: 30px; 
-    background-color: #555;
-    border-radius: 5px; 
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 18px; /* Tamaño de la fuente */
-}
-
-.asiento.seleccionado {
-    background-color: #E50914; /
-}
-.confirmar-asiento {
-    background-color: #E50914;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.confirmar-asiento:disabled {
-    background-color: #888;
-    cursor: not-allowed;
-}
-
-#boton-finalizar-compra {
-    background-color: #E50914;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-#boton-finalizar-compra:hover {
-    text-align: center;
-    background-color: #C40000;}
-
-    
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
-    font-family: var(--inter-fuente);
-    background-color: #000000; 
-    color: #ffffff; 
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fondo negro */
+    color: white; /* Texto blanco */
+    margin: 0;
 }
-
-/* Subtítulos */
-.subtitulo {
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #1c1c1c;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
     text-align: center;
-    font-size: 2.5em; 
-    color: #E50914; 
-    margin: 20px 0; 
-    text-shadow: 0 0 5px #1818189c, 0 0 15px #000000; 
 }
-
-/* Contenedor de la película */
-.contenedor-pelicula {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0; 
-}
-
-/* Imagen de la película */
-.imagen-pelicula {
-    width: 100%; 
-    height: auto; 
-    max-width: 250px; 
-    border-radius: 10px; 
-    border: 5px solid #fff; 
-}
-
-/* Título de la película */
-.titulo-pelicula {
-    font-size: 1.8em; 
-    margin: 10px 0; 
-}
-
-/* Detalles de la película */
-.detalles-pelicula {
-    text-align: center;
+h1 {
+    color: #e50914;
     margin-bottom: 20px;
 }
-
-/* Selector de asientos */
-.sala-de-cine {
-    background-color: #333;
+.info {
+    margin-bottom: 20px;
+    font-size: 18px;
+    background: #333;
+    padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    margin: 0px 35%; 
-    display: none;
 }
-
-/* Estilo para el contenedor de asientos */
-.asientos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; 
+.info p {
+    margin: 10px 0;
 }
-
-/* Estilo para cada asiento */
-.asiento {
-    background-color: #555;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1em; 
+.info strong {
+    color: #e50914;
 }
-
-/* Asiento seleccionado */
-.asiento.seleccionado {
-    background-color: #E50914; 
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
-
-/* Botones */
-.boton-seleccion-cine,
-.confirmar-asiento,
-#boton-finalizar-compra {
-    background-color: #E50914;
-    color: #ffffff;
-    padding: 10px 20px;
+select, button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+select {
+    background-color: #333;
+    color: white;
+}
+button {
+    background-color: #e50914;
+    color: white;
     cursor: pointer;
-    display: inline-block; 
-    font-size: 1em; 
-    margin: 10px 0; 
-    width: 100%; 
-    max-width: 200px; 
 }
-
-/* Cambiar color de los botones al pasar */
-#boton-finalizar-compra:hover,
-.boton-seleccion-cine:hover,
-.confirmar-asiento:hover {
-    background-color: #C40000; 
+button:hover {
+    background-color: #c40000; /* Rojo más oscuro al pasar el mouse */
 }
-
-/* Estilos adaptativos */
-@media (min-width: 600px) {
-    .contenedor-pelicula {
-        justify-content: space-between; 
-    }
-
-    .imagen-pelicula {
-        max-width: 300px; 
-    }
-    
-    .asientos-container {
-        grid-template-columns: repeat(5, 1fr); 
-    }
-}
-
-@media (max-width: 600px) {
-    .subtitulo {
-        font-size: 2em; 
-    }
-
-    .titulo-pelicula {
-        font-size: 1.5em; 
-    }
-
-    #boton-finalizar-compra,
-    .boton-seleccion-cine,
-    .confirmar-asiento {
-        min-width: 80%; 
-    }
-}
-.introduccion {
-    max-width: 600px; 
-    margin: 0 auto; 
-    line-height: 1.5;
-    color: #FFFFFF; 
-    text-shadow: none; 
-    text-align: center; 
-}
-
-.pelicula {
+.select-container {
     position: relative;
-    margin: 20px 10px; /* Aumentar margen vertical */
-    border: 5px solid #000000; 
-    border-radius: 10px; 
-    transition: transform 0.3s, box-shadow 0.3s;  
-    text-shadow: 0 0 5px #cf2812;
+    display: inline-block;
+    width: 100%;
 }
-.pelicula:hover {
-    transform: scale(1.05); 
-    box-shadow: 
-        0 -15px 20px rgba(255, 0, 0, 0.8), /* Más sombra roja hacia arriba */
-        0 15px 20px rgba(255, 0, 0, 0.8),  /* Más sombra roja hacia abajo */
-        0 0 20px rgba(255, 0, 0, 0.5), 
-        0 0 30px rgba(255, 0, 0, 0.5);  /* Mantener sombras difusas */
+.select-container::after {
+    content: '\f078'; /* Código del icono de FontAwesome */
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: white;
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fondo negro */
+    color: white; /* Texto blanco */
+    margin: 0;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #1c1c1c;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+h1 {
+    color: #e50914;
+    margin-bottom: 20px;
+}
+.info {
+    margin-bottom: 20px;
+    font-size: 18px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+.info p {
+    margin: 10px 0;
+}
+.info strong {
+    color: #e50914;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+select, button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+select {
+    background-color: #333;
+    color: white;
+}
+button {
+    background-color: #e50914;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #c40000; /* Rojo más oscuro al pasar el mouse */
+}
+.select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.select-container::after {
+    content: '\f078'; /* Código del icono de FontAwesome */
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: white;
+}
+
+/* Estilos específicos para seleccion_asientos.php */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0); /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    margin: 0;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: rgb(29, 28, 28);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.screen {
+    background-color: #fff;
+    height: 50px;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+    border-radius: 10px;
+}
+.seat {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-color: #444;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+.seat.selected {
+    background-color: #6feaf6;
+}
+.seat.occupied {
+    background-color: #fff;
+    cursor: not-allowed;
+}
+.seat-row {
+    display: flex;
+    justify-content: center;
+}
+.total {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.btn-pagar {
+    background-color: #e50914;
+    color: white;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.btn-pagar:hover {
+    background-color: #c40000;
+}
+.seat-info {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #e50914;
 }
