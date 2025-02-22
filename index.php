@@ -1,6 +1,12 @@
-<?php include_once('conexion.php'); ?>
+<?php
+include_once('conexion.php');
+session_start();
 
-<?php session_start(); ?>
+if (!isset($_SESSION['user_id'])) {
+  header("Location: /iniciarsesion.php");
+  exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
