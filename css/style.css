@@ -185,7 +185,6 @@ section {
   overflow: hidden;
 }
 
-
 section img {
   width: 100%;
   min-width: 95px;
@@ -213,4 +212,8 @@ section img:hover {
   padding: 20px;
   border-radius: 5px;
   text-align: end;
+}
+
+.hide {
+  display: none; /* Class to hide elements */
 }

@@ -5,7 +5,10 @@ session_start();
 if (!isset($_SESSION['user_id'])) {
   header("Location: /iniciarsesion.php");
   exit();
+} else {
+  $hideLoginButton = true; // Variable to control the visibility of the login button
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +37,10 @@ if (!isset($_SESSION['user_id'])) {
   <iframe src="header.php"
     onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
   <div class="buscador">
+    <?php if (!isset($hideLoginButton)): ?>
+      <button class="minimalbutton" id="login">Login</button>
+    <?php endif; ?>
+
     <input type="search" id="busqueda" placeholder="Buscar productos..." />
     <button class="minimal-button" id="buscar">Buscar</button>
   </div>
