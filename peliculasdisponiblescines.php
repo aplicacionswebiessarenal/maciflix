@@ -3,13 +3,14 @@
 <html lang="en">
     <head>
         <meta charset="utf8">
-        <title>Maciflix</title>
+        <title>Maciflix España - Peliculas Disponibles</title>
         <link rel="stylesheet" href="css/peliculasdisponibles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/footer.css">
+        <link rel="icon" type="image/x-icon" href="/img/logomaciflix.png" />
     </head>
     <body>
         <iframe src="header.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
