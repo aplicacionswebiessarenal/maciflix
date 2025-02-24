@@ -48,10 +48,13 @@
     }
 }
   /*estilos para el term.html*/
-#body-terms{
+#body-terms {
     background-color: rgb(0, 0, 0);
     font-family: "Inter", sans-serif;
     color: rgb(255, 255, 255);
+  }
+  #body-terms header {
+    background-color: #ffffffff;
   }
   .back-button {
     display: inline-block;
@@ -83,9 +86,16 @@
     color: #ffffff;
     padding: 10px 15px;
   }
- 
+  #body-aviso header {
+    background-color: #ffffff;
+  }
   #body-aviso h1 {
     color: rgb(255, 255, 255);
+  }
+  #body-aviso p {
+    color:#ffffff;
+    display: flex;
+  justify-content: flex-start;
   }
   .contenido-c {
     width: 90%;

@@ -31,7 +31,7 @@
             </p>
           </article>
             <h3> Privacidad y Protección de Datos</h3>
-            <p>El tratamiento de los datos personales se rige por la <strong>Política de Privacidad</strong> de MACIFLIX. Al utilizar los servicios, el usuario acepta que sus datos sean tratados conforme a dicha política.</p>
+            <p>El tratamiento de los datos personales se rige por la Política de Privacidad</strong> de MACIFLIX. Al utilizar los servicios, el usuario acepta que sus datos sean tratados conforme a dicha política.</p>
           <article>
             <h3> Jurisdicción y Legislación Aplicable</h3>
             <p>Este Aviso Legal se rige por la legislación de ESPAÑA. Cualquier controversia será sometida a los tribunales de illes balears.</p>
