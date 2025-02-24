@@ -51,8 +51,8 @@ $result = $conn->query($sql);
     <div id="lista">
             <?php while ($row = $result->fetch_assoc()) { ?>
                 <div class="pelicula" id="pelicula-<?php echo $row['id']; ?>">
-                    <img src="<?php echo $row['imagen']; ?>" alt="<?php echo $row['nombre']; ?>">
-                    <h1 class="nombre"><?php echo $row['nombre']; ?></h1>
+                <img src="img/<?php echo $row['imagen']; ?>" alt="<?php echo $row['nombre']; ?>">
+                <h1 class="nombre"><?php echo $row['nombre']; ?></h1>
                     <button class="boton ver" onclick="verPelicula('<?php echo $row['nombre']; ?>')">Ver</button>
                     <button class="boton quitar" onclick="quitarPelicula(<?php echo $row['id']; ?>)">Quitar</button>
                 </div>
@@ -76,9 +76,8 @@ $result = $conn->query($sql);
             }
         }
     </script>
-<footer>
+
     <iframe src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>        
-</footer>
 </body>
 </html>
 
