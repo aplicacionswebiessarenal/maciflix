@@ -1,14 +1,29 @@
 
 /*script para milista.html*/
-function showPopup(peli) {
-    document.getElementById('popup').style.display = 'flex';
-
+function verPelicula(nombre) {
+    alert('Reproduciendo ' + nombre);
 }
 
-function hidePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
+function quitarPelicula(id) {
+    if (confirm('¿Seguro que quieres quitar esta película?')) {
+        fetch('', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'delete=true&id=' + id
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al eliminar la película');
+            }
+            document.getElementById('pelicula-' + id).remove();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al eliminar la película. Por favor, inténtelo de nuevo.');
+        });
 
+    }
+}
 
 /*script para el faq.html*/
   document.querySelectorAll('.faq-pregunta').forEach(button => {
