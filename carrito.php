@@ -1,7 +1,10 @@
-<?php 
+<?php
 include_once('conexion.php'); // Conexión a la base de datos
 
+session_start(); // Start the session
+
 // Eliminar producto si se recibe una solicitud POST
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cart_id'])) {
     $cart_id = (int) $_POST['cart_id']; // Asegurar que sea un número entero
 
@@ -12,10 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cart_id'])) {
     $stmt->execute();
 }
 
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = []; // Buscar sesión PHP
+}
+
 // Obtener los productos del carrito con un JOIN para mejorar rendimiento
-$sql = "SELECT p.id, p.name, p.price, p.img, c.quantity, c.id as cart_id 
+
+$sql = "SELECT p.id, p.name, p.price, p.img, c.quantity, c.id as cart_id
         FROM cart c 
-        JOIN product p ON c.id_product = p.id";
+        JOIN product p ON c.id_product = p.id
+        WHERE c.id IN (" . implode(',', $_SESSION['cart']) . ")"; // Pillar datos de la base de datos
 
 $result = $bbdd->query($sql);
 
@@ -30,6 +39,7 @@ if ($result && $result->num_rows > 0) {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Maciflix España - Carrito de la compra</title>
@@ -41,9 +51,9 @@ if ($result && $result->num_rows > 0) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <iframe src="header.php"
-    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </head>
-    
+
 <body>
     <h2>Productos seleccionados</h2>
     <div class="carrito" id="carrito">
@@ -51,7 +61,8 @@ if ($result && $result->num_rows > 0) {
             <?php if (!empty($productos)): ?>
                 <?php foreach ($productos as $producto): ?>
                     <div class="producto">
-                        <img src="img/<?php echo htmlspecialchars($producto['img']); ?>" alt="<?php echo htmlspecialchars($producto['name']); ?>">
+                        <img src="img/<?php echo htmlspecialchars($producto['img']); ?>"
+                            alt="<?php echo htmlspecialchars($producto['name']); ?>">
                         <div class="info">
                             <h3><?php echo htmlspecialchars($producto['name']); ?></h3>
                             <p>Precio: $<?php echo number_format($producto['price'], 2); ?></p>
@@ -70,12 +81,12 @@ if ($result && $result->num_rows > 0) {
         </div>
         <div class="total">
             Total: $<span id="total">
-                <?php 
-                    $total = 0;
-                    foreach ($productos as $producto) {
-                        $total += $producto['price'] * $producto['quantity'];
-                    }
-                    echo number_format($total, 2);
+                <?php
+                $total = 0;
+                foreach ($productos as $producto) {
+                    $total += $producto['price'] * $producto['quantity'];
+                }
+                echo number_format($total, 2);
                 ?>
             </span>
         </div>
@@ -87,6 +98,7 @@ if ($result && $result->num_rows > 0) {
     </div>
 
     <iframe src="footer.php"
-    onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 </body>
+
 </html>

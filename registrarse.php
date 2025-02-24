@@ -59,6 +59,8 @@
 
 </html>
 <?php
+session_start(); // Start the session
+
 
 include_once("conexion.php");
 
