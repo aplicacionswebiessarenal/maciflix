@@ -14,27 +14,18 @@ if ($conn->connect_error) {
 if (isset($_POST['delete']) && isset($_POST['id'])) {
     $id = intval($_POST['id']);
     $sql = "DELETE FROM mi_lista WHERE id = $id";
-    if ($conn->query($sql) === TRUE) {
-    echo "Película eliminada con éxito.";
-
-    } else {
-        echo "Error deleting record: " . $conn->error;
-    }
+    $conn->query($sql);
     exit;
-
 }
-
-// Agregar nueva película si se envía el formulario
 if (isset($_POST['nombre']) && isset($_POST['imagen'])) {
     $nombre = $conn->real_escape_string($_POST['nombre']);
     $imagen = $conn->real_escape_string($_POST['imagen']);
     $sql = "INSERT INTO mi_lista (nombre, imagen) VALUES ('$nombre', '$imagen')";
     $conn->query($sql);
-    header("Location: ".$_SERVER['PHP_SELF']);
-    exit;
 }
 
 // Obtener la lista de películas
+
 $sql = "SELECT * FROM mi_lista";
 $result = $conn->query($sql);
 ?>
@@ -43,35 +34,31 @@ $result = $conn->query($sql);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Lista - Maciflix</title>
+    <script src="js/milista.js"></script>   
     <link rel="stylesheet" href="css/estilosmilista.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/style.css">
+    <title>Mi Lista - Maciflix</title>
+
 </head>
 <body id="body-milista">
-    <?php include("header.php"); ?>
 
-    <div class="container">
-        <h1>Mi Lista</h1>
-        <div id="lista">
-            <?php if ($result->num_rows > 0): ?>
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <div class="pelicula" id="pelicula-<?php echo $row['id']; ?>">
-                        <img src="img/<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>">
-                        <span class="nombre"><?php echo htmlspecialchars($row['nombre']); ?></span>
-                        <button class="boton ver" onclick="verPelicula('<?php echo htmlspecialchars($row['nombre']); ?>')">Ver</button>
-                        <button class="boton quitar" onclick="quitarPelicula(<?php echo $row['id']; ?>)">Quitar</button>
-                    </div>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <p>No tienes películas en tu lista.</p>
-            <?php endif; ?>
-        </div>
+<iframe src="header.php"onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
+
+    <h1>Mi Lista</h1>
+    <div id="lista">
+            <?php while ($row = $result->fetch_assoc()) { ?>
+                <div class="pelicula" id="pelicula-<?php echo $row['id']; ?>">
+                    <img src="<?php echo $row['imagen']; ?>" alt="<?php echo $row['nombre']; ?>">
+                    <h1 class="nombre"><?php echo $row['nombre']; ?></h1>
+                    <button class="boton ver" onclick="verPelicula('<?php echo $row['nombre']; ?>')">Ver</button>
+                    <button class="boton quitar" onclick="quitarPelicula(<?php echo $row['id']; ?>)">Quitar</button>
+                </div>
+            <?php } ?>
     </div>
-
-    <?php include("footer.php"); ?>
-
+    
     <script>
         function verPelicula(nombre) {
             alert('Reproduciendo ' + nombre);
@@ -83,21 +70,15 @@ $result = $conn->query($sql);
                     method: 'POST',
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     body: 'delete=true&id=' + id
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Error al eliminar la película');
-                    }
+                }).then(() => {
                     document.getElementById('pelicula-' + id).remove();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Error al eliminar la película. Por favor, inténtelo de nuevo.');
                 });
-
             }
         }
     </script>
+<footer>
+    <iframe src="footer.php" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>        
+</footer>
 </body>
 </html>
 
