@@ -14,8 +14,14 @@ if ($conn->connect_error) {
 if (isset($_POST['delete']) && isset($_POST['id'])) {
     $id = intval($_POST['id']);
     $sql = "DELETE FROM mi_lista WHERE id = $id";
-    $conn->query($sql);
+    if ($conn->query($sql) === TRUE) {
+    echo "Película eliminada con éxito.";
+
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
     exit;
+
 }
 
 // Agregar nueva película si se envía el formulario
@@ -77,9 +83,18 @@ $result = $conn->query($sql);
                     method: 'POST',
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     body: 'delete=true&id=' + id
-                }).then(() => {
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error al eliminar la película');
+                    }
                     document.getElementById('pelicula-' + id).remove();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al eliminar la película. Por favor, inténtelo de nuevo.');
                 });
+
             }
         }
     </script>

@@ -55,26 +55,28 @@ onload="this.before((this.contentDocument.body||this.contentDocument).children[0
 
 <script>
     function addToList(movieId, movieName, movieImg) {
-        // Obtener la lista actual de películas
-        let movies = JSON.parse(localStorage.getItem('myMovies') || '[]');
-        
-        // Verificar si la película ya está en la lista
-        if (!movies.some(movie => movie.id === movieId)) {
-            // Añadir la nueva película
-            movies.push({
-                id: movieId,
-                name: movieName,
-                img: movieImg
-            });
-            
-            // Guardar en localStorage
-            localStorage.setItem('myMovies', JSON.stringify(movies));
-            alert('Película añadida a tu lista');
-            window.location.href = 'milista.php';
-        } else {
-            alert('Esta película ya está en tu lista');
-        }
+        // Enviar datos al servidor para guardar en la base de datos
+        fetch('milista.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `nombre=${encodeURIComponent(movieName)}&imagen=${encodeURIComponent(movieImg)}`
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Película añadida a tu lista');
+                window.location.href = 'milista.php';
+            } else {
+                alert('Error al añadir la película');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al añadir la película');
+        });
     }
+
 
     function goToCinema() {
         // Implementar funcionalidad para ir al cine
