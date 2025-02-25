@@ -79,8 +79,9 @@ onload="this.before((this.contentDocument.body||this.contentDocument).children[0
 
 
     function goToCinema() {
-        // Implementar funcionalidad para ir al cine
-        alert('Funcionalidad en desarrollo');
+        // Redirigir a la página de cines
+        window.location.href = 'cines.php';
+
     }
 </script>
 </body>
