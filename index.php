@@ -2,12 +2,6 @@
 include_once('conexion.php');
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-  header("Location: /iniciarsesion.php");
-  exit();
-} else {
-  $hideLoginButton = true; // Variable to control the visibility of the login button
-}
 
 ?>
 
