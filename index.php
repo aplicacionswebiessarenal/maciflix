@@ -34,10 +34,6 @@ if (session_status() === PHP_SESSION_NONE) {
   <iframe src="header.php"
     onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
   <div class="buscador">
-    <?php if (!isset($hideLoginButton)): ?>
-      <button class="minimalbutton" id="login">Login</button>
-    <?php endif; ?>
-
     <input type="search" id="busqueda" placeholder="Buscar productos..." />
     <button class="minimal-button" id="buscar">Buscar</button>
   </div>
