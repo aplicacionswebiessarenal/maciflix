@@ -1,7 +1,10 @@
 <?php
 include_once('conexion.php'); // Conexión a la base de datos
 
-session_start(); // Start the session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); // Start the session
+}
+
 
 // Eliminar producto si se recibe una solicitud POST
 
