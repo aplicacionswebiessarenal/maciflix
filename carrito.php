@@ -24,7 +24,8 @@ if (!isset($_SESSION['cart'])) {
 $sql = "SELECT p.id, p.name, p.price, p.img, c.quantity, c.id as cart_id
         FROM cart c 
         JOIN product p ON c.id_product = p.id
-        WHERE c.id IN (" . implode(',', $_SESSION['cart']) . ")"; // Pillar datos de la base de datos
+WHERE c.id IN (" . (empty($_SESSION['cart']) ? 'NULL' : implode(',', $_SESSION['cart'])) . ")"; // Pillar datos de la base de datos
+
 
 $result = $bbdd->query($sql);
 
